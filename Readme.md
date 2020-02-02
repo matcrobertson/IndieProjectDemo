@@ -1,0 +1,3 @@
+I dont have time to run through every artist i like and see if they released new content. the only way i can do that is to google search all of them or spend way too much time browsing music services like spotify or apple music. also with those services if i dont want to pay to listen to them i will have to go out to youtube where they post it. i want to be able to open my application, set a time frame of the last time i was up to speed on my favorite artists, and then their new stuff will show up on the page
+
+https://github.com/matcrobertson/IndieProjectDemo
