@@ -1,0 +1,4 @@
+Persistence/SessionFactoryProvider.class
+Controller/SearchUser.class
+Persistence/UserDAO.class
+Entity/User.class
