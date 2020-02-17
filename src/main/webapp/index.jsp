@@ -1,11 +1,9 @@
-<%@include file="head.jsp"%>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<%@ include file="head.jsp"%>
 <body>
+    <div class="wrapper">
 
-<form action="searchUser" method="get">
-    <input type="text" name="lastName" >
-    <input type="submit" name="submit" value="Submit">
-</form>
-
+    </div>
 </body>
 </html>

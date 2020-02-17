@@ -1,0 +1,32 @@
+body {
+    background-image: url("../images/login.jpg");
+}
+
+.logon {
+    float: right;
+    background-color: white;
+    width: 50%;
+    height: 57em;
+    text-align: center;
+    border-radius: 20px;
+}
+
+#greetings {
+    margin: 4em;
+    font-size: 2em;
+
+}
+
+input {
+    margin-bottom: 1em;
+    font-size: 1.5em;
+}
+
+label {
+    margin-right: 2em;
+    font-size: 2em;
+}
+
+.spacing {
+    width: 4px;
+}

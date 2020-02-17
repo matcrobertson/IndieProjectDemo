@@ -1,4 +1,6 @@
-Persistence/UserDAO.class
 Persistence/SessionFactoryProvider.class
+Entity/Artists.class
 Controller/SearchUser.class
+Persistence/ArtistDAO.class
+Persistence/UserDAO.class
 Entity/User.class

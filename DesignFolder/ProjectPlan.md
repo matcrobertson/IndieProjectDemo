@@ -1,13 +1,16 @@
 ### Week 4
-- [ ] Complete database design
-- [ ] Create the database and user table
-- [ ] Create the test database
-- [ ] Weekly journal entry
-- [ ] Set up logging
-- [ ] research the APIs that i want to use
-- [ ] Prepare for Week 5 peer design/code review
+- [X] Complete database design
+- [x] Create the database and user table
+- [x] Create the Music database
+- [x] Weekly journal entry
+- [x] Set up logging
+- [x] research the APIs that i want to use
 
+- [ ? ] Prepare for Week 5 peer design/code review
 
+https://developer.spotify.com/documentation/web-api/
+https://developer.apple.com/documentation/applemusicapi
+https://developers.google.com/youtube/v3/docs#Search
 ### Week 5
 
 - [ ] Create the template for all jsps using bootstrap or materialize
