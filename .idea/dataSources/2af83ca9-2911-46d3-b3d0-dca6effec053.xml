@@ -1111,10 +1111,10 @@
       <Charset>utf8mb4</Charset>
       <DefaultForCharset>0</DefaultForCharset>
     </collation>
-    <table id="279" parent="2" name="Artist"/>
-    <table id="280" parent="2" name="Role"/>
-    <table id="281" parent="2" name="User"/>
-    <table id="282" parent="2" name="UserArtist"/>
+    <table id="279" parent="2" name="artist"/>
+    <table id="280" parent="2" name="role"/>
+    <table id="281" parent="2" name="user"/>
+    <table id="282" parent="2" name="user_artist"/>
     <column id="283" parent="279" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
@@ -1122,129 +1122,165 @@
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="284" parent="279" name="artist_name">
+    <column id="284" parent="279" name="artistName">
       <Position>2</Position>
       <DataType>varchar(45)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="285" parent="279" name="PRIMARY">
+    <index id="285" parent="279" name="id_UNIQUE">
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+      <Type>btree</Type>
+    </index>
+    <key id="286" parent="279" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="286" parent="280" name="id">
+    <key id="287" parent="279" name="id_UNIQUE">
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>id_UNIQUE</UnderlyingIndexName>
+    </key>
+    <column id="288" parent="280" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="287" parent="280" name="role">
+    <column id="289" parent="280" name="role">
       <Position>2</Position>
       <DataType>varchar(45)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="288" parent="280" name="User_id">
+    <column id="290" parent="280" name="user_id">
       <Position>3</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="289" parent="280" name="fk_Role_User1_idx">
-      <ColNames>User_id</ColNames>
+    <index id="291" parent="280" name="id_UNIQUE">
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <key id="290" parent="280" name="PRIMARY">
+    <index id="292" parent="280" name="fk_role_user1_idx">
+      <ColNames>user_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="293" parent="280" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id
-User_id</ColNames>
+user_id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="291" parent="280" name="fk_Role_User1">
-      <ColNames>User_id</ColNames>
+    <key id="294" parent="280" name="id_UNIQUE">
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>id_UNIQUE</UnderlyingIndexName>
+    </key>
+    <foreign-key id="295" parent="280" name="fk_role_user1">
+      <ColNames>user_id</ColNames>
       <RefSchemaName>Music</RefSchemaName>
-      <RefTableName>User</RefTableName>
+      <RefTableName>user</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="292" parent="281" name="id">
+    <column id="296" parent="281" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="293" parent="281" name="user_name">
+    <column id="297" parent="281" name="user_name">
       <Position>2</Position>
       <DataType>varchar(45)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="294" parent="281" name="password">
+    <column id="298" parent="281" name="password">
       <Position>3</Position>
       <DataType>varchar(45)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="295" parent="281" name="User_UNIQUE">
+    <index id="299" parent="281" name="id_UNIQUE">
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+      <Type>btree</Type>
+    </index>
+    <index id="300" parent="281" name="User_UNIQUE">
       <ColNames>user_name</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <key id="296" parent="281" name="PRIMARY">
+    <key id="301" parent="281" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="297" parent="281" name="User_UNIQUE">
+    <key id="302" parent="281" name="id_UNIQUE">
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>id_UNIQUE</UnderlyingIndexName>
+    </key>
+    <key id="303" parent="281" name="User_UNIQUE">
       <ColNames>user_name</ColNames>
       <UnderlyingIndexName>User_UNIQUE</UnderlyingIndexName>
     </key>
-    <column id="298" parent="282" name="id">
+    <column id="304" parent="282" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="299" parent="282" name="User_id">
+    <column id="305" parent="282" name="user_id">
       <Position>2</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="300" parent="282" name="Artist_id">
+    <column id="306" parent="282" name="artist_id">
       <Position>3</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="301" parent="282" name="fk_UserArtist_User_idx">
-      <ColNames>User_id</ColNames>
+    <index id="307" parent="282" name="id_UNIQUE">
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <index id="302" parent="282" name="fk_UserArtist_Artist1_idx">
-      <ColNames>Artist_id</ColNames>
+    <index id="308" parent="282" name="fk_user_artist_user_idx">
+      <ColNames>user_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="303" parent="282" name="PRIMARY">
+    <index id="309" parent="282" name="fk_user_artist_artist1_idx">
+      <ColNames>artist_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="310" parent="282" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id
-User_id
-Artist_id</ColNames>
+user_id
+artist_id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="304" parent="282" name="fk_UserArtist_User">
-      <ColNames>User_id</ColNames>
+    <key id="311" parent="282" name="id_UNIQUE">
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>id_UNIQUE</UnderlyingIndexName>
+    </key>
+    <foreign-key id="312" parent="282" name="fk_user_artist_user">
+      <ColNames>user_id</ColNames>
       <RefSchemaName>Music</RefSchemaName>
-      <RefTableName>User</RefTableName>
+      <RefTableName>user</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <foreign-key id="305" parent="282" name="fk_UserArtist_Artist1">
-      <ColNames>Artist_id</ColNames>
+    <foreign-key id="313" parent="282" name="fk_user_artist_artist1">
+      <ColNames>artist_id</ColNames>
       <RefSchemaName>Music</RefSchemaName>
-      <RefTableName>Artist</RefTableName>
+      <RefTableName>artist</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
   </database-model>

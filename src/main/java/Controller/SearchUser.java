@@ -1,6 +1,6 @@
 package Controller;
 
-import Persistence.UserDAO;
+import Persistence.UserDao;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -22,9 +22,9 @@ import java.io.IOException;
 public class SearchUser extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        UserDAO userDao = new UserDAO();
+        UserDao userDao = new UserDao();
 
-        req.setAttribute("users", userDao.getAllUsers());
+
         RequestDispatcher dispatcher = req.getRequestDispatcher("/results.jsp");
         dispatcher.forward(req, resp);
     }
