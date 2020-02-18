@@ -1,6 +1,6 @@
-package Controller;
+package controller;
 
-import Persistence.UserDao;
+import persistence.UserDao;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
