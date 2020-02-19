@@ -12,8 +12,8 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO, generator = "native")
     @GenericGenerator(name = "native", strategy = "native")
+    @ManyToOne
     private int id;
-
     @Column(name = "user_name")
     private String userName;
     @Column(name = "password")
