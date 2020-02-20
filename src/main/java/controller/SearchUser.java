@@ -1,6 +1,7 @@
 package controller;
 
-import persistence.UserDao;
+import entity.User;
+import persistence.GenericDao;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -22,7 +23,7 @@ import java.io.IOException;
 public class SearchUser extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        UserDao userDao = new UserDao();
+        GenericDao genericDao = new GenericDao(User.class);
 
 
         RequestDispatcher dispatcher = req.getRequestDispatcher("/results.jsp");

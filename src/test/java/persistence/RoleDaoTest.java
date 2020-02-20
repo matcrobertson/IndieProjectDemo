@@ -1,6 +1,5 @@
 package persistence;
-import entity.User;
-import lombok.extern.log4j.Log4j2;
+import entity.Role;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.junit.jupiter.api.BeforeEach;
@@ -9,9 +8,9 @@ import org.junit.jupiter.api.Test;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
-@Log4j2
-public class UserDaoTest {
 
+public class RoleDaoTest {
+    private final Logger logger = LogManager.getLogger(this.getClass());
     GenericDao genericDao;
 
 
@@ -22,7 +21,7 @@ public class UserDaoTest {
      */
     @BeforeEach
     void setUp() {
-        genericDao = new GenericDao(User.class);
+        genericDao = new GenericDao(Role.class);
 
 
         util.Database database = util.Database.getInstance();
@@ -35,9 +34,9 @@ public class UserDaoTest {
      */
     @Test
     void getByIdSuccess() {
-        User retrievedUser = (User)genericDao.getById(1);
-        assertEquals("dan", retrievedUser.getUserName());
-        assertEquals("dan", retrievedUser.getPassword());
+        Role retrievedRole = (Role)genericDao.getById(1);
+        assertEquals("admin", retrievedRole.getRole());
+
 
 
     }
@@ -46,7 +45,7 @@ public class UserDaoTest {
      */
     @Test
     void getAllSuccess() {
-        List<User> users = genericDao.getAll();
+        List<Role> users = genericDao.getAll();
         assertEquals(2, users.size());
     }
 
@@ -55,8 +54,8 @@ public class UserDaoTest {
      */
     @Test
     void getByPropertyEqualSuccess() {
-        List<User> users = genericDao.getAll();
-        assertEquals(3, users.size());
+        List<Role> users = genericDao.findByPropertyEqual("role", "admin");
+        assertEquals(1, users.size());
         assertEquals(1, users.get(0).getId());
     }
     /**
@@ -64,7 +63,7 @@ public class UserDaoTest {
      */
     @Test
     void getByPropertyLikeSuccess() {
-        List<User> users = genericDao.findByPropertyEqual("userName", "z");
+        List<Role> users = genericDao.findByPropertyEqual("role", "z");
         assertEquals(0, users.size());
     }
     /**
@@ -72,13 +71,13 @@ public class UserDaoTest {
      */
     @Test
     void updateSuccess() {
-        String newUserName = "Davis";
-        User userToUpdate = (User)genericDao.getById(1);
-        log.debug(userToUpdate);
-        userToUpdate.setUserName(newUserName);
+        String newRoleName = "Davis";
+        Role userToUpdate = (Role)genericDao.getById(4);
+        logger.debug(userToUpdate);
+        userToUpdate.setRole(newRoleName);
         genericDao.saveOrUpdate(userToUpdate);
-        User retrievedUser = (User)genericDao.getById(1);//
-        assertEquals(newUserName, retrievedUser.getUserName());
+        Role retrievedUser = (Role)genericDao.getById(1);//
+        assertEquals(newRoleName, retrievedUser.getRole());
     }
     /**
      * Verify successful insert of a user
@@ -86,11 +85,11 @@ public class UserDaoTest {
     @Test
     void insertSuccess() {
 
-        User newUser = new User("Fflintstone", "fflintstone");
+        Role newUser = new Role("Lord of Pancakes");
         int id = genericDao.insert(newUser);
         assertNotEquals(0,id);
-        User insertedUser = (User)genericDao.getById(id);
-        assertEquals("Fflintstone", insertedUser.getUserName());
+        Role insertedUser = (Role)genericDao.getById(id);
+        assertEquals("Lord of Pancakes", insertedUser.getRole());
         // Could continue comparing all values, but
         // it may make sense to use .equals()
         // review .equals recommendations http://docs.jboss.org/hibernate/orm/5.2/userguide/html_single/Hibernate_User_Guide.html#mapping-model-pojo-equalshashcode
@@ -102,8 +101,8 @@ public class UserDaoTest {
      */
     @Test
     void deleteSuccess() {
-        genericDao.delete(genericDao.getById(2));
-        assertNull(genericDao.getById(2));
+        genericDao.delete(genericDao.getById(4));
+        assertNull(genericDao.getById(4));
     }
 
 

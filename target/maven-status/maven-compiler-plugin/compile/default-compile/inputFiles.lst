@@ -1,6 +1,7 @@
-/home/student/IdeaProjects/indieProject/src/main/java/Persistence/SessionFactoryProvider.java
-/home/student/IdeaProjects/indieProject/src/main/java/Controller/SearchUser.java
-/home/student/IdeaProjects/indieProject/src/main/java/Persistence/UserDao.java
-/home/student/IdeaProjects/indieProject/src/main/java/Entity/User.java
-/home/student/IdeaProjects/indieProject/src/main/java/Entity/Artist.java
-/home/student/IdeaProjects/indieProject/src/main/java/Persistence/ArtistDao.java
+/home/student/IdeaProjects/indieProject/src/main/java/persistence/ArtistDao.java
+/home/student/IdeaProjects/indieProject/src/main/java/entity/Artist.java
+/home/student/IdeaProjects/indieProject/src/main/java/entity/User.java
+/home/student/IdeaProjects/indieProject/src/main/java/entity/Role.java
+/home/student/IdeaProjects/indieProject/src/main/java/controller/SearchUser.java
+/home/student/IdeaProjects/indieProject/src/main/java/persistence/UserDao.java
+/home/student/IdeaProjects/indieProject/src/main/java/persistence/SessionFactoryProvider.java

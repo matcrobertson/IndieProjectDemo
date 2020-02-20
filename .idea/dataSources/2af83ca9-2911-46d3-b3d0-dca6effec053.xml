@@ -1155,79 +1155,79 @@
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="290" parent="280" name="user_id">
-      <Position>3</Position>
-      <DataType>int(11)|0s</DataType>
-      <NotNull>1</NotNull>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <index id="291" parent="280" name="id_UNIQUE">
+    <index id="290" parent="280" name="id_UNIQUE">
       <ColNames>id</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <index id="292" parent="280" name="fk_role_user1_idx">
-      <ColNames>user_id</ColNames>
-      <Type>btree</Type>
-    </index>
-    <key id="293" parent="280" name="PRIMARY">
+    <key id="291" parent="280" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
-      <ColNames>id
-user_id</ColNames>
+      <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="294" parent="280" name="id_UNIQUE">
+    <key id="292" parent="280" name="id_UNIQUE">
       <ColNames>id</ColNames>
       <UnderlyingIndexName>id_UNIQUE</UnderlyingIndexName>
     </key>
-    <foreign-key id="295" parent="280" name="fk_role_user1">
-      <ColNames>user_id</ColNames>
-      <RefSchemaName>Music</RefSchemaName>
-      <RefTableName>user</RefTableName>
-      <RefColNames>id</RefColNames>
-    </foreign-key>
-    <column id="296" parent="281" name="id">
+    <column id="293" parent="281" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="297" parent="281" name="user_name">
+    <column id="294" parent="281" name="user_name">
       <Position>2</Position>
       <DataType>varchar(45)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="298" parent="281" name="password">
+    <column id="295" parent="281" name="password">
       <Position>3</Position>
       <DataType>varchar(45)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="299" parent="281" name="id_UNIQUE">
+    <column id="296" parent="281" name="role_id">
+      <Position>4</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <index id="297" parent="281" name="id_UNIQUE">
       <ColNames>id</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <index id="300" parent="281" name="User_UNIQUE">
+    <index id="298" parent="281" name="User_UNIQUE">
       <ColNames>user_name</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <key id="301" parent="281" name="PRIMARY">
+    <index id="299" parent="281" name="fk_user_role1_idx">
+      <ColNames>role_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="300" parent="281" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
-      <ColNames>id</ColNames>
+      <ColNames>id
+role_id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="302" parent="281" name="id_UNIQUE">
+    <key id="301" parent="281" name="id_UNIQUE">
       <ColNames>id</ColNames>
       <UnderlyingIndexName>id_UNIQUE</UnderlyingIndexName>
     </key>
-    <key id="303" parent="281" name="User_UNIQUE">
+    <key id="302" parent="281" name="User_UNIQUE">
       <ColNames>user_name</ColNames>
       <UnderlyingIndexName>User_UNIQUE</UnderlyingIndexName>
     </key>
+    <foreign-key id="303" parent="281" name="fk_user_role1">
+      <ColNames>role_id</ColNames>
+      <RefSchemaName>Music</RefSchemaName>
+      <RefTableName>role</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
     <column id="304" parent="282" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
