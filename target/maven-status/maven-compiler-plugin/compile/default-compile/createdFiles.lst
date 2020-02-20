@@ -1,6 +1,6 @@
 entity/Artist.class
 persistence/SessionFactoryProvider.class
 controller/SearchUser.class
+persistence/GenericDao.class
 entity/User.class
-persistence/UserDao.class
 entity/Role.class

@@ -25,7 +25,7 @@ public class RoleDaoTest {
 
 
         util.Database database = util.Database.getInstance();
-        database.runSQL("cleandb.sql");
+        database.runSQL("/cleandb.sql");
 
     }
 
@@ -46,7 +46,7 @@ public class RoleDaoTest {
     @Test
     void getAllSuccess() {
         List<Role> users = genericDao.getAll();
-        assertEquals(2, users.size());
+        assertEquals(3, users.size());
     }
 
     /**
@@ -71,12 +71,12 @@ public class RoleDaoTest {
      */
     @Test
     void updateSuccess() {
-        String newRoleName = "Davis";
-        Role userToUpdate = (Role)genericDao.getById(4);
+        String newRoleName = "Flying Spaghetti Monster";
+        Role userToUpdate = (Role)genericDao.getById(3);
         logger.debug(userToUpdate);
         userToUpdate.setRole(newRoleName);
         genericDao.saveOrUpdate(userToUpdate);
-        Role retrievedUser = (Role)genericDao.getById(1);//
+        Role retrievedUser = (Role)genericDao.getById(3);//
         assertEquals(newRoleName, retrievedUser.getRole());
     }
     /**
@@ -85,8 +85,8 @@ public class RoleDaoTest {
     @Test
     void insertSuccess() {
 
-        Role newUser = new Role("Lord of Pancakes");
-        int id = genericDao.insert(newUser);
+        Role newRole = new Role("Lord of Pancakes");
+        int id = genericDao.insert(newRole);
         assertNotEquals(0,id);
         Role insertedUser = (Role)genericDao.getById(id);
         assertEquals("Lord of Pancakes", insertedUser.getRole());
