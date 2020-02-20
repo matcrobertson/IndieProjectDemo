@@ -1,0 +1,2780 @@
+diff --git a/src/main/.gitignore b/.gitignore
+similarity index 100%
+rename from src/main/.gitignore
+rename to .gitignore
+diff --git a/.idea/compiler.xml b/.idea/compiler.xml
+index 3ab70f2..7c8ac26 100644
+--- a/.idea/compiler.xml
++++ b/.idea/compiler.xml
+@@ -2,6 +2,7 @@
+ <project version="4">
+   <component name="CompilerConfiguration">
+     <annotationProcessing>
++      <profile default="true" name="Default" enabled="true" />
+       <profile name="Maven default annotation processors profile" enabled="true">
+         <sourceOutputDir name="target/generated-sources/annotations" />
+         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+diff --git a/.idea/dataSources/2af83ca9-2911-46d3-b3d0-dca6effec053.xml b/.idea/dataSources/2af83ca9-2911-46d3-b3d0-dca6effec053.xml
+index 0abe8d1..4fc74ba 100644
+--- a/.idea/dataSources/2af83ca9-2911-46d3-b3d0-dca6effec053.xml
++++ b/.idea/dataSources/2af83ca9-2911-46d3-b3d0-dca6effec053.xml
+@@ -1111,10 +1111,10 @@
+       <Charset>utf8mb4</Charset>
+       <DefaultForCharset>0</DefaultForCharset>
+     </collation>
+-    <table id="279" parent="2" name="Artist"/>
+-    <table id="280" parent="2" name="Role"/>
+-    <table id="281" parent="2" name="User"/>
+-    <table id="282" parent="2" name="UserArtist"/>
++    <table id="279" parent="2" name="artist"/>
++    <table id="280" parent="2" name="role"/>
++    <table id="281" parent="2" name="user"/>
++    <table id="282" parent="2" name="user_artist"/>
+     <column id="283" parent="279" name="id">
+       <Position>1</Position>
+       <DataType>int(11)|0s</DataType>
+@@ -1122,129 +1122,165 @@
+       <SequenceIdentity>1</SequenceIdentity>
+       <ColumnKind>normal</ColumnKind>
+     </column>
+-    <column id="284" parent="279" name="artist_name">
++    <column id="284" parent="279" name="artistName">
+       <Position>2</Position>
+       <DataType>varchar(45)|0s</DataType>
+       <NotNull>1</NotNull>
+       <ColumnKind>normal</ColumnKind>
+     </column>
+-    <key id="285" parent="279" name="PRIMARY">
++    <index id="285" parent="279" name="id_UNIQUE">
++      <ColNames>id</ColNames>
++      <Unique>1</Unique>
++      <Type>btree</Type>
++    </index>
++    <key id="286" parent="279" name="PRIMARY">
+       <NameSurrogate>1</NameSurrogate>
+       <ColNames>id</ColNames>
+       <Primary>1</Primary>
+     </key>
+-    <column id="286" parent="280" name="id">
++    <key id="287" parent="279" name="id_UNIQUE">
++      <ColNames>id</ColNames>
++      <UnderlyingIndexName>id_UNIQUE</UnderlyingIndexName>
++    </key>
++    <column id="288" parent="280" name="id">
+       <Position>1</Position>
+       <DataType>int(11)|0s</DataType>
+       <NotNull>1</NotNull>
+       <SequenceIdentity>1</SequenceIdentity>
+       <ColumnKind>normal</ColumnKind>
+     </column>
+-    <column id="287" parent="280" name="role">
++    <column id="289" parent="280" name="role">
+       <Position>2</Position>
+       <DataType>varchar(45)|0s</DataType>
+       <NotNull>1</NotNull>
+       <ColumnKind>normal</ColumnKind>
+     </column>
+-    <column id="288" parent="280" name="User_id">
+-      <Position>3</Position>
+-      <DataType>int(11)|0s</DataType>
+-      <NotNull>1</NotNull>
+-      <ColumnKind>normal</ColumnKind>
+-    </column>
+-    <index id="289" parent="280" name="fk_Role_User1_idx">
+-      <ColNames>User_id</ColNames>
++    <index id="290" parent="280" name="id_UNIQUE">
++      <ColNames>id</ColNames>
++      <Unique>1</Unique>
+       <Type>btree</Type>
+     </index>
+-    <key id="290" parent="280" name="PRIMARY">
++    <key id="291" parent="280" name="PRIMARY">
+       <NameSurrogate>1</NameSurrogate>
+-      <ColNames>id
+-User_id</ColNames>
++      <ColNames>id</ColNames>
+       <Primary>1</Primary>
+     </key>
+-    <foreign-key id="291" parent="280" name="fk_Role_User1">
+-      <ColNames>User_id</ColNames>
+-      <RefSchemaName>Music</RefSchemaName>
+-      <RefTableName>User</RefTableName>
+-      <RefColNames>id</RefColNames>
+-    </foreign-key>
+-    <column id="292" parent="281" name="id">
++    <key id="292" parent="280" name="id_UNIQUE">
++      <ColNames>id</ColNames>
++      <UnderlyingIndexName>id_UNIQUE</UnderlyingIndexName>
++    </key>
++    <column id="293" parent="281" name="id">
+       <Position>1</Position>
+       <DataType>int(11)|0s</DataType>
+       <NotNull>1</NotNull>
+       <SequenceIdentity>1</SequenceIdentity>
+       <ColumnKind>normal</ColumnKind>
+     </column>
+-    <column id="293" parent="281" name="user_name">
++    <column id="294" parent="281" name="user_name">
+       <Position>2</Position>
+       <DataType>varchar(45)|0s</DataType>
+       <NotNull>1</NotNull>
+       <ColumnKind>normal</ColumnKind>
+     </column>
+-    <column id="294" parent="281" name="password">
++    <column id="295" parent="281" name="password">
+       <Position>3</Position>
+       <DataType>varchar(45)|0s</DataType>
+       <NotNull>1</NotNull>
+       <ColumnKind>normal</ColumnKind>
+     </column>
+-    <index id="295" parent="281" name="User_UNIQUE">
++    <column id="296" parent="281" name="role_id">
++      <Position>4</Position>
++      <DataType>int(11)|0s</DataType>
++      <NotNull>1</NotNull>
++      <ColumnKind>normal</ColumnKind>
++    </column>
++    <index id="297" parent="281" name="id_UNIQUE">
++      <ColNames>id</ColNames>
++      <Unique>1</Unique>
++      <Type>btree</Type>
++    </index>
++    <index id="298" parent="281" name="User_UNIQUE">
+       <ColNames>user_name</ColNames>
+       <Unique>1</Unique>
+       <Type>btree</Type>
+     </index>
+-    <key id="296" parent="281" name="PRIMARY">
++    <index id="299" parent="281" name="fk_user_role1_idx">
++      <ColNames>role_id</ColNames>
++      <Type>btree</Type>
++    </index>
++    <key id="300" parent="281" name="PRIMARY">
+       <NameSurrogate>1</NameSurrogate>
+-      <ColNames>id</ColNames>
++      <ColNames>id
++role_id</ColNames>
+       <Primary>1</Primary>
+     </key>
+-    <key id="297" parent="281" name="User_UNIQUE">
++    <key id="301" parent="281" name="id_UNIQUE">
++      <ColNames>id</ColNames>
++      <UnderlyingIndexName>id_UNIQUE</UnderlyingIndexName>
++    </key>
++    <key id="302" parent="281" name="User_UNIQUE">
+       <ColNames>user_name</ColNames>
+       <UnderlyingIndexName>User_UNIQUE</UnderlyingIndexName>
+     </key>
+-    <column id="298" parent="282" name="id">
++    <foreign-key id="303" parent="281" name="fk_user_role1">
++      <ColNames>role_id</ColNames>
++      <RefSchemaName>Music</RefSchemaName>
++      <RefTableName>role</RefTableName>
++      <RefColNames>id</RefColNames>
++    </foreign-key>
++    <column id="304" parent="282" name="id">
+       <Position>1</Position>
+       <DataType>int(11)|0s</DataType>
+       <NotNull>1</NotNull>
+       <SequenceIdentity>1</SequenceIdentity>
+       <ColumnKind>normal</ColumnKind>
+     </column>
+-    <column id="299" parent="282" name="User_id">
++    <column id="305" parent="282" name="user_id">
+       <Position>2</Position>
+       <DataType>int(11)|0s</DataType>
+       <NotNull>1</NotNull>
+       <ColumnKind>normal</ColumnKind>
+     </column>
+-    <column id="300" parent="282" name="Artist_id">
++    <column id="306" parent="282" name="artist_id">
+       <Position>3</Position>
+       <DataType>int(11)|0s</DataType>
+       <NotNull>1</NotNull>
+       <ColumnKind>normal</ColumnKind>
+     </column>
+-    <index id="301" parent="282" name="fk_UserArtist_User_idx">
+-      <ColNames>User_id</ColNames>
++    <index id="307" parent="282" name="id_UNIQUE">
++      <ColNames>id</ColNames>
++      <Unique>1</Unique>
++      <Type>btree</Type>
++    </index>
++    <index id="308" parent="282" name="fk_user_artist_user_idx">
++      <ColNames>user_id</ColNames>
+       <Type>btree</Type>
+     </index>
+-    <index id="302" parent="282" name="fk_UserArtist_Artist1_idx">
+-      <ColNames>Artist_id</ColNames>
++    <index id="309" parent="282" name="fk_user_artist_artist1_idx">
++      <ColNames>artist_id</ColNames>
+       <Type>btree</Type>
+     </index>
+-    <key id="303" parent="282" name="PRIMARY">
++    <key id="310" parent="282" name="PRIMARY">
+       <NameSurrogate>1</NameSurrogate>
+       <ColNames>id
+-User_id
+-Artist_id</ColNames>
++user_id
++artist_id</ColNames>
+       <Primary>1</Primary>
+     </key>
+-    <foreign-key id="304" parent="282" name="fk_UserArtist_User">
+-      <ColNames>User_id</ColNames>
++    <key id="311" parent="282" name="id_UNIQUE">
++      <ColNames>id</ColNames>
++      <UnderlyingIndexName>id_UNIQUE</UnderlyingIndexName>
++    </key>
++    <foreign-key id="312" parent="282" name="fk_user_artist_user">
++      <ColNames>user_id</ColNames>
+       <RefSchemaName>Music</RefSchemaName>
+-      <RefTableName>User</RefTableName>
++      <RefTableName>user</RefTableName>
+       <RefColNames>id</RefColNames>
+     </foreign-key>
+-    <foreign-key id="305" parent="282" name="fk_UserArtist_Artist1">
+-      <ColNames>Artist_id</ColNames>
++    <foreign-key id="313" parent="282" name="fk_user_artist_artist1">
++      <ColNames>artist_id</ColNames>
+       <RefSchemaName>Music</RefSchemaName>
+-      <RefTableName>Artist</RefTableName>
++      <RefTableName>artist</RefTableName>
+       <RefColNames>id</RefColNames>
+     </foreign-key>
+   </database-model>
+diff --git a/.idea/sqldialects.xml b/.idea/sqldialects.xml
+new file mode 100644
+index 0000000..56782ca
+--- /dev/null
++++ b/.idea/sqldialects.xml
+@@ -0,0 +1,6 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="SqlDialectMappings">
++    <file url="PROJECT" dialect="MySQL" />
++  </component>
++</project>
+\ No newline at end of file
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+new file mode 100644
+index 0000000..c7a61a7
+--- /dev/null
++++ b/.idea/workspace.xml
+@@ -0,0 +1,1302 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="ArtifactsWorkspaceSettings">
++    <artifacts-to-build>
++      <artifact name="indieProject:war" />
++    </artifacts-to-build>
++  </component>
++  <component name="ChangeListManager">
++    <list default="true" id="f72530a8-eb98-414b-9374-4e272efdd8dc" name="Default Changelist" comment="all tests pass. screenshot was taken">
++      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/java/persistence/GenericDao.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/resources/database.properties" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/test/java/persistence/RoleDaoTest.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/test/resources/database.properties" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/dataSources/2af83ca9-2911-46d3-b3d0-dca6effec053.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/2af83ca9-2911-46d3-b3d0-dca6effec053.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/Music.sql" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/indieProject.iml" beforeDir="false" afterPath="$PROJECT_DIR$/indieProject.iml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/logs/indieProject.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/indieProject.log" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/controller/SearchUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/SearchUser.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/entity/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/Role.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/User.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/persistence/ArtistDao.java" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/persistence/UserDao.java" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/resources/cleandb.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/cleandb.sql" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/test/java/persistence/UserDaoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/persistence/UserDaoTest.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/test/resources/cleandb.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/cleandb.sql" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/test/resources/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/hibernate.cfg.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/cleandb.sql" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cleandb.sql" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/hibernate.cfg.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/test-classes/Persistence/UserDaoTest.class" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/test-classes/cleandb.sql" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/cleandb.sql" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/test-classes/edu/matc/test/util/Database.class" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/test-classes/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/hibernate.cfg.xml" afterDir="false" />
++    </list>
++    <ignored path="$PROJECT_DIR$/out/" />
++    <ignored path="$PROJECT_DIR$/target/" />
++    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
++    <option name="SHOW_DIALOG" value="false" />
++    <option name="HIGHLIGHT_CONFLICTS" value="true" />
++    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
++    <option name="LAST_RESOLUTION" value="IGNORE" />
++  </component>
++  <component name="CoverageViewManager">
++    <option name="myElementSize" value="222" />
++  </component>
++  <component name="DatabaseView">
++    <option name="SHOW_INTERMEDIATE" value="true" />
++    <option name="GROUP_DATA_SOURCES" value="true" />
++    <option name="GROUP_SCHEMA" value="true" />
++    <option name="GROUP_CONTENTS" value="false" />
++    <option name="SORT_POSITIONED" value="false" />
++    <option name="SHOW_EMPTY_GROUPS" value="false" />
++    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
++    <option name="HIDDEN_KINDS">
++      <set />
++    </option>
++    <expand>
++      <path>
++        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
++        <item name="hibernate.cfg.xml/Hibernate" type="feb32156:DbDataSourceImpl" />
++      </path>
++      <path>
++        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
++        <item name="hibernate.cfg.xml/Hibernate" type="feb32156:DbDataSourceImpl" />
++        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
++      </path>
++      <path>
++        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
++        <item name="hibernate.cfg.xml/Hibernate" type="feb32156:DbDataSourceImpl" />
++        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
++        <item name="Music: schema" type="76f4a085:MysqlImplModel$Schema" />
++      </path>
++      <path>
++        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
++        <item name="hibernate.cfg.xml/Hibernate" type="feb32156:DbDataSourceImpl" />
++        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
++        <item name="Music: schema" type="76f4a085:MysqlImplModel$Schema" />
++        <item name="role: table" type="285a2a93:MysqlImplModel$Table" />
++      </path>
++      <path>
++        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
++        <item name="hibernate.cfg.xml/Hibernate" type="feb32156:DbDataSourceImpl" />
++        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
++        <item name="Music: schema" type="76f4a085:MysqlImplModel$Schema" />
++        <item name="user: table" type="285a2a93:MysqlImplModel$Table" />
++      </path>
++    </expand>
++    <select />
++  </component>
++  <component name="DefaultGradleProjectSettings">
++    <option name="isMigrated" value="true" />
++  </component>
++  <component name="FileEditorManager">
++    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
++      <file pinned="false" current-in-tab="false">
++        <entry file="file://$PROJECT_DIR$/src/main/java/entity/Role.java">
++          <provider selected="true" editor-type-id="text-editor">
++            <state relative-caret-position="333">
++              <caret line="24" column="31" selection-start-line="24" selection-start-column="31" selection-end-line="24" selection-end-column="31" />
++              <folding>
++                <element signature="imports" expanded="true" />
++              </folding>
++            </state>
++          </provider>
++        </entry>
++      </file>
++      <file pinned="false" current-in-tab="false">
++        <entry file="file://$PROJECT_DIR$/src/test/java/persistence/UserDaoTest.java">
++          <provider selected="true" editor-type-id="text-editor">
++            <state relative-caret-position="1534">
++              <caret line="111" lean-forward="true" selection-start-line="111" selection-end-line="111" />
++              <folding>
++                <element signature="imports" expanded="true" />
++              </folding>
++            </state>
++          </provider>
++        </entry>
++      </file>
++      <file pinned="false" current-in-tab="true">
++        <entry file="file://$PROJECT_DIR$/target/classes/hibernate.cfg.xml">
++          <provider selected="true" editor-type-id="text-editor" />
++        </entry>
++      </file>
++      <file pinned="false" current-in-tab="false">
++        <entry file="file://$PROJECT_DIR$/src/main/java/entity/User.java">
++          <provider selected="true" editor-type-id="text-editor">
++            <state relative-caret-position="192">
++              <caret line="23" column="21" selection-start-line="23" selection-start-column="21" selection-end-line="23" selection-end-column="21" />
++              <folding>
++                <element signature="imports" expanded="true" />
++              </folding>
++            </state>
++          </provider>
++        </entry>
++      </file>
++      <file pinned="false" current-in-tab="false">
++        <entry file="file://$PROJECT_DIR$/src/test/java/persistence/RoleDaoTest.java">
++          <provider selected="true" editor-type-id="text-editor">
++            <state relative-caret-position="143">
++              <caret line="37" column="43" selection-start-line="37" selection-start-column="43" selection-end-line="37" selection-end-column="43" />
++              <folding>
++                <element signature="imports" expanded="true" />
++              </folding>
++            </state>
++          </provider>
++        </entry>
++      </file>
++      <file pinned="false" current-in-tab="false">
++        <entry file="file://$PROJECT_DIR$/pom.xml">
++          <provider selected="true" editor-type-id="text-editor">
++            <state relative-caret-position="392">
++              <caret line="103" column="44" lean-forward="true" selection-start-line="103" selection-start-column="44" selection-end-line="103" selection-end-column="44" />
++            </state>
++          </provider>
++        </entry>
++      </file>
++      <file pinned="false" current-in-tab="false">
++        <entry file="file://$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml">
++          <provider selected="true" editor-type-id="text-editor">
++            <state relative-caret-position="312">
++              <caret line="13" lean-forward="true" selection-start-line="12" selection-start-column="8" selection-end-line="13" />
++            </state>
++          </provider>
++        </entry>
++      </file>
++    </leaf>
++  </component>
++  <component name="FileTemplateManagerImpl">
++    <option name="RECENT_TEMPLATES">
++      <list>
++        <option value="Arquillian JUnit Test Class" />
++        <option value="Class" />
++      </list>
++    </option>
++  </component>
++  <component name="FindInProjectRecents">
++    <findStrings>
++      <find>hib</find>
++      <find>error</find>
++      <find>err</find>
++      <find>your</find>
++      <find>Sess</find>
++      <find>ind</find>
++      <find>getFirstName</find>
++      <find>cause</find>
++      <find>sa</find>
++      <find>save</find>
++      <find>set</find>
++      <find>get</find>
++      <find>saveOr</find>
++      <find>id</find>
++      <find>User</find>
++      <find>dao</find>
++      <find>load</find>
++      <find>hibernate</find>
++      <find>hiber</find>
++      <find>hibernate.properties</find>
++      <find>user</find>
++      <find>ERROR</find>
++      <find>users1_.user_id</find>
++      <find>user_id</find>
++      <find>[ERROR]</find>
++      <find>ERR</find>
++    </findStrings>
++    <replaceStrings>
++      <replace>Artist</replace>
++      <replace>userName</replace>
++      <replace>Role</replace>
++      <replace>genericDao</replace>
++    </replaceStrings>
++  </component>
++  <component name="Git.Settings">
++    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
++  </component>
++  <component name="IdeDocumentHistory">
++    <option name="CHANGED_PATHS">
++      <list>
++        <option value="$PROJECT_DIR$/src/main/java/User.java" />
++        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/b607231a-0361-4596-a867-f4237bf6c099/console_1.sql" />
++        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/2af83ca9-2911-46d3-b3d0-dca6effec053/console.sql" />
++        <option value="$PROJECT_DIR$/src/main/webapp/results.jsp" />
++        <option value="$PROJECT_DIR$/src/main/java/Persistence/SessionFactoryProvider.java" />
++        <option value="$PROJECT_DIR$/src/main/resources/log4j2.properties" />
++        <option value="$PROJECT_DIR$/DesignFolder/ProjectPlan.md" />
++        <option value="$PROJECT_DIR$/indieProject.iml" />
++        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
++        <option value="$PROJECT_DIR$/src/main/webapp/add_artist.html" />
++        <option value="$PROJECT_DIR$/src/main/webapp/index.html" />
++        <option value="$PROJECT_DIR$/src/main/webapp/artist_update.jsp" />
++        <option value="$PROJECT_DIR$/src/main/webapp/edit_artists.jsp" />
++        <option value="$PROJECT_DIR$/src/main/webapp/remove_artist.jsp" />
++        <option value="$PROJECT_DIR$/src/main/webapp/add_artist.jsp" />
++        <option value="$PROJECT_DIR$/src/main/webapp/head.jsp" />
++        <option value="$PROJECT_DIR$/src/main/webapp/css/styles.css" />
++        <option value="$PROJECT_DIR$/src/main/webapp/login.jsp" />
++        <option value="$PROJECT_DIR$/src/main/webapp/index.jsp" />
++        <option value="$PROJECT_DIR$/src/main/java/Persistence/UserDAO.java" />
++        <option value="$PROJECT_DIR$/src/main/java/Entity/Artists.java" />
++        <option value="$PROJECT_DIR$/src/main/java/Persistence/ArtistDAO.java" />
++        <option value="$PROJECT_DIR$/src/test/java/TestCases.java" />
++        <option value="$PROJECT_DIR$/src/main/java/Controller/SearchUser.java" />
++        <option value="$PROJECT_DIR$/src/test/java/TestUserDao" />
++        <option value="$PROJECT_DIR$/src/test/java/UserDaoTest.java" />
++        <option value="$PROJECT_DIR$/src/main/java/Persistence/UserDaoTest.java" />
++        <option value="$PROJECT_DIR$/src/main/java/Entity/User.java" />
++        <option value="$PROJECT_DIR$/src/main/java/Persistence/UserDao.java" />
++        <option value="$PROJECT_DIR$/src/test/java/Util/Database.java" />
++        <option value="$PROJECT_DIR$/src/test/java/Persistence/UserDaoTest.java" />
++        <option value="$PROJECT_DIR$/Readme.md" />
++        <option value="$PROJECT_DIR$/src/main/java/Persistence/ArtistDao.java" />
++        <option value="$PROJECT_DIR$/src/main/java/persistence/ArtistDao.java" />
++        <option value="$USER_HOME$/GithubRepos/student/ProfessionalDevelopmentPresentations/ElspethStalterClouse/Presentation/Feedback.md" />
++        <option value="$PROJECT_DIR$/pom.xml" />
++        <option value="$PROJECT_DIR$/timeLog.md" />
++        <option value="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" />
++        <option value="$PROJECT_DIR$/src/main/java/persistence/GenericDao.java" />
++        <option value="$PROJECT_DIR$/src/test/resources/hibernate.cfg.xml" />
++        <option value="$PROJECT_DIR$/logs/indieProject.log" />
++        <option value="$PROJECT_DIR$/src/test/java/util/Database.java" />
++        <option value="$PROJECT_DIR$/src/test/resources/database.properties" />
++        <option value="$PROJECT_DIR$/src/test/resources/cleandb.sql" />
++        <option value="$PROJECT_DIR$/src/main/resources/database.properties" />
++        <option value="$PROJECT_DIR$/src/main/resources/cleandb.sql" />
++        <option value="$PROJECT_DIR$/src/test/java/persistence/UserDaoTest.java" />
++        <option value="$PROJECT_DIR$/src/main/java/controller/SearchUser.java" />
++        <option value="$PROJECT_DIR$/src/main/java/entity/User.java" />
++        <option value="$PROJECT_DIR$/src/test/java/persistence/RoleDaoTest.java" />
++        <option value="$PROJECT_DIR$/src/main/java/entity/Role.java" />
++      </list>
++    </option>
++  </component>
++  <component name="LogFilters">
++    <option name="FILTER_ERRORS" value="false" />
++    <option name="FILTER_WARNINGS" value="false" />
++    <option name="FILTER_INFO" value="false" />
++    <option name="FILTER_DEBUG" value="false" />
++    <option name="CUSTOM_FILTER" />
++  </component>
++  <component name="MavenImportPreferences">
++    <option name="importingSettings">
++      <MavenImportingSettings>
++        <option name="importAutomatically" value="true" />
++      </MavenImportingSettings>
++    </option>
++  </component>
++  <component name="ProjectFrameBounds" extendedState="6">
++    <option name="x" value="340" />
++    <option name="y" value="84" />
++    <option name="width" value="733" />
++    <option name="height" value="573" />
++  </component>
++  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
++    <ConfirmationsSetting value="2" id="Add" />
++  </component>
++  <component name="ProjectView">
++    <navigator proportions="" version="1">
++      <foldersAlwaysOnTop value="true" />
++    </navigator>
++    <panes>
++      <pane id="Scope" />
++      <pane id="PackagesPane" />
++      <pane id="CatdeaLogs" />
++      <pane id="ProjectPane">
++        <subPane>
++          <expand>
++            <path>
++              <item name="indieProject" type="b2602c69:ProjectViewProjectNode" />
++              <item name="indieProject" type="462c0819:PsiDirectoryNode" />
++            </path>
++            <path>
++              <item name="indieProject" type="b2602c69:ProjectViewProjectNode" />
++              <item name="indieProject" type="462c0819:PsiDirectoryNode" />
++              <item name=".idea" type="462c0819:PsiDirectoryNode" />
++            </path>
++            <path>
++              <item name="indieProject" type="b2602c69:ProjectViewProjectNode" />
++              <item name="indieProject" type="462c0819:PsiDirectoryNode" />
++              <item name="logs" type="462c0819:PsiDirectoryNode" />
++            </path>
++            <path>
++              <item name="indieProject" type="b2602c69:ProjectViewProjectNode" />
++              <item name="indieProject" type="462c0819:PsiDirectoryNode" />
++              <item name="Screenshots" type="462c0819:PsiDirectoryNode" />
++            </path>
++            <path>
++              <item name="indieProject" type="b2602c69:ProjectViewProjectNode" />
++              <item name="indieProject" type="462c0819:PsiDirectoryNode" />
++              <item name="src" type="462c0819:PsiDirectoryNode" />
++            </path>
++            <path>
++              <item name="indieProject" type="b2602c69:ProjectViewProjectNode" />
++              <item name="indieProject" type="462c0819:PsiDirectoryNode" />
++              <item name="src" type="462c0819:PsiDirectoryNode" />
++              <item name="main" type="462c0819:PsiDirectoryNode" />
++            </path>
++            <path>
++              <item name="indieProject" type="b2602c69:ProjectViewProjectNode" />
++              <item name="indieProject" type="462c0819:PsiDirectoryNode" />
++              <item name="src" type="462c0819:PsiDirectoryNode" />
++              <item name="main" type="462c0819:PsiDirectoryNode" />
++              <item name="java" type="462c0819:PsiDirectoryNode" />
++            </path>
++            <path>
++              <item name="indieProject" type="b2602c69:ProjectViewProjectNode" />
++              <item name="indieProject" type="462c0819:PsiDirectoryNode" />
++              <item name="src" type="462c0819:PsiDirectoryNode" />
++              <item name="main" type="462c0819:PsiDirectoryNode" />
++              <item name="java" type="462c0819:PsiDirectoryNode" />
++              <item name="entity" type="462c0819:PsiDirectoryNode" />
++            </path>
++            <path>
++              <item name="indieProject" type="b2602c69:ProjectViewProjectNode" />
++              <item name="indieProject" type="462c0819:PsiDirectoryNode" />
++              <item name="src" type="462c0819:PsiDirectoryNode" />
++              <item name="main" type="462c0819:PsiDirectoryNode" />
++              <item name="java" type="462c0819:PsiDirectoryNode" />
++              <item name="persistence" type="462c0819:PsiDirectoryNode" />
++            </path>
++            <path>
++              <item name="indieProject" type="b2602c69:ProjectViewProjectNode" />
++              <item name="indieProject" type="462c0819:PsiDirectoryNode" />
++              <item name="src" type="462c0819:PsiDirectoryNode" />
++              <item name="main" type="462c0819:PsiDirectoryNode" />
++              <item name="resources" type="462c0819:PsiDirectoryNode" />
++            </path>
++            <path>
++              <item name="indieProject" type="b2602c69:ProjectViewProjectNode" />
++              <item name="indieProject" type="462c0819:PsiDirectoryNode" />
++              <item name="src" type="462c0819:PsiDirectoryNode" />
++              <item name="test" type="462c0819:PsiDirectoryNode" />
++            </path>
++            <path>
++              <item name="indieProject" type="b2602c69:ProjectViewProjectNode" />
++              <item name="indieProject" type="462c0819:PsiDirectoryNode" />
++              <item name="src" type="462c0819:PsiDirectoryNode" />
++              <item name="test" type="462c0819:PsiDirectoryNode" />
++              <item name="java" type="462c0819:PsiDirectoryNode" />
++            </path>
++            <path>
++              <item name="indieProject" type="b2602c69:ProjectViewProjectNode" />
++              <item name="indieProject" type="462c0819:PsiDirectoryNode" />
++              <item name="src" type="462c0819:PsiDirectoryNode" />
++              <item name="test" type="462c0819:PsiDirectoryNode" />
++              <item name="java" type="462c0819:PsiDirectoryNode" />
++              <item name="persistence" type="462c0819:PsiDirectoryNode" />
++            </path>
++            <path>
++              <item name="indieProject" type="b2602c69:ProjectViewProjectNode" />
++              <item name="indieProject" type="462c0819:PsiDirectoryNode" />
++              <item name="src" type="462c0819:PsiDirectoryNode" />
++              <item name="test" type="462c0819:PsiDirectoryNode" />
++              <item name="java" type="462c0819:PsiDirectoryNode" />
++              <item name="util" type="462c0819:PsiDirectoryNode" />
++            </path>
++            <path>
++              <item name="indieProject" type="b2602c69:ProjectViewProjectNode" />
++              <item name="indieProject" type="462c0819:PsiDirectoryNode" />
++              <item name="src" type="462c0819:PsiDirectoryNode" />
++              <item name="test" type="462c0819:PsiDirectoryNode" />
++              <item name="resources" type="462c0819:PsiDirectoryNode" />
++            </path>
++            <path>
++              <item name="indieProject" type="b2602c69:ProjectViewProjectNode" />
++              <item name="indieProject" type="462c0819:PsiDirectoryNode" />
++              <item name="target" type="462c0819:PsiDirectoryNode" />
++            </path>
++            <path>
++              <item name="indieProject" type="b2602c69:ProjectViewProjectNode" />
++              <item name="indieProject" type="462c0819:PsiDirectoryNode" />
++              <item name="target" type="462c0819:PsiDirectoryNode" />
++              <item name="classes" type="462c0819:PsiDirectoryNode" />
++            </path>
++          </expand>
++          <select />
++        </subPane>
++      </pane>
++    </panes>
++  </component>
++  <component name="PropertiesComponent">
++    <property name="DatabaseDriversLRU" value="mysql" />
++    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
++    <property name="WebServerToolWindowFactoryState" value="false" />
++    <property name="aspect.path.notification.shown" value="true" />
++    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="Arquillian JUnit4" />
++    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.Arquillian JUnit4" value="" />
++    <property name="create.test.in.the.same.root" value="true" />
++    <property name="database.console.LAST_STATE" value="false" />
++    <property name="last_opened_file_path" value="$USER_HOME$/tomcat" />
++    <property name="node.js.detected.package.eslint" value="true" />
++    <property name="node.js.detected.package.tslint" value="true" />
++    <property name="node.js.path.for.package.eslint" value="project" />
++    <property name="node.js.path.for.package.tslint" value="project" />
++    <property name="node.js.selected.package.eslint" value="(autodetect)" />
++    <property name="node.js.selected.package.tslint" value="(autodetect)" />
++    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
++    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
++    <property name="project.structure.last.edited" value="Modules" />
++    <property name="project.structure.proportion" value="0.15" />
++    <property name="project.structure.side.proportion" value="0.2" />
++    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
++  </component>
++  <component name="RecentsManager">
++    <key name="CreateTestDialog.RecentsKey">
++      <recent name="Persistence" />
++    </key>
++    <key name="CopyClassDialog.RECENTS_KEY">
++      <recent name="Controller" />
++    </key>
++    <key name="CopyFile.RECENT_KEYS">
++      <recent name="$PROJECT_DIR$/src/test/resources" />
++      <recent name="$PROJECT_DIR$/src/main/resources" />
++      <recent name="$PROJECT_DIR$/src" />
++      <recent name="$PROJECT_DIR$/src/main/webapp" />
++    </key>
++    <key name="CreateTestDialog.Recents.Supers">
++      <recent name="" />
++    </key>
++    <key name="MoveFile.RECENT_KEYS">
++      <recent name="$PROJECT_DIR$" />
++      <recent name="$PROJECT_DIR$/src/main/java/Persistence" />
++      <recent name="$PROJECT_DIR$/src" />
++      <recent name="$PROJECT_DIR$/src/test/java/Persistence" />
++      <recent name="$PROJECT_DIR$/src/main/java/Entity" />
++    </key>
++  </component>
++  <component name="RunDashboard">
++    <option name="ruleStates">
++      <list>
++        <RuleState>
++          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
++        </RuleState>
++        <RuleState>
++          <option name="name" value="StatusDashboardGroupingRule" />
++        </RuleState>
++      </list>
++    </option>
++  </component>
++  <component name="RunManager" selected="JUnit.RoleDaoTest.getByIdSuccess">
++    <configuration name="RoleDaoTest.getByIdSuccess" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
++      <module name="indieProject" />
++      <extension name="coverage">
++        <pattern>
++          <option name="PATTERN" value="persistence.*" />
++          <option name="ENABLED" value="true" />
++        </pattern>
++      </extension>
++      <option name="PACKAGE_NAME" value="persistence" />
++      <option name="MAIN_CLASS_NAME" value="persistence.RoleDaoTest" />
++      <option name="METHOD_NAME" value="getByIdSuccess" />
++      <option name="TEST_OBJECT" value="method" />
++      <method v="2">
++        <option name="Make" enabled="true" />
++      </method>
++    </configuration>
++    <configuration name="UserDaoTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
++      <module name="indieProject" />
++      <extension name="coverage">
++        <pattern>
++          <option name="PATTERN" value="persistence.*" />
++          <option name="ENABLED" value="true" />
++        </pattern>
++      </extension>
++      <option name="PACKAGE_NAME" value="persistence" />
++      <option name="MAIN_CLASS_NAME" value="persistence.UserDaoTest" />
++      <option name="TEST_OBJECT" value="class" />
++      <method v="2">
++        <option name="Make" enabled="true" />
++      </method>
++    </configuration>
++    <configuration name="UserDaoTest.getAllSuccess" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
++      <module name="indieProject" />
++      <extension name="coverage">
++        <pattern>
++          <option name="PATTERN" value="persistence.*" />
++          <option name="ENABLED" value="true" />
++        </pattern>
++      </extension>
++      <option name="PACKAGE_NAME" value="persistence" />
++      <option name="MAIN_CLASS_NAME" value="persistence.UserDaoTest" />
++      <option name="METHOD_NAME" value="getAllSuccess" />
++      <option name="TEST_OBJECT" value="method" />
++      <method v="2">
++        <option name="Make" enabled="true" />
++      </method>
++    </configuration>
++    <configuration name="UserDaoTest.getByIdSuccess" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
++      <module name="indieProject" />
++      <extension name="coverage">
++        <pattern>
++          <option name="PATTERN" value="persistence.*" />
++          <option name="ENABLED" value="true" />
++        </pattern>
++      </extension>
++      <option name="PACKAGE_NAME" value="persistence" />
++      <option name="MAIN_CLASS_NAME" value="persistence.UserDaoTest" />
++      <option name="METHOD_NAME" value="getByIdSuccess" />
++      <option name="TEST_OBJECT" value="method" />
++      <method v="2">
++        <option name="Make" enabled="true" />
++      </method>
++    </configuration>
++    <configuration name="UserDaoTest.getByPropertyEqualSuccess" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
++      <module name="indieProject" />
++      <extension name="coverage">
++        <pattern>
++          <option name="PATTERN" value="persistence.*" />
++          <option name="ENABLED" value="true" />
++        </pattern>
++      </extension>
++      <option name="PACKAGE_NAME" value="persistence" />
++      <option name="MAIN_CLASS_NAME" value="persistence.UserDaoTest" />
++      <option name="METHOD_NAME" value="getByPropertyEqualSuccess" />
++      <option name="TEST_OBJECT" value="method" />
++      <method v="2">
++        <option name="Make" enabled="true" />
++      </method>
++    </configuration>
++    <configuration name="TomEE 8.5.41" type="TomeeConfiguration" factoryName="Local" APPLICATION_SERVER_NAME="TomEE 8.5.41" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
++      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/indieProject_war/" />
++      <option name="UPDATING_POLICY" value="restart-server" />
++      <deployment>
++        <artifact name="indieProject:war">
++          <settings>
++            <option name="CONTEXT_PATH" value="/indieProject_war" />
++          </settings>
++        </artifact>
++      </deployment>
++      <server-settings>
++        <option name="BASE_DIRECTORY_NAME" value="Unnamed_indieProject_4" />
++      </server-settings>
++      <predefined_log_file enabled="true" id="Tomcat" />
++      <predefined_log_file enabled="true" id="Tomcat Catalina" />
++      <predefined_log_file id="Tomcat Manager" />
++      <predefined_log_file id="Tomcat Host Manager" />
++      <predefined_log_file id="Tomcat Localhost Access" />
++      <RunnerSettings RunnerId="Debug">
++        <option name="DEBUG_PORT" value="41655" />
++      </RunnerSettings>
++      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
++        <option name="USE_ENV_VARIABLES" value="true" />
++        <STARTUP>
++          <option name="USE_DEFAULT" value="true" />
++          <option name="SCRIPT" value="" />
++          <option name="VM_PARAMETERS" value="" />
++          <option name="PROGRAM_PARAMETERS" value="" />
++        </STARTUP>
++        <SHUTDOWN>
++          <option name="USE_DEFAULT" value="true" />
++          <option name="SCRIPT" value="" />
++          <option name="VM_PARAMETERS" value="" />
++          <option name="PROGRAM_PARAMETERS" value="" />
++        </SHUTDOWN>
++      </ConfigurationWrapper>
++      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
++        <option name="USE_ENV_VARIABLES" value="true" />
++        <STARTUP>
++          <option name="USE_DEFAULT" value="true" />
++          <option name="SCRIPT" value="" />
++          <option name="VM_PARAMETERS" value="" />
++          <option name="PROGRAM_PARAMETERS" value="" />
++        </STARTUP>
++        <SHUTDOWN>
++          <option name="USE_DEFAULT" value="true" />
++          <option name="SCRIPT" value="" />
++          <option name="VM_PARAMETERS" value="" />
++          <option name="PROGRAM_PARAMETERS" value="" />
++        </SHUTDOWN>
++      </ConfigurationWrapper>
++      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
++        <option name="USE_ENV_VARIABLES" value="true" />
++        <STARTUP>
++          <option name="USE_DEFAULT" value="true" />
++          <option name="SCRIPT" value="" />
++          <option name="VM_PARAMETERS" value="" />
++          <option name="PROGRAM_PARAMETERS" value="" />
++        </STARTUP>
++        <SHUTDOWN>
++          <option name="USE_DEFAULT" value="true" />
++          <option name="SCRIPT" value="" />
++          <option name="VM_PARAMETERS" value="" />
++          <option name="PROGRAM_PARAMETERS" value="" />
++        </SHUTDOWN>
++      </ConfigurationWrapper>
++      <method v="2">
++        <option name="Maven.BeforeRunTask" enabled="true" file="$PROJECT_DIR$/pom.xml" goal="clean" />
++        <option name="Maven.BeforeRunTask" enabled="true" file="$PROJECT_DIR$/pom.xml" goal="install" />
++        <option name="BuildArtifacts" enabled="true">
++          <artifact name="indieProject:war" />
++        </option>
++      </method>
++    </configuration>
++    <recent_temporary>
++      <list>
++        <item itemvalue="JUnit.RoleDaoTest.getByIdSuccess" />
++        <item itemvalue="JUnit.UserDaoTest" />
++        <item itemvalue="JUnit.UserDaoTest.getByIdSuccess" />
++        <item itemvalue="JUnit.UserDaoTest.getByPropertyEqualSuccess" />
++        <item itemvalue="JUnit.UserDaoTest.getAllSuccess" />
++      </list>
++    </recent_temporary>
++  </component>
++  <component name="SvnConfiguration">
++    <configuration />
++  </component>
++  <component name="TaskManager">
++    <task active="true" id="Default" summary="Default task">
++      <changelist id="f72530a8-eb98-414b-9374-4e272efdd8dc" name="Default Changelist" comment="" />
++      <created>1580668075203</created>
++      <option name="number" value="Default" />
++      <option name="presentableId" value="Default" />
++      <updated>1580668075203</updated>
++      <workItem from="1580668081466" duration="2628000" />
++      <workItem from="1580855503179" duration="1730000" />
++      <workItem from="1580935058945" duration="165000" />
++      <workItem from="1581147981897" duration="4391000" />
++      <workItem from="1581157442028" duration="143000" />
++      <workItem from="1581224239468" duration="94000" />
++      <workItem from="1581228057635" duration="1861000" />
++      <workItem from="1581368769837" duration="203000" />
++      <workItem from="1581370686569" duration="488000" />
++      <workItem from="1581371392050" duration="12000" />
++      <workItem from="1581372071624" duration="673000" />
++      <workItem from="1581531435739" duration="263000" />
++      <workItem from="1581542605318" duration="1525000" />
++      <workItem from="1581546434648" duration="815000" />
++      <workItem from="1581547279840" duration="1598000" />
++      <workItem from="1581711212834" duration="17832000" />
++      <workItem from="1581758161946" duration="151000" />
++      <workItem from="1581796304970" duration="3497000" />
++      <workItem from="1581960834300" duration="2357000" />
++      <workItem from="1581971857318" duration="6854000" />
++      <workItem from="1582042953271" duration="1923000" />
++      <workItem from="1582045066054" duration="11621000" />
++      <workItem from="1582063356319" duration="3469000" />
++      <workItem from="1582145348597" duration="2697000" />
++      <workItem from="1582148687021" duration="2580000" />
++      <workItem from="1582151499949" duration="2208000" />
++      <workItem from="1582215910808" duration="16128000" />
++    </task>
++    <task id="LOCAL-00001" summary="planning has commenced">
++      <created>1581156080723</created>
++      <option name="number" value="00001" />
++      <option name="presentableId" value="LOCAL-00001" />
++      <option name="project" value="LOCAL" />
++      <updated>1581156080723</updated>
++    </task>
++    <task id="LOCAL-00002" summary="wireframes finished">
++      <created>1581156200165</created>
++      <option name="number" value="00002" />
++      <option name="presentableId" value="LOCAL-00002" />
++      <option name="project" value="LOCAL" />
++      <updated>1581156200165</updated>
++    </task>
++    <task id="LOCAL-00003" summary="project plan shelled out i think">
++      <created>1581229826895</created>
++      <option name="number" value="00003" />
++      <option name="presentableId" value="LOCAL-00003" />
++      <option name="project" value="LOCAL" />
++      <updated>1581229826895</updated>
++    </task>
++    <task id="LOCAL-00004" summary="getting a fatal error on application launch">
++      <created>1581755110986</created>
++      <option name="number" value="00004" />
++      <option name="presentableId" value="LOCAL-00004" />
++      <option name="project" value="LOCAL" />
++      <updated>1581755110986</updated>
++    </task>
++    <task id="LOCAL-00005" summary="getting a fatal error on application launch">
++      <created>1581757213348</created>
++      <option name="number" value="00005" />
++      <option name="presentableId" value="LOCAL-00005" />
++      <option name="project" value="LOCAL" />
++      <updated>1581757213348</updated>
++    </task>
++    <task id="LOCAL-00006" summary="Fatal error was fixed">
++      <created>1581977131274</created>
++      <option name="number" value="00006" />
++      <option name="presentableId" value="LOCAL-00006" />
++      <option name="project" value="LOCAL" />
++      <updated>1581977131274</updated>
++    </task>
++    <task id="LOCAL-00007" summary="all tests pass. screenshot was taken">
++      <created>1582056599314</created>
++      <option name="number" value="00007" />
++      <option name="presentableId" value="LOCAL-00007" />
++      <option name="project" value="LOCAL" />
++      <updated>1582056599314</updated>
++    </task>
++    <task id="LOCAL-00008" summary="all tests pass. screenshot was taken">
++      <created>1582063544490</created>
++      <option name="number" value="00008" />
++      <option name="presentableId" value="LOCAL-00008" />
++      <option name="project" value="LOCAL" />
++      <updated>1582063544490</updated>
++    </task>
++    <option name="localTasksCounter" value="9" />
++    <servers />
++  </component>
++  <component name="TestHistory">
++    <history-entry file="UserDaoTest - 2020.02.20 at 13h 59m 43s.xml">
++      <configuration name="UserDaoTest" configurationId="JUnit" />
++    </history-entry>
++    <history-entry file="UserDaoTest - 2020.02.20 at 14h 11m 04s.xml">
++      <configuration name="UserDaoTest" configurationId="JUnit" />
++    </history-entry>
++    <history-entry file="UserDaoTest - 2020.02.20 at 14h 11m 23s.xml">
++      <configuration name="UserDaoTest" configurationId="JUnit" />
++    </history-entry>
++    <history-entry file="UserDaoTest - 2020.02.20 at 14h 11m 57s.xml">
++      <configuration name="UserDaoTest" configurationId="JUnit" />
++    </history-entry>
++    <history-entry file="RoleDaoTest_getByIdSuccess - 2020.02.20 at 14h 13m 34s.xml">
++      <configuration name="RoleDaoTest.getByIdSuccess" configurationId="JUnit" />
++    </history-entry>
++    <history-entry file="RoleDaoTest_getByIdSuccess - 2020.02.20 at 14h 29m 51s.xml">
++      <configuration name="RoleDaoTest.getByIdSuccess" configurationId="JUnit" />
++    </history-entry>
++    <history-entry file="RoleDaoTest_getByIdSuccess - 2020.02.20 at 14h 36m 57s.xml">
++      <configuration name="RoleDaoTest.getByIdSuccess" configurationId="JUnit" />
++    </history-entry>
++    <history-entry file="RoleDaoTest_getByIdSuccess - 2020.02.20 at 14h 43m 03s.xml">
++      <configuration name="RoleDaoTest.getByIdSuccess" configurationId="JUnit" />
++    </history-entry>
++    <history-entry file="RoleDaoTest_getByIdSuccess - 2020.02.20 at 14h 48m 07s.xml">
++      <configuration name="RoleDaoTest.getByIdSuccess" configurationId="JUnit" />
++    </history-entry>
++    <history-entry file="RoleDaoTest_getByIdSuccess - 2020.02.20 at 14h 49m 33s.xml">
++      <configuration name="RoleDaoTest.getByIdSuccess" configurationId="JUnit" />
++    </history-entry>
++  </component>
++  <component name="TimeTrackingManager">
++    <option name="totallyTimeSpent" value="88132000" />
++  </component>
++  <component name="TodoView">
++    <todo-panel id="selected-file">
++      <is-autoscroll-to-source value="true" />
++    </todo-panel>
++    <todo-panel id="all">
++      <are-packages-shown value="true" />
++      <is-autoscroll-to-source value="true" />
++    </todo-panel>
++  </component>
++  <component name="ToolWindowManager">
++    <frame x="67" y="25" width="1853" height="1055" extended-state="6" />
++    <layout>
++      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18781163" />
++      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
++      <window_info id="Designer" order="2" />
++      <window_info id="Image Layers" order="3" />
++      <window_info id="Capture Tool" order="4" />
++      <window_info id="UI Designer" order="5" />
++      <window_info id="Favorites" order="6" side_tool="true" />
++      <window_info id="Web" order="7" side_tool="true" />
++      <window_info id="Persistence" order="8" side_tool="true" />
++      <window_info anchor="bottom" id="Message" order="0" />
++      <window_info anchor="bottom" id="Find" order="1" weight="0.32988358" />
++      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.65152353" visible="true" weight="0.35027027" />
++      <window_info anchor="bottom" id="Debug" order="3" weight="0.34799483" />
++      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
++      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
++      <window_info anchor="bottom" id="TODO" order="6" weight="0.32774192" />
++      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.49916896" weight="0.15006468" />
++      <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
++      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.34847644" side_tool="true" weight="0.32864866" />
++      <window_info anchor="bottom" id="Java Enterprise" order="10" weight="0.32858992" />
++      <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
++      <window_info anchor="bottom" id="Version Control" order="12" weight="0.15782665" />
++      <window_info anchor="bottom" id="Application Servers" order="13" sideWeight="0.499723" weight="0.32858992" />
++      <window_info anchor="bottom" id="Database Console" order="14" sideWeight="0.49861497" weight="0.32972974" />
++      <window_info anchor="bottom" id="Messages" order="15" weight="0.32858992" />
++      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
++      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
++      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
++      <window_info anchor="right" id="Maven" order="3" />
++      <window_info anchor="right" id="Palette" order="4" />
++      <window_info anchor="right" id="Capture Analysis" order="5" />
++      <window_info anchor="right" id="JSF" order="6" />
++      <window_info anchor="right" id="Database" order="7" visible="true" weight="0.23601107" />
++      <window_info anchor="right" id="Palette&#9;" order="8" />
++      <window_info anchor="right" id="Theme Preview" order="9" />
++      <window_info anchor="right" id="CDI" order="10" />
++      <window_info anchor="right" id="Bean Validation" order="11" />
++      <window_info anchor="right" id="Coverage" order="12" side_tool="true" visible="true" weight="0.32934132" />
++    </layout>
++    <layout-to-restore>
++      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.33333334" />
++      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
++      <window_info id="Designer" order="2" />
++      <window_info id="Image Layers" order="3" />
++      <window_info id="Capture Tool" order="4" />
++      <window_info id="UI Designer" order="5" />
++      <window_info id="Favorites" order="6" side_tool="true" />
++      <window_info id="Web" order="7" side_tool="true" />
++      <window_info id="Persistence" order="8" side_tool="true" />
++      <window_info anchor="bottom" id="Message" order="0" />
++      <window_info anchor="bottom" id="Find" order="1" weight="0.32988358" />
++      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.65152353" visible="true" weight="0.34411386" />
++      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
++      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
++      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
++      <window_info anchor="bottom" id="TODO" order="6" weight="0.32972974" />
++      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.49916896" weight="0.32858992" />
++      <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
++      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.34847644" side_tool="true" weight="0.32864866" />
++      <window_info anchor="bottom" id="Java Enterprise" order="10" weight="0.32858992" />
++      <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
++      <window_info anchor="bottom" id="Version Control" order="12" weight="0.15782665" />
++      <window_info anchor="bottom" id="Application Servers" order="13" sideWeight="0.499723" weight="0.32858992" />
++      <window_info anchor="bottom" id="Database Console" order="14" sideWeight="0.49861497" weight="0.32972974" />
++      <window_info anchor="bottom" id="Messages" order="15" weight="0.32858992" />
++      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
++      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
++      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
++      <window_info anchor="right" id="Maven" order="3" />
++      <window_info anchor="right" id="Palette" order="4" />
++      <window_info anchor="right" id="Capture Analysis" order="5" />
++      <window_info anchor="right" id="JSF" order="6" />
++      <window_info anchor="right" id="Database" order="7" visible="true" weight="0.16966067" />
++      <window_info anchor="right" id="Palette&#9;" order="8" />
++      <window_info anchor="right" id="Theme Preview" order="9" />
++      <window_info anchor="right" id="CDI" order="10" />
++      <window_info anchor="right" id="Bean Validation" order="11" />
++    </layout-to-restore>
++  </component>
++  <component name="TypeScriptGeneratedFilesManager">
++    <option name="version" value="1" />
++  </component>
++  <component name="VcsManagerConfiguration">
++    <MESSAGE value="planning has commenced" />
++    <MESSAGE value="wireframes finished" />
++    <MESSAGE value="project plan shelled out i think" />
++    <MESSAGE value="getting a fatal error on application launch" />
++    <MESSAGE value="Fatal error was fixed" />
++    <MESSAGE value="all tests pass. screenshot was taken" />
++    <option name="LAST_COMMIT_MESSAGE" value="all tests pass. screenshot was taken" />
++  </component>
++  <component name="com.intellij.coverage.CoverageDataManagerImpl">
++    <SUITE FILE_PATH="coverage/indieProject$UserDaoTest.ic" NAME="UserDaoTest Coverage Results" MODIFIED="1582056162015" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
++      <FILTER>Persistence.*</FILTER>
++    </SUITE>
++  </component>
++  <component name="editorHistoryManager">
++    <entry file="file://$PROJECT_DIR$/DesignFolder/wireframes/Log_in.png">
++      <provider selected="true" editor-type-id="images" />
++    </entry>
++    <entry file="file://$PROJECT_DIR$/indieProject.iml">
++      <provider selected="true" editor-type-id="text-editor">
++        <state relative-caret-position="312">
++          <caret line="13" column="9" selection-start-line="13" selection-start-column="9" selection-end-line="13" selection-end-column="9" />
++        </state>
++      </provider>
++    </entry>
++    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
++      <provider selected="true" editor-type-id="text-editor">
++        <state relative-caret-position="-2880" />
++      </provider>
++    </entry>
++    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
++      <provider selected="true" editor-type-id="text-editor">
++        <state relative-caret-position="120">
++          <caret line="5" column="10" selection-start-line="5" selection-start-column="10" selection-end-line="5" selection-end-column="10" />
++        </state>
++      </provider>
++    </entry>
++    <entry file="file://$PROJECT_DIR$/src/main/webapp/images/login.jpg">
++      <provider selected="true" editor-type-id="images" />
++    </entry>
++    <entry file="file://$PROJECT_DIR$/src/main/webapp/sign_up.jsp">
++      <provider selected="true" editor-type-id="text-editor">
++        <state relative-caret-position="216">
++          <caret line="15" column="17" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
++        </state>
++      </provider>
++    </entry>
++    <entry file="file://$PROJECT_DIR$/src/main/webapp/remove_artist.jsp">
++      <provider selected="true" editor-type-id="text-editor">
++        <state relative-caret-position="144">
++          <caret line="6" column="7" selection-start-line="6" selection-start-column="7" selection-end-line="6" selection-end-column="7" />
++        </state>
++      </provider>
++    </entry>
++    <entry file="file://$PROJECT_DIR$/src/main/webapp/add_artist.jsp">
++      <provider selected="true" editor-type-id="text-editor">
++        <state relative-caret-position="24">
++          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
++        </state>
++      </provider>
++    </entry>
++    <entry file="file://$PROJECT_DIR$/src/main/webapp/edit_artists.jsp">
++      <provider selected="true" editor-type-id="text-editor">
++        <state>
++          <caret selection-end-line="6" selection-end-column="7" />
++        </state>
++      </provider>
++    </entry>
++    <entry file="file://$PROJECT_DIR$/src/main/webapp/artist_update.jsp">
++      <provider selected="true" editor-type-id="text-editor">
++        <state relative-caret-position="48">
++          <caret line="2" column="29" selection-start-line="2" selection-start-column="29" selection-end-line="2" selection-end-column="29" />
++        </state>
++      </provider>
++    </entry>
++    <entry file="file://$PROJECT_DIR$/src/main/webapp/css/styles.css">
++      <provider selected="true" editor-type-id="text-editor">
++        <state relative-caret-position="96">
++          <caret line="4" column="6" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="6" />
++        </state>
++      </provider>
++    </entry>
++    <entry file="file://$PROJECT_DIR$/src/main/webapp/head.jsp">
++      <provider selected="true" editor-type-id="text-editor">
++        <state relative-caret-position="360">
++          <caret line="15" column="49" selection-start-line="15" selection-start-column="49" selection-end-line="15" selection-end-column="49" />
++        </state>
++      </provider>
++    </entry>
++    <entry file="file://$PROJECT_DIR$/src/main/webapp/login.jsp">
++      <provider selected="true" editor-type-id="text-editor">
++        <state relative-caret-position="120">
++          <caret line="8" column="25" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
++        </state>
++      </provider>
++    </entry>
++    <entry file="file://$PROJECT_DIR$/src/test/java/Entity/User.java" />
++    <entry file="file://$PROJECT_DIR$/src/main/webapp/index.jsp">
++      <provider selected="true" editor-type-id="text-editor">
++        <state relative-caret-position="96">
++          <caret line="4" column="24" selection-start-line="4" selection-start-column="24" selection-end-line="4" selection-end-column="24" />
++        </state>
++      </provider>
++    </entry>
++    <entry file="file://$PROJECT_DIR$/src/test/java/UserDaoTest" />
++    <entry file="file://$PROJECT_DIR$/src/test/java/TestUserDao" />
++    <entry file="das://2af83ca9-2911-46d3-b3d0-dca6effec053/schema/Music/table/Artist" />
++    <entry file="das://2af83ca9-2911-46d3-b3d0-dca6effec053/schema/Music/table/artist">
++      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
++        <state projectRestartId="eb4250b0-c6d8-4737-84fc-a967ad84eebd">
++          <filtering>
++            <filter text="" />
++          </filtering>
++        </state>
++      </provider>
++    </entry>
++    <entry file="file://$PROJECT_DIR$/src/main/resources/Music.sql" />
++    <entry file="file://$PROJECT_DIR$/src/main/java/persistence/SessionFactoryProvider.java">
++      <provider selected="true" editor-type-id="text-editor">
++        <state relative-caret-position="144">
++          <caret line="15" selection-start-line="15" selection-end-line="15" />
++          <folding>
++            <element signature="imports" expanded="true" />
++          </folding>
++        </state>
++      </provider>
++    </entry>
++    <entry file="file://$PROJECT_DIR$/src/main/java/persistence/ArtistDao.java">
++      <provider selected="true" editor-type-id="text-editor">
++        <state relative-caret-position="312">
++          <caret line="13" column="2" lean-forward="true" selection-start-line="13" selection-start-column="2" selection-end-line="13" selection-end-column="2" />
++        </state>
++      </provider>
++    </entry>
++    <entry file="file://$USER_HOME$/GithubRepos/student/ProfessionalDevelopmentPresentations/ElspethStalterClouse/Presentation/Feedback.md">
++      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
++        <state split_layout="SPLIT">
++          <first_editor relative-caret-position="-818">
++            <caret line="10" column="41" selection-start-line="10" selection-start-column="41" selection-end-line="10" selection-end-column="41" />
++          </first_editor>
++          <second_editor />
++        </state>
++      </provider>
++    </entry>
++    <entry file="file://$PROJECT_DIR$/src/main/java/entity/Artist.java">
++      <provider selected="true" editor-type-id="text-editor">
++        <state relative-caret-position="-24">
++          <caret line="8" column="19" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
++          <folding>
++            <element signature="imports" expanded="true" />
++          </folding>
++        </state>
++      </provider>
++    </entry>
++    <entry file="file://$PROJECT_DIR$/Readme.md">
++      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
++        <state split_layout="SPLIT">
++          <first_editor relative-caret-position="348">
++            <caret line="19" column="28" lean-forward="true" selection-start-line="19" selection-start-column="28" selection-end-line="19" selection-end-column="28" />
++          </first_editor>
++          <second_editor />
++        </state>
++      </provider>
++    </entry>
++    <entry file="file://$PROJECT_DIR$/timeLog.md">
++      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
++        <state split_layout="SPLIT">
++          <first_editor relative-caret-position="406">
++            <caret line="20" column="34" selection-start-line="20" selection-start-column="34" selection-end-line="20" selection-end-column="34" />
++          </first_editor>
++          <second_editor />
++        </state>
++      </provider>
++    </entry>
++    <entry file="jrt:///usr/lib/jvm/java-1.11.0-openjdk-amd64!/java.base/java/util/Objects.class">
++      <provider selected="true" editor-type-id="text-editor" />
++    </entry>
++    <entry file="file://$PROJECT_DIR$/src/test/resources/log4j2.properties">
++      <provider selected="true" editor-type-id="text-editor">
++        <state relative-caret-position="-144" />
++      </provider>
++    </entry>
++    <entry file="file://$PROJECT_DIR$/src/test/java/util/Database.java">
++      <provider selected="true" editor-type-id="text-editor">
++        <state relative-caret-position="309">
++          <caret line="41" column="82" selection-start-line="41" selection-start-column="82" selection-end-line="41" selection-end-column="82" />
++          <folding>
++            <element signature="imports" expanded="true" />
++          </folding>
++        </state>
++      </provider>
++    </entry>
++    <entry file="file://$PROJECT_DIR$/src/main/resources/database.properties">
++      <provider selected="true" editor-type-id="text-editor">
++        <state relative-caret-position="72">
++          <caret line="3" column="16" lean-forward="true" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="16" />
++        </state>
++      </provider>
++    </entry>
++    <entry file="file://$PROJECT_DIR$/src/test/resources/database.properties">
++      <provider selected="true" editor-type-id="text-editor">
++        <state>
++          <caret column="31" selection-start-column="31" selection-end-column="31" />
++        </state>
++      </provider>
++    </entry>
++    <entry file="file://$PROJECT_DIR$/logs/indieProject.log">
++      <provider selected="true" editor-type-id="LogFileEditorProvider" />
++    </entry>
++    <entry file="file://$PROJECT_DIR$/src/main/resources/log4j2.properties">
++      <provider selected="true" editor-type-id="text-editor">
++        <state relative-caret-position="210">
++          <caret line="16" column="23" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
++        </state>
++      </provider>
++    </entry>
++    <entry file="file://$PROJECT_DIR$/src/main/java/persistence/UserDao.java">
++      <provider selected="true" editor-type-id="text-editor">
++        <state relative-caret-position="316">
++          <caret line="56" column="5" lean-forward="true" selection-start-line="56" selection-start-column="5" selection-end-line="56" selection-end-column="5" />
++          <folding>
++            <element signature="imports" expanded="true" />
++          </folding>
++        </state>
++      </provider>
++    </entry>
++    <entry file="file://$PROJECT_DIR$/src/main/java/controller/SearchUser.java">
++      <provider selected="true" editor-type-id="text-editor">
++        <state relative-caret-position="189">
++          <caret line="25" column="57" selection-start-line="25" selection-start-column="57" selection-end-line="25" selection-end-column="57" />
++          <folding>
++            <element signature="imports" expanded="true" />
++          </folding>
++        </state>
++      </provider>
++    </entry>
++    <entry file="file://$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml">
++      <provider selected="true" editor-type-id="text-editor">
++        <state relative-caret-position="312">
++          <caret line="13" lean-forward="true" selection-start-line="12" selection-start-column="8" selection-end-line="13" />
++        </state>
++      </provider>
++    </entry>
++    <entry file="file://$PROJECT_DIR$/src/test/resources/hibernate.cfg.xml">
++      <provider selected="true" editor-type-id="text-editor">
++        <state relative-caret-position="288">
++          <caret line="12" column="35" selection-start-line="12" selection-start-column="31" selection-end-line="12" selection-end-column="35" />
++        </state>
++      </provider>
++    </entry>
++    <entry file="file://$PROJECT_DIR$/pom.xml">
++      <provider selected="true" editor-type-id="text-editor">
++        <state relative-caret-position="392">
++          <caret line="103" column="44" lean-forward="true" selection-start-line="103" selection-start-column="44" selection-end-line="103" selection-end-column="44" />
++        </state>
++      </provider>
++    </entry>
++    <entry file="file://$PROJECT_DIR$/Music.sql">
++      <provider selected="true" editor-type-id="text-editor">
++        <state relative-caret-position="311">
++          <caret line="56" column="48" selection-start-line="56" selection-start-column="48" selection-end-line="56" selection-end-column="48" />
++        </state>
++      </provider>
++    </entry>
++    <entry file="file://$PROJECT_DIR$/src/test/resources/cleandb.sql">
++      <provider selected="true" editor-type-id="text-editor">
++        <state relative-caret-position="48">
++          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
++        </state>
++      </provider>
++    </entry>
++    <entry file="das://2af83ca9-2911-46d3-b3d0-dca6effec053/schema/Music/table/user">
++      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
++        <state projectRestartId="ac75b98e-6576-423b-a815-53aad27877c4">
++          <filtering>
++            <filter text="" />
++          </filtering>
++        </state>
++      </provider>
++    </entry>
++    <entry file="file://$PROJECT_DIR$/src/main/resources/cleandb.sql">
++      <provider selected="true" editor-type-id="text-editor">
++        <state relative-caret-position="48">
++          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
++        </state>
++      </provider>
++    </entry>
++    <entry file="file://$PROJECT_DIR$/src/main/java/entity/User.java">
++      <provider selected="true" editor-type-id="text-editor">
++        <state relative-caret-position="192">
++          <caret line="23" column="21" selection-start-line="23" selection-start-column="21" selection-end-line="23" selection-end-column="21" />
++          <folding>
++            <element signature="imports" expanded="true" />
++          </folding>
++        </state>
++      </provider>
++    </entry>
++    <entry file="file://$PROJECT_DIR$/src/main/java/persistence/GenericDao.java">
++      <provider selected="true" editor-type-id="text-editor">
++        <state relative-caret-position="77">
++          <caret line="66" column="6" selection-start-line="66" selection-start-column="6" selection-end-line="66" selection-end-column="6" />
++          <folding>
++            <element signature="imports" expanded="true" />
++          </folding>
++        </state>
++      </provider>
++    </entry>
++    <entry file="file://$PROJECT_DIR$/src/test/java/persistence/RoleDaoTest.java">
++      <provider selected="true" editor-type-id="text-editor">
++        <state relative-caret-position="143">
++          <caret line="37" column="43" selection-start-line="37" selection-start-column="43" selection-end-line="37" selection-end-column="43" />
++          <folding>
++            <element signature="imports" expanded="true" />
++          </folding>
++        </state>
++      </provider>
++    </entry>
++    <entry file="file://$PROJECT_DIR$/src/main/java/entity/Role.java">
++      <provider selected="true" editor-type-id="text-editor">
++        <state relative-caret-position="333">
++          <caret line="24" column="31" selection-start-line="24" selection-start-column="31" selection-end-line="24" selection-end-column="31" />
++          <folding>
++            <element signature="imports" expanded="true" />
++          </folding>
++        </state>
++      </provider>
++    </entry>
++    <entry file="file://$PROJECT_DIR$/src/test/java/persistence/UserDaoTest.java">
++      <provider selected="true" editor-type-id="text-editor">
++        <state relative-caret-position="1534">
++          <caret line="111" lean-forward="true" selection-start-line="111" selection-end-line="111" />
++          <folding>
++            <element signature="imports" expanded="true" />
++          </folding>
++        </state>
++      </provider>
++    </entry>
++    <entry file="file://$PROJECT_DIR$/target/classes/database.properties">
++      <provider selected="true" editor-type-id="text-editor" />
++    </entry>
++    <entry file="file://$PROJECT_DIR$/target/classes/cleandb.sql">
++      <provider selected="true" editor-type-id="text-editor" />
++    </entry>
++    <entry file="file://$PROJECT_DIR$/target/classes/log4j2.properties">
++      <provider selected="true" editor-type-id="text-editor">
++        <state relative-caret-position="-122" />
++      </provider>
++    </entry>
++    <entry file="file://$PROJECT_DIR$/target/classes/hibernate.cfg.xml">
++      <provider selected="true" editor-type-id="text-editor" />
++    </entry>
++  </component>
++  <component name="masterDetails">
++    <states>
++      <state key="ArtifactsStructureConfigurable.UI">
++        <settings>
++          <artifact-editor />
++          <last-edited>indieProject:war</last-edited>
++          <splitter-proportions>
++            <option name="proportions">
++              <list>
++                <option value="0.2" />
++              </list>
++            </option>
++          </splitter-proportions>
++        </settings>
++      </state>
++      <state key="FacetStructureConfigurable.UI">
++        <settings>
++          <last-edited>Web</last-edited>
++          <splitter-proportions>
++            <option name="proportions">
++              <list>
++                <option value="0.2" />
++              </list>
++            </option>
++          </splitter-proportions>
++        </settings>
++      </state>
++      <state key="GlobalLibrariesConfigurable.UI">
++        <settings>
++          <splitter-proportions>
++            <option name="proportions">
++              <list>
++                <option value="0.2" />
++              </list>
++            </option>
++          </splitter-proportions>
++        </settings>
++      </state>
++      <state key="JdkListConfigurable.UI">
++        <settings>
++          <last-edited>11</last-edited>
++          <splitter-proportions>
++            <option name="proportions">
++              <list>
++                <option value="0.2" />
++              </list>
++            </option>
++          </splitter-proportions>
++        </settings>
++      </state>
++      <state key="ModuleStructureConfigurable.UI">
++        <settings>
++          <last-edited>indieProject</last-edited>
++          <splitter-proportions>
++            <option name="proportions">
++              <list>
++                <option value="0.2" />
++              </list>
++            </option>
++          </splitter-proportions>
++        </settings>
++      </state>
++      <state key="ProjectLibrariesConfigurable.UI">
++        <settings>
++          <last-edited>Maven: com.google.protobuf:protobuf-java:3.6.1</last-edited>
++          <splitter-proportions>
++            <option name="proportions">
++              <list>
++                <option value="0.2" />
++              </list>
++            </option>
++          </splitter-proportions>
++        </settings>
++      </state>
++    </states>
++  </component>
++</project>
+\ No newline at end of file
+diff --git a/DesignFolder/ERD/goodIThink.mwb b/DesignFolder/ERD/goodIThink.mwb
+index ed8fa00..53c746a 100644
+Binary files a/DesignFolder/ERD/goodIThink.mwb and b/DesignFolder/ERD/goodIThink.mwb differ
+diff --git a/DesignFolder/ERD/goodIThink.mwb.bak b/DesignFolder/ERD/goodIThink.mwb.bak
+index dd1bdd0..ed8fa00 100644
+Binary files a/DesignFolder/ERD/goodIThink.mwb.bak and b/DesignFolder/ERD/goodIThink.mwb.bak differ
+diff --git a/Readme.md b/Readme.md
+index de96bf8..1e2e56b 100644
+--- a/Readme.md
++++ b/Readme.md
+@@ -1,3 +1,20 @@
+-I dont have time to run through every artist i like and see if they released new content. the only way i can do that is to google search all of them or spend way too much time browsing music services like spotify or apple music. also with those services if i dont want to pay to listen to them i will have to go out to youtube where they post it. i want to be able to open my application, set a time frame of the last time i was up to speed on my favorite artists, and then their new stuff will show up on the page
++I don't have time to run through every artist that
++ I like to see if they released new content. 
++The only way I can do that is to Google search all 
++of them or spend way too much time browsing through music
++ services like Spotify or Apple Music. If I don't want 
++ to pay to listen to their new content I will have to go out to
++  Youtube where they posted it. I want to be able to 
++  open my application, set a time frame of the last
++   time I was up to speed on my favorite artists, 
++   and then their new stuff will show up on the page.
+ 
+-https://github.com/matcrobertson/IndieProjectDemo
+\ No newline at end of file
++https://github.com/matcrobertson/IndieProjectDemo
++
++- I plan on using JSTL to output my data
++- I will be using Spotify and/or Apple Music API to gather musical data
++- I will be using Youtube API to output links to the songs
++- If the API can not find a match to the artist that you chose, 
++    the application will return an error message
++- If there is no new music to be returned, it will output 
++    "you are all caught up!"
+\ No newline at end of file
+diff --git a/Screenshots/PassingTestsAndCoverage.png b/Screenshots/PassingTestsAndCoverage.png
+new file mode 100644
+index 0000000..1409a9c
+Binary files /dev/null and b/Screenshots/PassingTestsAndCoverage.png differ
+diff --git a/indieProject.iml b/indieProject.iml
+index 9569321..b3a24a2 100644
+--- a/indieProject.iml
++++ b/indieProject.iml
+@@ -8,6 +8,7 @@
+         </datasource-map>
+         <naming-strategy-map />
+         <deploymentDescriptor name="hibernate.cfg.xml" url="file://$MODULE_DIR$/src/main/resources/hibernate.cfg.xml" />
++        <deploymentDescriptor name="hibernate.cfg.xml" url="file://$MODULE_DIR$/src/test/resources/hibernate.cfg.xml" />
+       </configuration>
+     </facet>
+   </component>
+diff --git a/logs/indieProject.log b/logs/indieProject.log
+new file mode 100644
+index 0000000..e69de29
+diff --git a/pom.xml b/pom.xml
+index 7c3df4a..a93739e 100644
+--- a/pom.xml
++++ b/pom.xml
+@@ -93,6 +93,20 @@
+       <artifactId>hibernate-c3p0</artifactId>
+       <version>5.4.4.Final</version>
+     </dependency>
++      <dependency>
++          <groupId>org.junit.jupiter</groupId>
++          <artifactId>junit-jupiter-api</artifactId>
++          <version>5.0.0</version>
++          <scope>compile</scope>
++      </dependency>
++<!--    lombok dependencies-->
++      <dependency>
++        <groupId>org.projectlombok</groupId>
++        <artifactId>lombok</artifactId>
++        <version>1.18.12</version>
++        <scope>provided</scope>
++      </dependency>
++
+   </dependencies>
+ 
+   <build>
+diff --git a/src/main/java/Persistence/ArtistDAO.java b/src/main/java/Persistence/ArtistDAO.java
+deleted file mode 100644
+index f0927a7..0000000
+--- a/src/main/java/Persistence/ArtistDAO.java
++++ /dev/null
+@@ -1,34 +0,0 @@
+-package Persistence;
+-
+-
+-import Entity.Artists;
+-
+-import org.apache.logging.log4j.LogManager;
+-import org.apache.logging.log4j.Logger;
+-import org.hibernate.Session;
+-import org.hibernate.SessionFactory;
+-
+-import javax.persistence.criteria.CriteriaBuilder;
+-import javax.persistence.criteria.CriteriaQuery;
+-import javax.persistence.criteria.Root;
+-import java.util.List;
+-
+-public class ArtistDAO {
+-    private final Logger logger = LogManager.getLogger(this.getClass());
+-    private SessionFactory sessionFactory = SessionFactoryProvider.getSessionFactory();
+-
+-
+-    /**
+-     * gets all users
+-     */
+-    public List<Artists> getAllUsers() {
+-        Session session = sessionFactory.openSession();
+-        CriteriaBuilder builder = session.getCriteriaBuilder();
+-        CriteriaQuery<Artists> query = builder.createQuery(Artists.class);
+-        Root<Artists> root = query.from(Artists.class);
+-        List<Artists> users = session.createQuery(query).getResultList();
+-        session.close();
+-        return users;
+-    }
+-
+-}
+diff --git a/src/main/java/Persistence/UserDAO.java b/src/main/java/Persistence/UserDAO.java
+deleted file mode 100644
+index 591151d..0000000
+--- a/src/main/java/Persistence/UserDAO.java
++++ /dev/null
+@@ -1,33 +0,0 @@
+-package Persistence;
+-
+-
+-import Entity.User;
+-import org.apache.logging.log4j.LogManager;
+-import org.apache.logging.log4j.Logger;
+-import org.hibernate.Session;
+-import org.hibernate.SessionFactory;
+-
+-import javax.persistence.criteria.CriteriaBuilder;
+-import javax.persistence.criteria.CriteriaQuery;
+-import javax.persistence.criteria.Root;
+-import java.util.List;
+-
+-public class UserDAO {
+-    private final Logger logger = LogManager.getLogger(this.getClass());
+-    private SessionFactory sessionFactory = SessionFactoryProvider.getSessionFactory();
+-
+-
+-    /**
+-     * gets all users
+-     */
+-    public List<User> getAllUsers() {
+-        Session session = sessionFactory.openSession();
+-        CriteriaBuilder builder = session.getCriteriaBuilder();
+-        CriteriaQuery<User> query = builder.createQuery(User.class);
+-        Root<User> root = query.from(User.class);
+-        List<User> users = session.createQuery(query).getResultList();
+-        session.close();
+-        return users;
+-    }
+-
+-}
+diff --git a/src/main/java/Controller/SearchUser.java b/src/main/java/controller/SearchUser.java
+similarity index 82%
+rename from src/main/java/Controller/SearchUser.java
+rename to src/main/java/controller/SearchUser.java
+index 5f51d06..41c36e2 100644
+--- a/src/main/java/Controller/SearchUser.java
++++ b/src/main/java/controller/SearchUser.java
+@@ -1,6 +1,7 @@
+-package Controller;
++package controller;
+ 
+-import Persistence.UserDAO;
++import entity.User;
++import persistence.GenericDao;
+ 
+ import javax.servlet.RequestDispatcher;
+ import javax.servlet.ServletException;
+@@ -22,9 +23,9 @@ import java.io.IOException;
+ public class SearchUser extends HttpServlet {
+     @Override
+     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+-        UserDAO userDao = new UserDAO();
++        GenericDao genericDao = new GenericDao(User.class);
++
+ 
+-        req.setAttribute("users", userDao.getAllUsers());
+         RequestDispatcher dispatcher = req.getRequestDispatcher("/results.jsp");
+         dispatcher.forward(req, resp);
+     }
+diff --git a/src/main/java/Entity/Artists.java b/src/main/java/entity/Artist.java
+similarity index 94%
+rename from src/main/java/Entity/Artists.java
+rename to src/main/java/entity/Artist.java
+index 080cdfa..0293bd3 100644
+--- a/src/main/java/Entity/Artists.java
++++ b/src/main/java/entity/Artist.java
+@@ -1,4 +1,4 @@
+-package Entity;
++package entity;
+ 
+ import org.hibernate.annotations.GenericGenerator;
+ 
+@@ -6,7 +6,7 @@ import javax.persistence.*;
+ 
+ @Entity(name = "Artist")
+ @Table(name = "artist")
+-public class Artists {
++public class Artist {
+ 
+     @Id
+     @GeneratedValue(strategy = GenerationType.AUTO, generator = "native")
+diff --git a/src/main/java/entity/Role.java b/src/main/java/entity/Role.java
+new file mode 100644
+index 0000000..62dfbff
+--- /dev/null
++++ b/src/main/java/entity/Role.java
+@@ -0,0 +1,32 @@
++package entity;
++
++import lombok.*;
++import org.hibernate.annotations.GenericGenerator;
++
++import javax.persistence.*;
++import java.util.HashSet;
++import java.util.Set;
++
++@Data
++
++@NoArgsConstructor
++@AllArgsConstructor
++@Entity(name = "Role")
++@Table(name = "role")
++public class Role {
++    @Id
++    @GeneratedValue(strategy = GenerationType.AUTO, generator = "native")
++    @GenericGenerator(name = "native", strategy = "native")
++    private int id;
++    @Column(name = "role")
++    private String role;
++    @EqualsAndHashCode.Exclude
++    @ToString.Exclude
++    @OneToMany(mappedBy = "role_id", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
++    private Set<User> users = new HashSet<>();
++
++    public Role(String role) {
++        this.role = role;
++    }
++
++}
+diff --git a/src/main/java/Entity/User.java b/src/main/java/entity/User.java
+similarity index 50%
+rename from src/main/java/Entity/User.java
+rename to src/main/java/entity/User.java
+index 562dc74..8c60188 100644
+--- a/src/main/java/Entity/User.java
++++ b/src/main/java/entity/User.java
+@@ -1,8 +1,16 @@
+-package Entity;
++package entity;
++import lombok.*;
+ import org.hibernate.annotations.GenericGenerator;
+ 
+ import javax.persistence.*;
+ 
++/**
++ * represents one user in the music application
++ */
++@Setter
++@Getter
++@NoArgsConstructor
++@AllArgsConstructor
+ @Entity(name = "User")
+ @Table(name = "user")
+ public class User {
+@@ -10,37 +18,17 @@ public class User {
+     @GeneratedValue(strategy = GenerationType.AUTO, generator = "native")
+     @GenericGenerator(name = "native", strategy = "native")
+     private int id;
+-
++    @ManyToOne
++    @EqualsAndHashCode.Exclude
++    @ToString.Exclude
++    private Role role;
+     @Column(name = "user_name")
+-    private String user;
++    private String userName;
+     @Column(name = "password")
+     private String password;
+ 
+-    public User() {
+-
+-    }
+-
+-    public int getId() {
+-        return id;
+-    }
+-
+-    public void setId(int id) {
+-        this.id = id;
+-    }
+-
+-    public String getUser() {
+-        return user;
+-    }
+-
+-    public void setUser(String user) {
+-        this.user = user;
+-    }
+-
+-    public String getPassword() {
+-        return password;
+-    }
+-
+-    public void setPassword(String password) {
++    public User(String userName, String password) {
++        this.userName = userName;
+         this.password = password;
+     }
+ }
+\ No newline at end of file
+diff --git a/src/main/java/persistence/GenericDao.java b/src/main/java/persistence/GenericDao.java
+new file mode 100644
+index 0000000..7bd509b
+--- /dev/null
++++ b/src/main/java/persistence/GenericDao.java
+@@ -0,0 +1,156 @@
++package persistence;
++import java.util.ArrayList;
++import java.util.List;
++import java.util.Map;
++
++import javax.persistence.criteria.CriteriaBuilder;
++import javax.persistence.criteria.CriteriaQuery;
++import javax.persistence.criteria.Predicate;
++import javax.persistence.criteria.Root;
++
++import org.apache.logging.log4j.LogManager;
++import org.apache.logging.log4j.Logger;
++import org.hibernate.Session;
++import org.hibernate.Transaction;
++
++/**
++ * A generic DAO somewhat inspired by http://rodrigouchoa.wordpress.com
++ *
++ */
++public class GenericDao<T> {
++
++    private Class<T> type;
++    private final Logger logger = LogManager.getLogger(this.getClass());
++
++
++    /**
++     * Instantiates a new Generic dao.
++     *
++     * @param type the entity type, for example, User.
++     */
++    public GenericDao(Class<T> type) {
++        this.type = type;
++    }
++
++    /**
++     * Gets all entities
++     *
++     * @return the all entities
++     */
++    public List<T> getAll() {
++        Session session = getSession();
++
++        CriteriaBuilder builder = session.getCriteriaBuilder();
++
++        CriteriaQuery<T> query = builder.createQuery(type);
++        Root<T> root = query.from(type);
++        List<T> list = session.createQuery(query).getResultList();
++        session.close();
++        return list;
++
++    }
++
++    /**
++     * Gets an entity by id
++     * @param id entity id to search by
++     * @return entity
++     */
++    public <T> T getById(int id) {
++        Session session = getSession();
++        T entity = (T)session.get(type, id);
++        session.close();
++        return entity;
++    }
++
++    /**
++     * Deletes the entity.
++     *
++     * @param entity entity to be deleted
++     */
++    public void delete(T entity) {
++        Session session = getSession();
++        Transaction transaction = session.beginTransaction();
++        session.delete(entity);
++        transaction.commit();
++        session.close();
++    }
++
++
++    /**
++     * Inserts the entity.
++     *
++     * @param entity entity to be inserted
++     */
++    public int insert(T entity) {
++        int id = 0;
++        Session session = getSession();
++        Transaction transaction = session.beginTransaction();
++        id = (int)session.save(entity);
++        transaction.commit();
++        session.close();
++        return id;
++    }
++
++    /**
++     * Inserts or updates the entity.
++     *
++     * @param entity entity to be inserted/saved
++     */
++    public void saveOrUpdate(T entity) {
++        Session session = getSession();
++        Transaction transaction = session.beginTransaction();
++        session.saveOrUpdate(entity);
++        transaction.commit();
++        session.close();
++    }
++
++
++    /**
++     * Finds entities by one of its properties.
++     * @param propertyName the property name.
++     * @param value the value by which to find.
++     * @return
++     */
++    public List<T> findByPropertyEqual(String propertyName, Object value) {
++        Session session = getSession();
++        CriteriaBuilder builder = session.getCriteriaBuilder();
++        CriteriaQuery<T> query = builder.createQuery(type);
++        Root<T> root = query.from(type);
++        query.select(root).where(builder.equal(root.get(propertyName),value));
++
++        return session.createQuery(query).getResultList();
++    }
++
++    /**
++     * Finds entities by multiple properties.
++     * Inspired by https://stackoverflow.com/questions/11138118/really-dynamic-jpa-criteriabuilder
++     * @param propertyMap property and value pairs
++     * @return entities with properties equal to those passed in the map
++     *
++     *
++     */
++    public List<T> findByPropertyEqual(Map<String, Object> propertyMap) {
++        Session session = getSession();
++        CriteriaBuilder builder = session.getCriteriaBuilder();
++        CriteriaQuery<T> query = builder.createQuery(type);
++        Root<T> root = query.from(type);
++        List<Predicate> predicates = new ArrayList<Predicate>();
++        for (Map.Entry entry: propertyMap.entrySet()) {
++            predicates.add(builder.equal(root.get((String) entry.getKey()), entry.getValue()));
++        }
++        query.select(root).where(builder.and(predicates.toArray(new Predicate[predicates.size()])));
++
++        return session.createQuery(query).getResultList();
++    }
++
++
++    /**
++     * Returns an open session from the SessionFactory
++     * @return session
++     */
++    private Session getSession() {
++        return SessionFactoryProvider.getSessionFactory().openSession();
++
++    }
++
++}
+\ No newline at end of file
+diff --git a/src/main/java/Persistence/SessionFactoryProvider.java b/src/main/java/persistence/SessionFactoryProvider.java
+similarity index 98%
+rename from src/main/java/Persistence/SessionFactoryProvider.java
+rename to src/main/java/persistence/SessionFactoryProvider.java
+index b41214d..cdd09d7 100644
+--- a/src/main/java/Persistence/SessionFactoryProvider.java
++++ b/src/main/java/persistence/SessionFactoryProvider.java
+@@ -1,4 +1,4 @@
+-package Persistence;
++package persistence;
+ 
+ import org.hibernate.SessionFactory;
+ import org.hibernate.boot.Metadata;
+diff --git a/src/main/resources/cleandb.sql b/src/main/resources/cleandb.sql
+new file mode 100644
+index 0000000..f17ffed
+--- /dev/null
++++ b/src/main/resources/cleandb.sql
+@@ -0,0 +1,2 @@
++delete from user;
++INSERT INTO user (user_name, password) VALUES ('dan','dan'),('sue','sue'),('bob','bob');
+diff --git a/src/main/resources/database.properties b/src/main/resources/database.properties
+new file mode 100644
+index 0000000..8318ab4
+--- /dev/null
++++ b/src/main/resources/database.properties
+@@ -0,0 +1,4 @@
++driver=com.mysql.jdbc.Driver
++url=jdbc:mysql://localhost:3306/Music
++username=root
++password=student
+\ No newline at end of file
+diff --git a/src/main/resources/hibernate.cfg.xml b/src/main/resources/hibernate.cfg.xml
+index 4b09eb2..00e816f 100644
+--- a/src/main/resources/hibernate.cfg.xml
++++ b/src/main/resources/hibernate.cfg.xml
+@@ -9,7 +9,8 @@
+         <property name="hibernate.c3p0.timeout">300</property>
+         <property name="hibernate.c3p0.max_statements">50</property>
+         <property name="hibernate.c3p0.idle_test_period">3000</property>
+-        <mapping class="Entity.User"/>
++        <mapping class="entity.User"/>
++        <mapping class="entity.Role"/>
+ 
+     </session-factory>
+ </hibernate-configuration>
+\ No newline at end of file
+diff --git a/src/test/.gitignore b/src/test/.gitignore
+new file mode 100644
+index 0000000..7136f34
+--- /dev/null
++++ b/src/test/.gitignore
+@@ -0,0 +1,49 @@
++# Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion, Android Studio and Webstorm
++# Reference: https://intellij-support.jetbrains.com/hc/en-us/articles/206544839
++.DS_Store*
++# User-specific stuff:
++.idea/workspace.xml
++.idea/tasks.xml
++.idea/dictionaries
++.idea/vcs.xml
++.idea/jsLibraryMappings.xml
++
++# Sensitive or high-churn files:
++.idea/dataSources.ids
++.idea/dataSources.xml
++.idea/dataSources.local.xml
++.idea/sqlDataSources.xml
++.idea/dynamic.xml
++.idea/uiDesigner.xml
++
++# Gradle:
++.idea/gradle.xml
++.idea/libraries
++
++# Mongo Explorer plugin:
++.idea/mongoSettings.xml
++
++## File-based project format:
++*.iws
++
++## Plugin-specific files:
++
++# IntelliJ
++/out/
++
++# Maven
++/target/
++/log/
++/lib/
++
++# mpeltonen/sbt-idea plugin
++.idea_modules/
++
++# JIRA plugin
++atlassian-ide-plugin.xml
++
++# Crashlytics plugin (for Android Studio and IntelliJ)
++com_crashlytics_export_strings.xml
++crashlytics.properties
++crashlytics-build.properties
++fabric.properties
+\ No newline at end of file
+diff --git a/src/test/java/persistence/RoleDaoTest.java b/src/test/java/persistence/RoleDaoTest.java
+new file mode 100644
+index 0000000..613a9e0
+--- /dev/null
++++ b/src/test/java/persistence/RoleDaoTest.java
+@@ -0,0 +1,115 @@
++package persistence;
++import entity.Role;
++import org.apache.logging.log4j.LogManager;
++import org.apache.logging.log4j.Logger;
++import org.junit.jupiter.api.BeforeEach;
++import org.junit.jupiter.api.Test;
++
++import java.util.List;
++
++import static org.junit.jupiter.api.Assertions.*;
++
++public class RoleDaoTest {
++    private final Logger logger = LogManager.getLogger(this.getClass());
++    GenericDao genericDao;
++
++
++    /**
++     * Run set up tasks before each test:
++     * 1. execute sql which deletes everything from the table and inserts records)
++     * 2. Create any objects needed in the tests
++     */
++    @BeforeEach
++    void setUp() {
++        genericDao = new GenericDao(Role.class);
++
++
++        util.Database database = util.Database.getInstance();
++        database.runSQL("cleandb.sql");
++
++    }
++
++    /**
++     * Verify successful retrieval of a user
++     */
++    @Test
++    void getByIdSuccess() {
++        Role retrievedRole = (Role)genericDao.getById(1);
++        assertEquals("admin", retrievedRole.getRole());
++
++
++
++    }
++    /**
++     * Verify successful retrieval of all users
++     */
++    @Test
++    void getAllSuccess() {
++        List<Role> users = genericDao.getAll();
++        assertEquals(2, users.size());
++    }
++
++    /**
++     * Verify successful get by property (equal match)
++     */
++    @Test
++    void getByPropertyEqualSuccess() {
++        List<Role> users = genericDao.findByPropertyEqual("role", "admin");
++        assertEquals(1, users.size());
++        assertEquals(1, users.get(0).getId());
++    }
++    /**
++     * Verify successful get by property (like match)
++     */
++    @Test
++    void getByPropertyLikeSuccess() {
++        List<Role> users = genericDao.findByPropertyEqual("role", "z");
++        assertEquals(0, users.size());
++    }
++    /**
++     * Verify successful update of user
++     */
++    @Test
++    void updateSuccess() {
++        String newRoleName = "Davis";
++        Role userToUpdate = (Role)genericDao.getById(4);
++        logger.debug(userToUpdate);
++        userToUpdate.setRole(newRoleName);
++        genericDao.saveOrUpdate(userToUpdate);
++        Role retrievedUser = (Role)genericDao.getById(1);//
++        assertEquals(newRoleName, retrievedUser.getRole());
++    }
++    /**
++     * Verify successful insert of a user
++     */
++    @Test
++    void insertSuccess() {
++
++        Role newUser = new Role("Lord of Pancakes");
++        int id = genericDao.insert(newUser);
++        assertNotEquals(0,id);
++        Role insertedUser = (Role)genericDao.getById(id);
++        assertEquals("Lord of Pancakes", insertedUser.getRole());
++        // Could continue comparing all values, but
++        // it may make sense to use .equals()
++        // review .equals recommendations http://docs.jboss.org/hibernate/orm/5.2/userguide/html_single/Hibernate_User_Guide.html#mapping-model-pojo-equalshashcode
++    }
++
++
++    /**
++     * Verify successful delete of user
++     */
++    @Test
++    void deleteSuccess() {
++        genericDao.delete(genericDao.getById(4));
++        assertNull(genericDao.getById(4));
++    }
++
++
++
++
++
++
++
++
++}
+\ No newline at end of file
+diff --git a/src/test/java/persistence/UserDaoTest.java b/src/test/java/persistence/UserDaoTest.java
+new file mode 100644
+index 0000000..d07f271
+--- /dev/null
++++ b/src/test/java/persistence/UserDaoTest.java
+@@ -0,0 +1,116 @@
++package persistence;
++import entity.User;
++import lombok.extern.log4j.Log4j2;
++import org.apache.logging.log4j.LogManager;
++import org.apache.logging.log4j.Logger;
++import org.junit.jupiter.api.BeforeEach;
++import org.junit.jupiter.api.Test;
++
++import java.util.List;
++
++import static org.junit.jupiter.api.Assertions.*;
++@Log4j2
++public class UserDaoTest {
++
++    GenericDao genericDao;
++
++
++    /**
++     * Run set up tasks before each test:
++     * 1. execute sql which deletes everything from the table and inserts records)
++     * 2. Create any objects needed in the tests
++     */
++    @BeforeEach
++    void setUp() {
++        genericDao = new GenericDao(User.class);
++
++
++        util.Database database = util.Database.getInstance();
++        database.runSQL("cleandb.sql");
++
++    }
++
++    /**
++     * Verify successful retrieval of a user
++     */
++    @Test
++    void getByIdSuccess() {
++        User retrievedUser = (User)genericDao.getById(1);
++        assertEquals("dan", retrievedUser.getUserName());
++        assertEquals("dan", retrievedUser.getPassword());
++
++
++    }
++    /**
++     * Verify successful retrieval of all users
++     */
++    @Test
++    void getAllSuccess() {
++        List<User> users = genericDao.getAll();
++        assertEquals(2, users.size());
++    }
++
++    /**
++     * Verify successful get by property (equal match)
++     */
++    @Test
++    void getByPropertyEqualSuccess() {
++        List<User> users = genericDao.getAll();
++        assertEquals(3, users.size());
++        assertEquals(1, users.get(0).getId());
++    }
++    /**
++     * Verify successful get by property (like match)
++     */
++    @Test
++    void getByPropertyLikeSuccess() {
++        List<User> users = genericDao.findByPropertyEqual("userName", "z");
++        assertEquals(0, users.size());
++    }
++    /**
++     * Verify successful update of user
++     */
++    @Test
++    void updateSuccess() {
++        String newUserName = "Davis";
++        User userToUpdate = (User)genericDao.getById(1);
++        log.debug(userToUpdate);
++        userToUpdate.setUserName(newUserName);
++        genericDao.saveOrUpdate(userToUpdate);
++        User retrievedUser = (User)genericDao.getById(1);//
++        assertEquals(newUserName, retrievedUser.getUserName());
++    }
++    /**
++     * Verify successful insert of a user
++     */
++    @Test
++    void insertSuccess() {
++
++        User newUser = new User("Fflintstone", "fflintstone");
++        int id = genericDao.insert(newUser);
++        assertNotEquals(0,id);
++        User insertedUser = (User)genericDao.getById(id);
++        assertEquals("Fflintstone", insertedUser.getUserName());
++        // Could continue comparing all values, but
++        // it may make sense to use .equals()
++        // review .equals recommendations http://docs.jboss.org/hibernate/orm/5.2/userguide/html_single/Hibernate_User_Guide.html#mapping-model-pojo-equalshashcode
++    }
++
++
++    /**
++     * Verify successful delete of user
++     */
++    @Test
++    void deleteSuccess() {
++        genericDao.delete(genericDao.getById(2));
++        assertNull(genericDao.getById(2));
++    }
++
++
++
++
++
++
++
++
++}
+\ No newline at end of file
+diff --git a/src/test/java/util/Database.java b/src/test/java/util/Database.java
+new file mode 100644
+index 0000000..4f4069e
+--- /dev/null
++++ b/src/test/java/util/Database.java
+@@ -0,0 +1,122 @@
++package util;
++
++
++import org.apache.logging.log4j.LogManager;
++import org.apache.logging.log4j.Logger;
++
++import java.io.BufferedReader;
++import java.io.IOException;
++import java.io.InputStream;
++import java.io.InputStreamReader;
++import java.sql.Connection;
++import java.sql.DriverManager;
++import java.sql.SQLException;
++import java.sql.Statement;
++import java.util.Properties;
++/**
++ * Provides access the database
++ * Created on 8/31/16.
++ *
++ * @author pwaite
++ */
++
++public class Database {
++
++    private final Logger logger = LogManager.getLogger(this.getClass());
++    // create an object of the class Database
++    private static Database instance = new Database();
++
++    private Properties properties;
++
++    private Connection connection;
++
++    // private constructor prevents instantiating this class anywhere else
++    private Database() {
++        loadProperties();
++
++    }
++
++    private void loadProperties() {
++        properties = new Properties();
++        try {
++            properties.load (this.getClass().getResourceAsStream("/database.properties"));
++        } catch (IOException ioe) {
++            System.out.println("Database.loadProperties()...Cannot load the properties file");
++            ioe.printStackTrace();
++        } catch (Exception e) {
++            System.out.println("Database.loadProperties()..." + e);
++            e.printStackTrace();
++        }
++
++    }
++
++    // get the only Database object available
++    public static Database getInstance() {
++        return instance;
++    }
++
++    public Connection getConnection() {
++        return connection;
++    }
++
++    public void connect() throws Exception {
++        if (connection != null)
++            return;
++
++        try {
++            Class.forName(properties.getProperty("driver"));
++        } catch (ClassNotFoundException e) {
++            throw new Exception("Database.connect()... Error: MySQL Driver not found");
++        }
++
++        String url = properties.getProperty("url");
++        connection = DriverManager.getConnection(url, properties.getProperty("username"),  properties.getProperty("password"));
++    }
++
++    public void disconnect() {
++        if (connection != null) {
++            try {
++                connection.close();
++            } catch (SQLException e) {
++                System.out.println("Cannot close connection" + e);
++            }
++        }
++
++        connection = null;
++    }
++
++    /**
++     * Run the sql.
++     *
++     * @param sqlFile the sql file to be read and executed line by line
++     */
++    public void runSQL(String sqlFile) {
++
++        Statement stmt = null;
++        ClassLoader classloader = Thread.currentThread().getContextClassLoader();
++        InputStream inputStream = classloader.getResourceAsStream(sqlFile);
++        try (BufferedReader br = new BufferedReader(new InputStreamReader(inputStream))) {
++
++            Class.forName("com.mysql.cj.jdbc.Driver");
++            connect();
++            stmt = connection.createStatement();
++
++            while (true) {
++                String sql = br.readLine();
++                if (sql == null) {
++                    break;
++                }
++                stmt.executeUpdate(sql);
++
++            }
++
++        } catch (SQLException se) {
++            logger.error(se);
++        } catch (Exception e) {
++            logger.error(e);
++        } finally {
++            disconnect();
++        }
++
++    }
++}
+\ No newline at end of file
+diff --git a/src/test/resources/cleandb.sql b/src/test/resources/cleandb.sql
+new file mode 100644
+index 0000000..f17ffed
+--- /dev/null
++++ b/src/test/resources/cleandb.sql
+@@ -0,0 +1,2 @@
++delete from user;
++INSERT INTO user (user_name, password) VALUES ('dan','dan'),('sue','sue'),('bob','bob');
+diff --git a/src/test/resources/database.properties b/src/test/resources/database.properties
+new file mode 100644
+index 0000000..ba71874
+--- /dev/null
++++ b/src/test/resources/database.properties
+@@ -0,0 +1,4 @@
++driver=com.mysql.cj.jdbc.Driver
++url=jdbc:mysql://localhost:3306/sample
++username=root
++password=student
+\ No newline at end of file
+diff --git a/src/test/resources/hibernate.cfg.xml b/src/test/resources/hibernate.cfg.xml
+new file mode 100644
+index 0000000..00e816f
+--- /dev/null
++++ b/src/test/resources/hibernate.cfg.xml
+@@ -0,0 +1,16 @@
++<hibernate-configuration>
++    <session-factory>
++        <property name="connection.url">jdbc:mysql://localhost:3306/Music</property>
++        <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
++        <property name="connection.username">root</property>
++        <property name="connection.password">student</property>
++        <property name="hibernate.c3p0.min_size">5</property>
++        <property name="hibernate.c3p0.max_size">20</property>
++        <property name="hibernate.c3p0.timeout">300</property>
++        <property name="hibernate.c3p0.max_statements">50</property>
++        <property name="hibernate.c3p0.idle_test_period">3000</property>
++        <mapping class="entity.User"/>
++        <mapping class="entity.Role"/>
++
++    </session-factory>
++</hibernate-configuration>
+\ No newline at end of file
+diff --git a/src/test/resources/log4j2.properties b/src/test/resources/log4j2.properties
+new file mode 100644
+index 0000000..d050e9f
+--- /dev/null
++++ b/src/test/resources/log4j2.properties
+@@ -0,0 +1,24 @@
++#property.filename = logs
++property.filename = /home/student/IdeaProjects/indieProject/logs
++appenders = console, file
++
++appender.console.type = Console
++appender.console.name = STDOUT
++appender.console.layout.type = PatternLayout
++appender.console.layout.pattern = [%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %c{1} - %msg%n
++
++appender.file.type = File
++appender.file.name = LOGFILE
++appender.file.fileName=${filename}/indieProject.log
++appender.file.layout.type=PatternLayout
++appender.file.layout.pattern=[%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %c{1} - %msg%n
++
++loggers=file
++logger.file.name=edu.matc
++logger.file.level = debug
++logger.file.appenderRefs = file
++logger.file.appenderRef.file.ref = LOGFILE
++
++rootLogger.level = debug
++rootLogger.appenderRefs = stdout
++rootLogger.appenderRef.stdout.ref = STDOUT
+\ No newline at end of file
+diff --git a/target/classes/Controller/SearchUser.class b/target/classes/Controller/SearchUser.class
+deleted file mode 100644
+index 1486f06..0000000
+Binary files a/target/classes/Controller/SearchUser.class and /dev/null differ
+diff --git a/target/classes/Entity/User.class b/target/classes/Entity/User.class
+deleted file mode 100644
+index ce1a8dd..0000000
+Binary files a/target/classes/Entity/User.class and /dev/null differ
+diff --git a/target/classes/META-INF/indieProject.kotlin_module b/target/classes/META-INF/indieProject.kotlin_module
+new file mode 100644
+index 0000000..8fb6019
+Binary files /dev/null and b/target/classes/META-INF/indieProject.kotlin_module differ
+diff --git a/target/classes/Persistence/SessionFactoryProvider.class b/target/classes/Persistence/SessionFactoryProvider.class
+deleted file mode 100644
+index eded698..0000000
+Binary files a/target/classes/Persistence/SessionFactoryProvider.class and /dev/null differ
+diff --git a/target/classes/Persistence/UserDAO.class b/target/classes/Persistence/UserDAO.class
+deleted file mode 100644
+index 4fca4e6..0000000
+Binary files a/target/classes/Persistence/UserDAO.class and /dev/null differ
+diff --git a/target/classes/cleandb.sql b/target/classes/cleandb.sql
+new file mode 100644
+index 0000000..f17ffed
+--- /dev/null
++++ b/target/classes/cleandb.sql
+@@ -0,0 +1,2 @@
++delete from user;
++INSERT INTO user (user_name, password) VALUES ('dan','dan'),('sue','sue'),('bob','bob');
+diff --git a/target/classes/hibernate.cfg.xml b/target/classes/hibernate.cfg.xml
+index 4b09eb2..00e816f 100644
+--- a/target/classes/hibernate.cfg.xml
++++ b/target/classes/hibernate.cfg.xml
+@@ -9,7 +9,8 @@
+         <property name="hibernate.c3p0.timeout">300</property>
+         <property name="hibernate.c3p0.max_statements">50</property>
+         <property name="hibernate.c3p0.idle_test_period">3000</property>
+-        <mapping class="Entity.User"/>
++        <mapping class="entity.User"/>
++        <mapping class="entity.Role"/>
+ 
+     </session-factory>
+ </hibernate-configuration>
+\ No newline at end of file
+diff --git a/target/maven-archiver/pom.properties b/target/maven-archiver/pom.properties
+deleted file mode 100644
+index 3be79f0..0000000
+--- a/target/maven-archiver/pom.properties
++++ /dev/null
+@@ -1,5 +0,0 @@
+-#Generated by Maven
+-#Mon Feb 17 15:57:30 CST 2020
+-groupId=dan
+-artifactId=indieProject
+-version=1.0-SNAPSHOT
+diff --git a/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst b/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst
+index d42454e..bc5dd27 100644
+--- a/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst
++++ b/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst
+@@ -1,6 +1,6 @@
+-Persistence/SessionFactoryProvider.class
+-Entity/Artists.class
+-Controller/SearchUser.class
+-Persistence/ArtistDAO.class
+-Persistence/UserDAO.class
+-Entity/User.class
++entity/Artist.class
++persistence/SessionFactoryProvider.class
++controller/SearchUser.class
++entity/User.class
++persistence/UserDao.class
++entity/Role.class
+diff --git a/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst b/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst
+index 0aae328..25e6ae1 100644
+--- a/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst
++++ b/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst
+@@ -1,6 +1,7 @@
+-/home/student/IdeaProjects/indieProject/src/main/java/Persistence/SessionFactoryProvider.java
+-/home/student/IdeaProjects/indieProject/src/main/java/Controller/SearchUser.java
+-/home/student/IdeaProjects/indieProject/src/main/java/Entity/Artists.java
+-/home/student/IdeaProjects/indieProject/src/main/java/Persistence/ArtistDAO.java
+-/home/student/IdeaProjects/indieProject/src/main/java/Persistence/UserDAO.java
+-/home/student/IdeaProjects/indieProject/src/main/java/Entity/User.java
++/home/student/IdeaProjects/indieProject/src/main/java/persistence/ArtistDao.java
++/home/student/IdeaProjects/indieProject/src/main/java/entity/Artist.java
++/home/student/IdeaProjects/indieProject/src/main/java/entity/User.java
++/home/student/IdeaProjects/indieProject/src/main/java/entity/Role.java
++/home/student/IdeaProjects/indieProject/src/main/java/controller/SearchUser.java
++/home/student/IdeaProjects/indieProject/src/main/java/persistence/UserDao.java
++/home/student/IdeaProjects/indieProject/src/main/java/persistence/SessionFactoryProvider.java
+diff --git a/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst b/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst
+new file mode 100644
+index 0000000..9178a23
+--- /dev/null
++++ b/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst
+@@ -0,0 +1 @@
++util/Database.class
+diff --git a/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst b/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst
+new file mode 100644
+index 0000000..c3c17a2
+--- /dev/null
++++ b/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst
+@@ -0,0 +1,2 @@
++/home/student/IdeaProjects/indieProject/src/test/java/util/Database.java
++/home/student/IdeaProjects/indieProject/src/test/java/persistence/UserDaoTest.java
+diff --git a/target/test-classes/cleandb.sql b/target/test-classes/cleandb.sql
+new file mode 100644
+index 0000000..f17ffed
+--- /dev/null
++++ b/target/test-classes/cleandb.sql
+@@ -0,0 +1,2 @@
++delete from user;
++INSERT INTO user (user_name, password) VALUES ('dan','dan'),('sue','sue'),('bob','bob');
+diff --git a/target/test-classes/hibernate.cfg.xml b/target/test-classes/hibernate.cfg.xml
+new file mode 100644
+index 0000000..00e816f
+--- /dev/null
++++ b/target/test-classes/hibernate.cfg.xml
+@@ -0,0 +1,16 @@
++<hibernate-configuration>
++    <session-factory>
++        <property name="connection.url">jdbc:mysql://localhost:3306/Music</property>
++        <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
++        <property name="connection.username">root</property>
++        <property name="connection.password">student</property>
++        <property name="hibernate.c3p0.min_size">5</property>
++        <property name="hibernate.c3p0.max_size">20</property>
++        <property name="hibernate.c3p0.timeout">300</property>
++        <property name="hibernate.c3p0.max_statements">50</property>
++        <property name="hibernate.c3p0.idle_test_period">3000</property>
++        <mapping class="entity.User"/>
++        <mapping class="entity.Role"/>
++
++    </session-factory>
++</hibernate-configuration>
+\ No newline at end of file
+diff --git a/target/test-classes/log4j2.properties b/target/test-classes/log4j2.properties
+new file mode 100644
+index 0000000..d050e9f
+--- /dev/null
++++ b/target/test-classes/log4j2.properties
+@@ -0,0 +1,24 @@
++#property.filename = logs
++property.filename = /home/student/IdeaProjects/indieProject/logs
++appenders = console, file
++
++appender.console.type = Console
++appender.console.name = STDOUT
++appender.console.layout.type = PatternLayout
++appender.console.layout.pattern = [%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %c{1} - %msg%n
++
++appender.file.type = File
++appender.file.name = LOGFILE
++appender.file.fileName=${filename}/indieProject.log
++appender.file.layout.type=PatternLayout
++appender.file.layout.pattern=[%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %c{1} - %msg%n
++
++loggers=file
++logger.file.name=edu.matc
++logger.file.level = debug
++logger.file.appenderRefs = file
++logger.file.appenderRef.file.ref = LOGFILE
++
++rootLogger.level = debug
++rootLogger.appenderRefs = stdout
++rootLogger.appenderRef.stdout.ref = STDOUT
+\ No newline at end of file
+diff --git a/timeLog.md b/timeLog.md
+index 44485d6..5807efc 100644
+--- a/timeLog.md
++++ b/timeLog.md
+@@ -14,4 +14,8 @@ I got my Wireframe and the user story done. project plan is still in the works
+ 
+ week 4 - 10 hours
+ - 
+-- set up hibernate and made a few daos. it still doesnt work yet due to an unknown exception that is occurring at launch. it says its a non-application error. Im going to discuss it in class to see if anyone has any insight.
+\ No newline at end of file
++- set up hibernate and made a few daos. it still doesnt work yet due to an unknown exception that is occurring at launch. it says its a non-application error. Im going to discuss it in class to see if anyone has any insight.
++
++week 5 
++-
++- started using lombok(super cool!)
+\ No newline at end of file

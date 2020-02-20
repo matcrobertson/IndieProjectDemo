@@ -6,19 +6,12 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f72530a8-eb98-414b-9374-4e272efdd8dc" name="Default Changelist" comment="all tests pass. screenshot was taken">
+    <list default="true" id="f72530a8-eb98-414b-9374-4e272efdd8dc" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/entity/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/Role.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/cleandb.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/cleandb.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/persistence/RoleDaoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/persistence/RoleDaoTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/cleandb.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/cleandb.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/indieProject.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/cleandb.sql" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cleandb.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/cleandb.sql" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/cleandb.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/database.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/database.properties" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -29,7 +22,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageViewManager">
-    <option name="myElementSize" value="222" />
+    <option name="myElementSize" value="194" />
   </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
@@ -80,11 +73,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/test/java/persistence/RoleDaoTest.java">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/entity/Role.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1416">
-              <caret line="59" column="5" lean-forward="true" selection-start-line="59" selection-start-column="5" selection-end-line="59" selection-end-column="5" />
+            <state relative-caret-position="239">
+              <caret line="22" selection-start-line="22" selection-end-line="22" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/entity/User.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="359">
+              <caret line="25" selection-start-line="25" selection-end-line="25" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -102,19 +107,31 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/logs/indieProject.log">
-          <provider selected="true" editor-type-id="LogFileEditorProvider" />
+        <entry file="file://$PROJECT_DIR$/src/test/java/persistence/UserDaoTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="277">
+              <caret line="58" selection-start-line="58" selection-end-line="58" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/persistence/GenericDao.java">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="359">
-              <caret line="124" column="20" selection-start-line="124" selection-start-column="20" selection-end-line="124" selection-end-column="20" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#3829#3840#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="288">
+              <caret line="12" column="35" selection-start-line="12" selection-start-column="31" selection-end-line="12" selection-end-column="35" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/test/resources/database.properties">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="24">
+              <caret line="1" column="37" selection-start-line="1" selection-start-column="37" selection-end-line="1" selection-end-column="37" />
             </state>
           </provider>
         </entry>
@@ -213,17 +230,17 @@
         <option value="$PROJECT_DIR$/src/test/resources/hibernate.cfg.xml" />
         <option value="$PROJECT_DIR$/logs/indieProject.log" />
         <option value="$PROJECT_DIR$/src/test/java/util/Database.java" />
-        <option value="$PROJECT_DIR$/src/test/resources/database.properties" />
         <option value="$PROJECT_DIR$/src/test/resources/cleandb.sql" />
         <option value="$PROJECT_DIR$/src/main/resources/database.properties" />
         <option value="$PROJECT_DIR$/src/test/java/persistence/UserDaoTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/controller/SearchUser.java" />
-        <option value="$PROJECT_DIR$/src/main/java/entity/User.java" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/main/java/persistence/GenericDao.java" />
-        <option value="$PROJECT_DIR$/src/main/java/entity/Role.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/cleandb.sql" />
         <option value="$PROJECT_DIR$/src/test/java/persistence/RoleDaoTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/entity/Role.java" />
+        <option value="$PROJECT_DIR$/src/main/java/entity/User.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/cleandb.sql" />
+        <option value="$PROJECT_DIR$/src/test/resources/database.properties" />
       </list>
     </option>
   </component>
@@ -419,7 +436,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.RoleDaoTest">
+  <component name="RunManager" selected="TomEE Server.TomEE 8.5.41">
     <configuration name="RoleDaoTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="indieProject" />
       <extension name="coverage">
@@ -431,22 +448,6 @@
       <option name="PACKAGE_NAME" value="persistence" />
       <option name="MAIN_CLASS_NAME" value="persistence.RoleDaoTest" />
       <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="RoleDaoTest.deleteSuccess" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="indieProject" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="persistence.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="persistence" />
-      <option name="MAIN_CLASS_NAME" value="persistence.RoleDaoTest" />
-      <option name="METHOD_NAME" value="deleteSuccess" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -467,22 +468,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RoleDaoTest.getByIdSuccess" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="indieProject" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="persistence.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="persistence" />
-      <option name="MAIN_CLASS_NAME" value="persistence.RoleDaoTest" />
-      <option name="METHOD_NAME" value="getByIdSuccess" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="RoleDaoTest.updateSuccess" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="indieProject" />
       <extension name="coverage">
@@ -494,6 +479,37 @@
       <option name="PACKAGE_NAME" value="persistence" />
       <option name="MAIN_CLASS_NAME" value="persistence.RoleDaoTest" />
       <option name="METHOD_NAME" value="updateSuccess" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserDaoTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="indieProject" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="persistence.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="persistence" />
+      <option name="MAIN_CLASS_NAME" value="persistence.UserDaoTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserDaoTest.getByPropertyEqualSuccess" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="indieProject" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="persistence.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="persistence" />
+      <option name="MAIN_CLASS_NAME" value="persistence.UserDaoTest" />
+      <option name="METHOD_NAME" value="getByPropertyEqualSuccess" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -575,11 +591,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.UserDaoTest" />
+        <item itemvalue="JUnit.UserDaoTest.getByPropertyEqualSuccess" />
         <item itemvalue="JUnit.RoleDaoTest" />
         <item itemvalue="JUnit.RoleDaoTest.getAllSuccess" />
         <item itemvalue="JUnit.RoleDaoTest.updateSuccess" />
-        <item itemvalue="JUnit.RoleDaoTest.deleteSuccess" />
-        <item itemvalue="JUnit.RoleDaoTest.getByIdSuccess" />
       </list>
     </recent_temporary>
   </component>
@@ -619,7 +635,7 @@
       <workItem from="1582145348597" duration="2697000" />
       <workItem from="1582148687021" duration="2580000" />
       <workItem from="1582151499949" duration="2208000" />
-      <workItem from="1582215910808" duration="21517000" />
+      <workItem from="1582215910808" duration="23687000" />
     </task>
     <task id="LOCAL-00001" summary="planning has commenced">
       <created>1581156080723</created>
@@ -677,43 +693,50 @@
       <option name="project" value="LOCAL" />
       <updated>1582063544490</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="it currently works. pretty sure that the foreign keys dont exist though">
+      <created>1582237612649</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1582237612649</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="RoleDaoTest_getAllSuccess - 2020.02.20 at 16h 13m 42s.xml">
-      <configuration name="RoleDaoTest.getAllSuccess" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="RoleDaoTest_getAllSuccess - 2020.02.20 at 16h 13m 49s.xml">
-      <configuration name="RoleDaoTest.getAllSuccess" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="RoleDaoTest - 2020.02.20 at 16h 15m 11s.xml">
-      <configuration name="RoleDaoTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="RoleDaoTest - 2020.02.20 at 16h 15m 48s.xml">
-      <configuration name="RoleDaoTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="RoleDaoTest - 2020.02.20 at 16h 16m 25s.xml">
-      <configuration name="RoleDaoTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="RoleDaoTest - 2020.02.20 at 16h 20m 46s.xml">
-      <configuration name="RoleDaoTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="RoleDaoTest - 2020.02.20 at 16h 20m 54s.xml">
-      <configuration name="RoleDaoTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="RoleDaoTest_getAllSuccess - 2020.02.20 at 16h 21m 24s.xml">
-      <configuration name="RoleDaoTest.getAllSuccess" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="RoleDaoTest_getAllSuccess - 2020.02.20 at 16h 21m 35s.xml">
-      <configuration name="RoleDaoTest.getAllSuccess" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="RoleDaoTest - 2020.02.20 at 16h 22m 02s.xml">
       <configuration name="RoleDaoTest" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="RoleDaoTest - 2020.02.20 at 16h 24m 18s.xml">
+      <configuration name="RoleDaoTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="UserDaoTest - 2020.02.20 at 16h 52m 51s.xml">
+      <configuration name="UserDaoTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="UserDaoTest - 2020.02.20 at 16h 53m 37s.xml">
+      <configuration name="UserDaoTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="UserDaoTest_getByPropertyEqualSuccess - 2020.02.20 at 16h 55m 29s.xml">
+      <configuration name="UserDaoTest.getByPropertyEqualSuccess" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="UserDaoTest_getByPropertyEqualSuccess - 2020.02.20 at 16h 55m 40s.xml">
+      <configuration name="UserDaoTest.getByPropertyEqualSuccess" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="UserDaoTest - 2020.02.20 at 16h 58m 50s.xml">
+      <configuration name="UserDaoTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="UserDaoTest_getByPropertyEqualSuccess - 2020.02.20 at 16h 59m 03s.xml">
+      <configuration name="UserDaoTest.getByPropertyEqualSuccess" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="UserDaoTest_getByPropertyEqualSuccess - 2020.02.20 at 16h 59m 13s.xml">
+      <configuration name="UserDaoTest.getByPropertyEqualSuccess" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="UserDaoTest_getByPropertyEqualSuccess - 2020.02.20 at 16h 59m 25s.xml">
+      <configuration name="UserDaoTest.getByPropertyEqualSuccess" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="93521000" />
+    <option name="totallyTimeSpent" value="95691000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -728,7 +751,7 @@
     <frame x="67" y="25" width="1853" height="1055" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18781163" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18781163" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -740,7 +763,7 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32988358" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.65152353" weight="0.29621622" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.51135135" />
+      <window_info anchor="bottom" id="Debug" order="3" visible="true" weight="0.51135135" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32774192" />
@@ -751,7 +774,7 @@
       <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="12" weight="0.15675676" />
       <window_info anchor="bottom" id="Application Servers" order="13" sideWeight="0.499723" weight="0.32756758" />
-      <window_info active="true" anchor="bottom" id="Database Console" order="14" sideWeight="0.49861497" visible="true" weight="0.32972974" />
+      <window_info anchor="bottom" id="Database Console" order="14" sideWeight="0.49861497" weight="0.32972974" />
       <window_info anchor="bottom" id="Messages" order="15" weight="0.32756758" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -760,12 +783,12 @@
       <window_info anchor="right" id="Palette" order="4" />
       <window_info anchor="right" id="Capture Analysis" order="5" />
       <window_info anchor="right" id="JSF" order="6" />
-      <window_info anchor="right" id="Database" order="7" sideWeight="0.4983871" visible="true" weight="0.23601107" />
+      <window_info anchor="right" id="Database" order="7" sideWeight="0.49778762" visible="true" weight="0.23601107" />
       <window_info anchor="right" id="Palette&#9;" order="8" />
       <window_info anchor="right" id="Theme Preview" order="9" />
       <window_info anchor="right" id="CDI" order="10" />
       <window_info anchor="right" id="Bean Validation" order="11" />
-      <window_info anchor="right" id="Coverage" order="12" sideWeight="0.5016129" side_tool="true" visible="true" weight="0.23601107" />
+      <window_info anchor="right" id="Coverage" order="12" sideWeight="0.5022124" side_tool="true" visible="true" weight="0.23601107" />
     </layout>
     <layout-to-restore>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.33333334" />
@@ -817,7 +840,20 @@
     <MESSAGE value="getting a fatal error on application launch" />
     <MESSAGE value="Fatal error was fixed" />
     <MESSAGE value="all tests pass. screenshot was taken" />
-    <option name="LAST_COMMIT_MESSAGE" value="all tests pass. screenshot was taken" />
+    <MESSAGE value="it currently works. pretty sure that the foreign keys dont exist though" />
+    <option name="LAST_COMMIT_MESSAGE" value="it currently works. pretty sure that the foreign keys dont exist though" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/persistence/UserDaoTest.java</url>
+          <line>59</line>
+          <properties />
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/indieProject$RoleDaoTest.ic" NAME="RoleDaoTest Coverage Results" MODIFIED="1582237452552" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
@@ -825,6 +861,9 @@
     </SUITE>
     <SUITE FILE_PATH="coverage/indieProject$UserDaoTest.ic" NAME="UserDaoTest Coverage Results" MODIFIED="1582056162015" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>Persistence.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/indieProject$UserDaoTest_getByPropertyEqualSuccess.ic" NAME="UserDaoTest.getByPropertyEqualSuccess Coverage Results" MODIFIED="1582239335353" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>persistence.*</FILTER>
     </SUITE>
   </component>
   <component name="editorHistoryManager">
@@ -942,16 +981,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/entity/Artist.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-24">
-          <caret line="8" column="19" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Readme.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
@@ -994,13 +1023,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="72">
           <caret line="3" column="16" lean-forward="true" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/resources/database.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="31" selection-start-column="31" selection-end-column="31" />
         </state>
       </provider>
     </entry>
@@ -1082,16 +1104,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/persistence/UserDaoTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-304">
-          <caret line="24" column="48" lean-forward="true" selection-start-line="24" selection-start-column="10" selection-end-line="24" selection-end-column="48" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="33">
@@ -1099,10 +1111,87 @@
         </state>
       </provider>
     </entry>
+    <entry file="das://2af83ca9-2911-46d3-b3d0-dca6effec053/schema/Music/table/role">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state projectRestartId="ac75b98e-6576-423b-a815-53aad27877c4">
+          <filtering>
+            <filter text="" />
+          </filtering>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/resources/cleandb.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="16" selection-start-column="16" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/persistence/GenericDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="263">
+          <caret line="138" column="7" lean-forward="true" selection-start-line="138" selection-start-column="7" selection-end-line="138" selection-end-column="7" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3829#3840#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/persistence/RoleDaoTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1416">
+          <caret line="59" column="5" lean-forward="true" selection-start-line="59" selection-start-column="5" selection-end-line="59" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logs/indieProject.log">
+      <provider selected="true" editor-type-id="LogFileEditorProvider" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/entity/Artist.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="24">
+          <caret line="8" column="19" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/entity/Role.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="239">
+          <caret line="22" selection-start-line="22" selection-end-line="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/entity/User.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="284">
-          <caret line="23" column="22" lean-forward="true" selection-start-line="23" selection-start-column="22" selection-end-line="23" selection-end-column="22" />
+        <state relative-caret-position="359">
+          <caret line="25" selection-start-line="25" selection-end-line="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/cleandb.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="16" selection-start-column="16" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/persistence/UserDaoTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="277">
+          <caret line="58" selection-start-line="58" selection-end-line="58" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1116,60 +1205,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://2af83ca9-2911-46d3-b3d0-dca6effec053/schema/Music/table/role">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state projectRestartId="ac75b98e-6576-423b-a815-53aad27877c4">
-          <filtering>
-            <filter text="" />
-          </filtering>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/entity/Role.java">
+    <entry file="file://$PROJECT_DIR$/src/test/resources/database.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/resources/cleandb.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="16" selection-start-column="16" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/logs/indieProject.log">
-      <provider selected="true" editor-type-id="LogFileEditorProvider" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/persistence/GenericDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="359">
-          <caret line="124" column="20" selection-start-line="124" selection-start-column="20" selection-end-line="124" selection-end-column="20" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#3829#3840#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/cleandb.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="16" selection-start-column="16" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/persistence/RoleDaoTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1416">
-          <caret line="59" column="5" lean-forward="true" selection-start-line="59" selection-start-column="5" selection-end-line="59" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="24">
+          <caret line="1" column="37" selection-start-line="1" selection-start-column="37" selection-end-line="1" selection-end-column="37" />
         </state>
       </provider>
     </entry>

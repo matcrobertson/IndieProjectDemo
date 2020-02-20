@@ -20,10 +20,11 @@ public class Role {
     private int id;
     @Column(name = "role")
     private String role;
-//    @EqualsAndHashCode.Exclude
-//    @ToString.Exclude
-//    @OneToMany(mappedBy = "role_id", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
-//    private Set<User> users = new HashSet<>();
+
+    @EqualsAndHashCode.Exclude
+    @ToString.Exclude
+    @OneToMany(mappedBy = "role", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+    private Set<User> user =  new HashSet<>();
 
     public Role(String role) {
         this.role = role;

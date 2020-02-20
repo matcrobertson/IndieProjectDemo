@@ -7,8 +7,7 @@ import javax.persistence.*;
 /**
  * represents one user in the music application
  */
-@Setter
-@Getter
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity(name = "User")
@@ -18,10 +17,13 @@ public class User {
     @GeneratedValue(strategy = GenerationType.AUTO, generator = "native")
     @GenericGenerator(name = "native", strategy = "native")
     private int id;
-    @ManyToOne
+
+
     @EqualsAndHashCode.Exclude
     @ToString.Exclude
+    @ManyToOne
     private Role role;
+
     @Column(name = "user_name")
     private String userName;
     @Column(name = "password")
