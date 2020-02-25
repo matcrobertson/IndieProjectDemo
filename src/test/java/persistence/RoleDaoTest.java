@@ -25,7 +25,7 @@ public class RoleDaoTest {
 
 
         util.Database database = util.Database.getInstance();
-        database.runSQL("/cleandb.sql");
+        database.runSQL("cleandb.sql");
 
     }
 
@@ -46,7 +46,7 @@ public class RoleDaoTest {
     @Test
     void getAllSuccess() {
         List<Role> users = genericDao.getAll();
-        assertEquals(3, users.size());
+        assertEquals(2, users.size());
     }
 
     /**
@@ -101,8 +101,8 @@ public class RoleDaoTest {
      */
     @Test
     void deleteSuccess() {
-        genericDao.delete(genericDao.getById(4));
-        assertNull(genericDao.getById(4));
+        genericDao.delete(genericDao.getById(2));
+        assertNull(genericDao.getById(2));
     }
 
 

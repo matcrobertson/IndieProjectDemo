@@ -1,6 +1,6 @@
 package util;
 
-
+import lombok.extern.log4j.Log4j;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -41,10 +41,10 @@ public class Database {
         try {
             properties.load (this.getClass().getResourceAsStream("/database.properties"));
         } catch (IOException ioe) {
-            System.out.println("Database.loadProperties()...Cannot load the properties file");
+            logger.error("Database.loadProperties()...Cannot load the properties file");
             ioe.printStackTrace();
         } catch (Exception e) {
-            System.out.println("Database.loadProperties()..." + e);
+            logger.error("Database.loadProperties()..." + e);
             e.printStackTrace();
         }
 
@@ -95,6 +95,7 @@ public class Database {
         Statement stmt = null;
         ClassLoader classloader = Thread.currentThread().getContextClassLoader();
         InputStream inputStream = classloader.getResourceAsStream(sqlFile);
+
         try (BufferedReader br = new BufferedReader(new InputStreamReader(inputStream))) {
 
             Class.forName("com.mysql.cj.jdbc.Driver");
@@ -104,6 +105,7 @@ public class Database {
             while (true) {
                 String sql = br.readLine();
                 if (sql == null) {
+
                     break;
                 }
                 stmt.executeUpdate(sql);

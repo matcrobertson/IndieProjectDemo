@@ -24,10 +24,14 @@ public class Role {
     @EqualsAndHashCode.Exclude
     @ToString.Exclude
     @OneToMany(mappedBy = "role", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
-    private Set<User> user =  new HashSet<>();
+    private Set<User> users =  new HashSet<>();
 
     public Role(String role) {
         this.role = role;
     }
 
+    public void addUser(User order) {
+        users.add(order);
+        order.setRole(this);
+    }
 }
