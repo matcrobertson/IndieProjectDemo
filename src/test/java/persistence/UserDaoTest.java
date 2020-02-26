@@ -2,13 +2,11 @@ package persistence;
 import entity.Role;
 import entity.User;
 import lombok.extern.log4j.Log4j2;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import java.util.ArrayList;
 import java.util.List;
+
 
 import static org.junit.jupiter.api.Assertions.*;
 @Log4j2
@@ -27,7 +25,7 @@ public class UserDaoTest {
         genericDao = new GenericDao(User.class);
 
 
-        util.Database database = util.Database.getInstance();
+        Database database = Database.getInstance();
         database.runSQL("cleandb.sql");
     }
 
@@ -48,7 +46,7 @@ public class UserDaoTest {
     @Test
     void getAllSuccess() {
         List<User> users = genericDao.getAll();
-        assertEquals(2, users.size());
+        assertEquals(3, users.size());
     }
 
     /**
@@ -57,7 +55,7 @@ public class UserDaoTest {
     @Test
     void getByPropertyEqualSuccess() {
         List<User> users = genericDao.getAll();
-        assertEquals(2, users.size());
+        assertEquals(3, users.size());
         assertEquals(1, users.get(0).getId());
     }
     /**
@@ -111,16 +109,7 @@ public class UserDaoTest {
     }
 
 
-//    @Test
-//    public void whatDoesThisTest() {
-//
-//        GenericDao roleDao = new GenericDao(User.class);
-//       List<User> = roleDao.getById(1);
-
-
-//        findByPropertyEqual(<String, Object> propertyMap)
-//    }
-
+ //the mapping test is not necessary
 
 
 

@@ -24,7 +24,7 @@ public class RoleDaoTest {
         genericDao = new GenericDao(Role.class);
 
 
-        util.Database database = util.Database.getInstance();
+        Database database = Database.getInstance();
         database.runSQL("cleandb.sql");
 
     }
@@ -46,7 +46,7 @@ public class RoleDaoTest {
     @Test
     void getAllSuccess() {
         List<Role> users = genericDao.getAll();
-        assertEquals(2, users.size());
+        assertEquals(3, users.size());
     }
 
     /**

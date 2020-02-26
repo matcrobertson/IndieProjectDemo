@@ -2181,7 +2181,7 @@ index 0000000..613a9e0
 +        genericDao = new GenericDao(Role.class);
 +
 +
-+        util.Database database = util.Database.getInstance();
++        persistence.Database database = persistence.Database.getInstance();
 +        database.runSQL("cleandb.sql");
 +
 +    }
@@ -2304,7 +2304,7 @@ index 0000000..d07f271
 +        genericDao = new GenericDao(User.class);
 +
 +
-+        util.Database database = util.Database.getInstance();
++        persistence.Database database = persistence.Database.getInstance();
 +        database.runSQL("cleandb.sql");
 +
 +    }
