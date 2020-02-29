@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.List;
 
 /**
  * A simple servlet to welcome the user.
@@ -17,16 +18,17 @@ import java.io.IOException;
  */
 
 @WebServlet(
-        urlPatterns = {"/searchUser"}
+        urlPatterns = {"/home"}
 )
 
 public class SearchUser extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        GenericDao genericDao = new GenericDao(User.class);
+        GenericDao userDao = new GenericDao(User.class);
 
+        req.setAttribute("people", userDao.getById(1));
 
-        RequestDispatcher dispatcher = req.getRequestDispatcher("/results.jsp");
+        RequestDispatcher dispatcher = req.getRequestDispatcher("/index.jsp");
         dispatcher.forward(req, resp);
     }
 }
