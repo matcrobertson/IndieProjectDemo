@@ -18,17 +18,17 @@ import java.util.List;
  */
 
 @WebServlet(
-        urlPatterns = {"/home"}
+        urlPatterns = {"/artists"}
 )
 
 public class SearchUser extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         GenericDao userDao = new GenericDao(User.class);
+        List<User> users = userDao.getAll();
+        req.setAttribute("users", users);
 
-        req.setAttribute("people", userDao.getById(1));
-
-        RequestDispatcher dispatcher = req.getRequestDispatcher("/index.jsp");
+        RequestDispatcher dispatcher = req.getRequestDispatcher("/edit_artists.jsp");
         dispatcher.forward(req, resp);
     }
 }

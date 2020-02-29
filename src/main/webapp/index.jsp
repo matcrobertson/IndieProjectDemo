@@ -4,11 +4,14 @@
 <body>
     <div class="wrapper">
         <section>
+            steven
             <article>
-                <c:forEach var="people" items="users">
-                    ${people.userName}
-                </c:forEach>
+<%--                <c:forEach var="people" items="${users}">--%>
+<%--                    ${people.userName}--%>
+<%--                </c:forEach>--%>
+                <a href="artists">display stuff</a>
             </article>
+            segal
         </section>
 
     </div>
