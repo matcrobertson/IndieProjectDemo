@@ -16,6 +16,13 @@ week 4 - 10 hours
 - 
 - set up hibernate and made a few daos. it still doesnt work yet due to an unknown exception that is occurring at launch. it says its a non-application error. Im going to discuss it in class to see if anyone has any insight.
 
-week 5 
+week 5 - 7 hours
 -
 - started using lombok(super cool!)
+- completed my one to many relationship
+
+week 6 - 5 hours
+-
+- made my AWS account
+- deployed my application to AWS
+- database was placed into the server
