@@ -8,16 +8,16 @@
                 <p>Please sign in</p>
 
             </div>
-            <form action="#" method="post">
+            <form action="j_security_check" method="post">
 
                     <label for="userName">User Name:</label>
 
-                <input type="text" id="userName" name="userName" value=""><br>
+                <input type="text" id="userName" name="j_username"><br>
 
                     <label for="password">Password</label>
                 
-                <input type="password" id="password" name="password" value=""><br>
-                <input type="submit" name="Submit" value="Sign In">
+                <input type="password" id="password" name="j_password" value=""><br>
+                <input type="submit" name="Submit" value="Log In">
                 <input type="button" name="SignUp" value="Sign Up">
             </form>
 

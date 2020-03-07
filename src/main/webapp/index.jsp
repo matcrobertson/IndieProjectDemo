@@ -10,6 +10,7 @@
 <%--                    ${people.userName}--%>
 <%--                </c:forEach>--%>
                 <a href="artists">display stuff</a>
+                <a href="super_secret.jsp">dont click(super secret)</a>
             </article>
             segal
         </section>

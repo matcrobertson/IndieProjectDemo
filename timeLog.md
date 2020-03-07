@@ -26,3 +26,6 @@ week 6 - 5 hours
 - made my AWS account
 - deployed my application to AWS
 - database was placed into the server
+
+week 7 -
+-
