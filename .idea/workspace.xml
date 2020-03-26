@@ -7,18 +7,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f72530a8-eb98-414b-9374-4e272efdd8dc" name="Default Changelist" comment="output works locally but not on the AWS server">
+      <change afterPath="$PROJECT_DIR$/src/main/java/entity/DeezerArtist/ArtistResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/entity/DeezerSearch/Album.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/entity/DeezerSearch/Artist.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/entity/DeezerSearch/DataItem.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/entity/DeezerSearch/SearchResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/persistence/DeezerSearchDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/persistence/TestServiceClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/2af83ca9-2911-46d3-b3d0-dca6effec053.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/2af83ca9-2911-46d3-b3d0-dca6effec053.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DesignFolder/ERD/goodIThink.mwb" beforeDir="false" afterPath="$PROJECT_DIR$/DesignFolder/ERD/goodIThink.mwb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DesignFolder/ERD/goodIThink.mwb.bak" beforeDir="false" afterPath="$PROJECT_DIR$/DesignFolder/ERD/goodIThink.mwb.bak" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/diff.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignFolder/ProjectPlan.md" beforeDir="false" afterPath="$PROJECT_DIR$/DesignFolder/ProjectPlan.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/cleandb.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/cleandb.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/database.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/database.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/persistence/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/persistence/Database.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/database.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/database.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/hibernate.cfg.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/hibernate.cfg.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/hibernate.cfg.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/timeLog.md" beforeDir="false" afterPath="$PROJECT_DIR$/timeLog.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/META-INF/context.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/META-INF/context.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/cleandb.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/cleandb.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cleandb.sql" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cleandb.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/cleandb.sql" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/cleandb.sql" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -63,6 +69,13 @@
         <item name="hibernate.cfg.xml/Hibernate" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="Music: schema" type="76f4a085:MysqlImplModel$Schema" />
+        <item name="role: table" type="285a2a93:MysqlImplModel$Table" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="hibernate.cfg.xml/Hibernate" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="Music: schema" type="76f4a085:MysqlImplModel$Schema" />
         <item name="user: table" type="285a2a93:MysqlImplModel$Table" />
       </path>
     </expand>
@@ -74,22 +87,61 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/timeLog.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="336">
-                <caret line="14" column="17" lean-forward="true" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
-              </first_editor>
-              <second_editor />
+        <entry file="file://$PROJECT_DIR$/src/test/java/persistence/TestServiceClient.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="384">
+              <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/entity/DeezerSearch/SearchResponse.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="22" column="5" lean-forward="true" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/entity/DeezerArtist/ArtistResponse.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-586">
+              <caret line="41" column="68" selection-start-line="41" selection-start-column="68" selection-end-line="41" selection-end-column="68" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/entity/DeezerSearch/DataItem.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-19">
+              <caret line="51" column="15" selection-start-line="51" selection-start-column="13" selection-end-line="51" selection-end-column="15" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/test/java/persistence/Database.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/persistence/DeezerSearchDao.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="440">
-              <caret line="42" column="35" lean-forward="true" selection-start-line="42" selection-start-column="35" selection-end-line="42" selection-end-column="35" />
+            <state relative-caret-position="477">
+              <caret line="21" column="35" lean-forward="true" selection-start-line="21" selection-start-column="25" selection-end-line="21" selection-end-column="35" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/entity/Artist.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="24">
+              <caret line="12" column="59" lean-forward="true" selection-start-line="12" selection-start-column="59" selection-end-line="12" selection-end-column="59" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -103,20 +155,18 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Arquillian JUnit Test Class" />
+        <option value="Jsp File" />
         <option value="Class" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>getFirstName</find>
-      <find>cause</find>
       <find>sa</find>
       <find>save</find>
       <find>set</find>
       <find>get</find>
       <find>saveOr</find>
-      <find>id</find>
       <find>User</find>
       <find>dao</find>
       <find>load</find>
@@ -139,6 +189,9 @@
       <find>runA</find>
       <find>Sys</find>
       <find>System</find>
+      <find>tomc</find>
+      <find>to</find>
+      <find>id</find>
     </findStrings>
     <replaceStrings>
       <replace>Artist</replace>
@@ -153,19 +206,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/indieProject.iml" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
-        <option value="$PROJECT_DIR$/src/main/webapp/add_artist.html" />
-        <option value="$PROJECT_DIR$/src/main/webapp/index.html" />
-        <option value="$PROJECT_DIR$/src/main/webapp/artist_update.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/remove_artist.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/add_artist.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/head.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/Persistence/UserDAO.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Entity/Artists.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Persistence/ArtistDAO.java" />
-        <option value="$PROJECT_DIR$/src/test/java/TestCases.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Controller/SearchUser.java" />
         <option value="$PROJECT_DIR$/src/test/java/TestUserDao" />
         <option value="$PROJECT_DIR$/src/test/java/UserDaoTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/Persistence/UserDaoTest.java" />
@@ -177,33 +217,46 @@
         <option value="$PROJECT_DIR$/src/main/java/Persistence/ArtistDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/persistence/ArtistDao.java" />
         <option value="$USER_HOME$/GithubRepos/student/ProfessionalDevelopmentPresentations/ElspethStalterClouse/Presentation/Feedback.md" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/logs/indieProject.log" />
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/main/java/persistence/GenericDao.java" />
         <option value="$PROJECT_DIR$/musi.sql" />
         <option value="$PROJECT_DIR$/src/main/java/entity/User.java" />
         <option value="$PROJECT_DIR$/music.sql" />
         <option value="$PROJECT_DIR$/src/main/java/entity/Role.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/cleandb.sql" />
         <option value="$PROJECT_DIR$/src/test/java/util/Database.java" />
-        <option value="$PROJECT_DIR$/src/test/resources/cleandb.sql" />
         <option value="$PROJECT_DIR$/src/test/java/persistance/Database.java" />
         <option value="$PROJECT_DIR$/src/test/java/persistence/RoleDaoTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/persistence/UserDaoTest.java" />
         <option value="$PROJECT_DIR$/dummy.md" />
         <option value="$PROJECT_DIR$/src/test/.gitignore" />
-        <option value="$PROJECT_DIR$/src/main/webapp/login.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/edit_artists.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/controller/SearchUser.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/css/styles.css" />
-        <option value="$PROJECT_DIR$/src/main/webapp/index.jsp" />
-        <option value="$PROJECT_DIR$/src/test/resources/database.properties" />
-        <option value="$PROJECT_DIR$/src/main/resources/database.properties" />
-        <option value="$PROJECT_DIR$/src/test/resources/hibernate.cfg.xml" />
-        <option value="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" />
-        <option value="$PROJECT_DIR$/timeLog.md" />
         <option value="$PROJECT_DIR$/src/test/java/persistence/Database.java" />
+        <option value="$PROJECT_DIR$/timeLog.md" />
+        <option value="$PROJECT_DIR$/context.xml" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/context.xml" />
+        <option value="$PROJECT_DIR$/src/main/webapp/login.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/login_error.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/super_secret.jsp" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/2af83ca9-2911-46d3-b3d0-dca6effec053/console_1.sql" />
+        <option value="$PROJECT_DIR$/src/main/webapp/index.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/2af83ca9-2911-46d3-b3d0-dca6effec053/console_2.sql" />
+        <option value="$PROJECT_DIR$/src/main/resources/cleandb.sql" />
+        <option value="$PROJECT_DIR$/src/test/resources/cleandb.sql" />
+        <option value="$PROJECT_DIR$/src/main/webapp/META-INF/context.xml" />
+        <option value="$PROJECT_DIR$/src/main/resources/database.properties" />
+        <option value="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" />
+        <option value="$PROJECT_DIR$/src/test/resources/database.properties" />
+        <option value="$PROJECT_DIR$/src/test/resources/hibernate.cfg.xml" />
+        <option value="$PROJECT_DIR$/DesignFolder/ProjectPlan.md" />
+        <option value="$PROJECT_DIR$/src/main/java/entity/myApi.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/entity/DeezerArtist/Response.java" />
+        <option value="$PROJECT_DIR$/src/main/java/persistence/DeezerSearchDao.java" />
+        <option value="$PROJECT_DIR$/src/test/java/persistence/TestServiceClient.java" />
       </list>
     </option>
   </component>
@@ -235,9 +288,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
-      <pane id="CatdeaLogs" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -248,7 +298,7 @@
             <path>
               <item name="indieProject" type="b2602c69:ProjectViewProjectNode" />
               <item name="indieProject" type="462c0819:PsiDirectoryNode" />
-              <item name="logs" type="462c0819:PsiDirectoryNode" />
+              <item name="DesignFolder" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="indieProject" type="b2602c69:ProjectViewProjectNode" />
@@ -267,14 +317,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="indieProject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="indieProject" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="indieProject" type="b2602c69:ProjectViewProjectNode" />
@@ -290,29 +332,25 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="entity" type="462c0819:PsiDirectoryNode" />
+              <item name="DeezerArtist" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="indieProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="indieProject" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="entity" type="462c0819:PsiDirectoryNode" />
+              <item name="DeezerSearch" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="indieProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="indieProject" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="persistence" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="indieProject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="indieProject" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="indieProject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="indieProject" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="indieProject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="indieProject" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="indieProject" type="b2602c69:ProjectViewProjectNode" />
@@ -334,22 +372,22 @@
               <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="persistence" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="indieProject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="indieProject" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="CatdeaLogs" />
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="GenerateAntBuildDialog.backupFiles" value="true" />
+    <property name="GenerateAntBuildDialog.enableUiFormCompile" value="true" />
+    <property name="GenerateAntBuildDialog.forceTargetJdk" value="true" />
+    <property name="GenerateAntBuildDialog.outputFileNameProperty" value="indieproject" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
@@ -380,11 +418,11 @@
       <recent name="" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/webapp/META-INF" />
+      <recent name="$PROJECT_DIR$/src/main/webapp/WEB-INF" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/src/main/java/Persistence" />
       <recent name="$PROJECT_DIR$/src" />
-      <recent name="$PROJECT_DIR$/src/test/java/Persistence" />
-      <recent name="$PROJECT_DIR$/src/main/java/Entity" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="persistence" />
@@ -411,8 +449,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="TomEE Server.TomEE 8.5.41">
-    <configuration name="RoleDaoTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.TestServiceClient">
+    <configuration name="TestServiceClient" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="indieProject" />
       <extension name="coverage">
         <pattern>
@@ -421,13 +459,13 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="persistence" />
-      <option name="MAIN_CLASS_NAME" value="persistence.RoleDaoTest" />
+      <option name="MAIN_CLASS_NAME" value="persistence.TestServiceClient" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserDaoTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TestServiceClient.deezerSearchAlbumJSON" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="indieProject" />
       <extension name="coverage">
         <pattern>
@@ -436,29 +474,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="persistence" />
-      <option name="MAIN_CLASS_NAME" value="persistence.UserDaoTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="UserDaoTest.deleteSuccess" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="indieProject" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="persistence.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="persistence" />
-      <option name="MAIN_CLASS_NAME" value="persistence.UserDaoTest" />
-      <option name="METHOD_NAME" value="deleteSuccess" />
+      <option name="MAIN_CLASS_NAME" value="persistence.TestServiceClient" />
+      <option name="METHOD_NAME" value="deezerSearchAlbumJSON" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserDaoTest.insertSuccess" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TestServiceClient.deezerSearchArtistJSON" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="indieProject" />
       <extension name="coverage">
         <pattern>
@@ -467,14 +490,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="persistence" />
-      <option name="MAIN_CLASS_NAME" value="persistence.UserDaoTest" />
-      <option name="METHOD_NAME" value="insertSuccess" />
+      <option name="MAIN_CLASS_NAME" value="persistence.TestServiceClient" />
+      <option name="METHOD_NAME" value="deezerSearchArtistJSON" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserDaoTest.whatDoesThisTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TestServiceClient.deezerSearchJSON" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="indieProject" />
       <extension name="coverage">
         <pattern>
@@ -483,8 +506,24 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="persistence" />
-      <option name="MAIN_CLASS_NAME" value="persistence.UserDaoTest" />
-      <option name="METHOD_NAME" value="whatDoesThisTest" />
+      <option name="MAIN_CLASS_NAME" value="persistence.TestServiceClient" />
+      <option name="METHOD_NAME" value="deezerSearchJSON" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestServiceClient.deezerSearchResponseJSON" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="indieProject" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="persistence.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="persistence" />
+      <option name="MAIN_CLASS_NAME" value="persistence.TestServiceClient" />
+      <option name="METHOD_NAME" value="deezerSearchResponseJSON" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -566,11 +605,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.UserDaoTest" />
-        <item itemvalue="JUnit.RoleDaoTest" />
-        <item itemvalue="JUnit.UserDaoTest.whatDoesThisTest" />
-        <item itemvalue="JUnit.UserDaoTest.insertSuccess" />
-        <item itemvalue="JUnit.UserDaoTest.deleteSuccess" />
+        <item itemvalue="JUnit.TestServiceClient" />
+        <item itemvalue="JUnit.TestServiceClient.deezerSearchResponseJSON" />
+        <item itemvalue="JUnit.TestServiceClient.deezerSearchAlbumJSON" />
+        <item itemvalue="JUnit.TestServiceClient.deezerSearchArtistJSON" />
+        <item itemvalue="JUnit.TestServiceClient.deezerSearchJSON" />
       </list>
     </recent_temporary>
   </component>
@@ -621,7 +660,18 @@
       <workItem from="1583013112748" duration="1027000" />
       <workItem from="1583016524771" duration="5887000" />
       <workItem from="1583188920029" duration="1161000" />
-      <workItem from="1583354531878" duration="405000" />
+      <workItem from="1583354531878" duration="7237000" />
+      <workItem from="1583519740404" duration="7487000" />
+      <workItem from="1583530761753" duration="1541000" />
+      <workItem from="1583561471281" duration="663000" />
+      <workItem from="1583612127260" duration="1348000" />
+      <workItem from="1583784185493" duration="52000" />
+      <workItem from="1583788038633" duration="2105000" />
+      <workItem from="1584998821751" duration="331000" />
+      <workItem from="1585031013705" duration="1493000" />
+      <workItem from="1585069529121" duration="69000" />
+      <workItem from="1585162334316" duration="4413000" />
+      <workItem from="1585171246728" duration="18858000" />
     </task>
     <task id="LOCAL-00001" summary="planning has commenced">
       <created>1581156080723</created>
@@ -700,43 +750,50 @@
       <option name="project" value="LOCAL" />
       <updated>1583016797373</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="authentication is set up on AWS">
+      <created>1583561680634</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1583561680634</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="RoleDaoTest - 2020.02.26 at 16h 23m 52s.xml">
-      <configuration name="RoleDaoTest" configurationId="JUnit" />
+    <history-entry file="TestServiceClient_deezerSearchJSON - 2020.03.26 at 16h 25m 37s.xml">
+      <configuration name="TestServiceClient.deezerSearchJSON" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="RoleDaoTest - 2020.02.26 at 16h 24m 18s.xml">
-      <configuration name="RoleDaoTest" configurationId="JUnit" />
+    <history-entry file="TestServiceClient - 2020.03.26 at 16h 27m 15s.xml">
+      <configuration name="TestServiceClient" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="RoleDaoTest - 2020.02.26 at 16h 30m 12s.xml">
-      <configuration name="RoleDaoTest" configurationId="JUnit" />
+    <history-entry file="TestServiceClient_deezerSearchArtistJSON - 2020.03.26 at 16h 43m 35s.xml">
+      <configuration name="TestServiceClient.deezerSearchArtistJSON" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="RoleDaoTest - 2020.02.26 at 16h 34m 25s.xml">
-      <configuration name="RoleDaoTest" configurationId="JUnit" />
+    <history-entry file="TestServiceClient_deezerSearchArtistJSON - 2020.03.26 at 16h 46m 00s.xml">
+      <configuration name="TestServiceClient.deezerSearchArtistJSON" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="RoleDaoTest - 2020.02.26 at 16h 34m 40s.xml">
-      <configuration name="RoleDaoTest" configurationId="JUnit" />
+    <history-entry file="TestServiceClient_deezerSearchAlbumJSON - 2020.03.26 at 16h 50m 01s.xml">
+      <configuration name="TestServiceClient.deezerSearchAlbumJSON" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="RoleDaoTest - 2020.02.26 at 16h 42m 00s.xml">
-      <configuration name="RoleDaoTest" configurationId="JUnit" />
+    <history-entry file="TestServiceClient_deezerSearchAlbumJSON - 2020.03.26 at 16h 50m 56s.xml">
+      <configuration name="TestServiceClient.deezerSearchAlbumJSON" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="RoleDaoTest - 2020.02.26 at 16h 42m 14s.xml">
-      <configuration name="RoleDaoTest" configurationId="JUnit" />
+    <history-entry file="TestServiceClient - 2020.03.26 at 16h 53m 01s.xml">
+      <configuration name="TestServiceClient" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="RoleDaoTest - 2020.02.26 at 16h 44m 14s.xml">
-      <configuration name="RoleDaoTest" configurationId="JUnit" />
+    <history-entry file="TestServiceClient_deezerSearchResponseJSON - 2020.03.26 at 16h 58m 25s.xml">
+      <configuration name="TestServiceClient.deezerSearchResponseJSON" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="UserDaoTest - 2020.02.26 at 16h 44m 56s.xml">
-      <configuration name="UserDaoTest" configurationId="JUnit" />
+    <history-entry file="TestServiceClient - 2020.03.26 at 16h 58m 50s.xml">
+      <configuration name="TestServiceClient" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="UserDaoTest - 2020.02.26 at 16h 45m 37s.xml">
-      <configuration name="UserDaoTest" configurationId="JUnit" />
+    <history-entry file="TestServiceClient - 2020.03.26 at 17h 00m 51s.xml">
+      <configuration name="TestServiceClient" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="137930000" />
+    <option name="totallyTimeSpent" value="183122000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -748,10 +805,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="67" y="25" width="1551" height="903" extended-state="6" />
+    <frame x="67" y="25" width="1851" height="903" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.3359947" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16749862" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -762,8 +819,8 @@
       <window_info id="Persistence" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32988358" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.6500312" weight="0.37774903" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.4996881" weight="0.42690814" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.6500312" visible="true" weight="0.4087969" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.4996881" weight="0.4217335" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32729626" />
@@ -783,12 +840,12 @@
       <window_info anchor="right" id="Palette" order="4" />
       <window_info anchor="right" id="Capture Analysis" order="5" />
       <window_info anchor="right" id="JSF" order="6" />
-      <window_info anchor="right" id="Database" order="7" sideWeight="0.49420848" visible="true" weight="0.040585496" />
+      <window_info anchor="right" id="Database" order="7" sideWeight="0.49420848" weight="0.17193566" />
       <window_info anchor="right" id="Palette&#9;" order="8" />
       <window_info anchor="right" id="Theme Preview" order="9" />
       <window_info anchor="right" id="CDI" order="10" />
       <window_info anchor="right" id="Bean Validation" order="11" />
-      <window_info anchor="right" id="Coverage" order="12" sideWeight="0.5057915" side_tool="true" visible="true" weight="0.23552895" />
+      <window_info active="true" anchor="right" id="Coverage" order="12" sideWeight="0.5057915" side_tool="true" visible="true" weight="0.23516361" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -804,7 +861,8 @@
     <MESSAGE value="it currently works. pretty sure that the foreign keys dont exist though" />
     <MESSAGE value="working on printing stuff to the jsp" />
     <MESSAGE value="output works locally but not on the AWS server" />
-    <option name="LAST_COMMIT_MESSAGE" value="output works locally but not on the AWS server" />
+    <MESSAGE value="authentication is set up on AWS" />
+    <option name="LAST_COMMIT_MESSAGE" value="authentication is set up on AWS" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -828,6 +886,9 @@
     <SUITE FILE_PATH="coverage/indieProject$RoleDaoTest.ic" NAME="RoleDaoTest Coverage Results" MODIFIED="1582659791221" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>persistence.*</FILTER>
     </SUITE>
+    <SUITE FILE_PATH="coverage/indieProject$TestServiceClient.ic" NAME="TestServiceClient Coverage Results" MODIFIED="1585260042241" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>persistence.*</FILTER>
+    </SUITE>
     <SUITE FILE_PATH="coverage/indieProject$UserDaoTest.ic" NAME="UserDaoTest Coverage Results" MODIFIED="1582656608121" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>persistence.*</FILTER>
     </SUITE>
@@ -836,89 +897,6 @@
     </SUITE>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/test/java/Entity/User.java" />
-    <entry file="file://$PROJECT_DIR$/src/test/java/UserDaoTest" />
-    <entry file="file://$PROJECT_DIR$/src/test/java/TestUserDao" />
-    <entry file="das://2af83ca9-2911-46d3-b3d0-dca6effec053/schema/Music/table/Artist" />
-    <entry file="das://2af83ca9-2911-46d3-b3d0-dca6effec053/schema/Music/table/artist">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state projectRestartId="eb4250b0-c6d8-4737-84fc-a967ad84eebd">
-          <filtering>
-            <filter text="" />
-          </filtering>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/Music.sql" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/persistence/ArtistDao.java" />
-    <entry file="file://$USER_HOME$/GithubRepos/student/ProfessionalDevelopmentPresentations/ElspethStalterClouse/Presentation/Feedback.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="-818">
-            <caret line="10" column="41" selection-start-line="10" selection-start-column="41" selection-end-line="10" selection-end-column="41" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jrt:///usr/lib/jvm/java-1.11.0-openjdk-amd64!/java.base/java/util/Objects.class">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/resources/log4j2.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-144" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/persistence/UserDao.java" />
-    <entry file="file://$PROJECT_DIR$/Music.sql" />
-    <entry file="file://$PROJECT_DIR$/target/classes/database.properties">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/target/classes/cleandb.sql">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/target/classes/log4j2.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-122" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/target/classes/hibernate.cfg.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="257">
-          <caret line="34" column="8" lean-forward="true" selection-start-line="34" selection-start-column="8" selection-end-line="34" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/entity/Artist.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="24">
-          <caret line="8" column="19" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/musi.sql" />
-    <entry file="das://2af83ca9-2911-46d3-b3d0-dca6effec053/schema/Music/table/role">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state projectRestartId="49bfef61-35a9-42c7-885b-efb2062b445b">
-          <filtering>
-            <filter text="" />
-          </filtering>
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://2af83ca9-2911-46d3-b3d0-dca6effec053/schema/Music/table/user">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state projectRestartId="b578d20f-f7be-4e36-a9ee-fdad336bcf71">
-          <filtering />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/indieProject.iml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="334">
@@ -926,20 +904,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/music.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="24" column="12" lean-forward="true" selection-start-line="24" selection-start-column="12" selection-end-line="24" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1017">
-          <caret line="85" column="45" lean-forward="true" selection-start-line="85" selection-start-column="45" selection-end-line="85" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/music.sql" />
     <entry file="file://$PROJECT_DIR$/src/main/java/persistence/SessionFactoryProvider.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
@@ -950,27 +915,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/entity/Role.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="29" column="25" selection-start-line="29" selection-start-column="25" selection-end-line="29" selection-end-column="25" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#732#733#0" expanded="true" />
-            <element signature="e#763#764#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/logs/indieProject.log">
       <provider selected="true" editor-type-id="LogFileEditorProvider" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/cleandb.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="11" column="41" lean-forward="true" selection-end-line="86" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/persistence/RoleDaoTest.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -982,35 +928,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/log4j2.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="16" column="23" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/resources/cleandb.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="48">
-          <caret line="2" column="14" selection-end-line="44" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dummy.md" />
     <entry file="file://$PROJECT_DIR$/src/test/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="386">
           <caret line="33" column="7" selection-start-line="33" selection-start-column="7" selection-end-line="33" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Readme.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="347">
-            <caret line="17" column="10" selection-start-line="17" selection-start-column="10" selection-end-line="17" selection-end-column="10" />
-          </first_editor>
-          <second_editor />
         </state>
       </provider>
     </entry>
@@ -1041,13 +963,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/login.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="137">
-          <caret line="22" selection-start-line="22" selection-end-line="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/css/styles.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="261">
@@ -1065,20 +980,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/database.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="6" column="24" selection-start-line="6" selection-start-column="24" selection-end-line="6" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/resources/hibernate.cfg.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="7" column="32" selection-start-line="7" selection-start-column="32" selection-end-line="7" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/edit_artists.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="192">
@@ -1086,31 +987,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="7" column="24" selection-start-line="7" selection-start-column="24" selection-end-line="7" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/artist_update.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="48">
           <caret line="2" column="29" selection-start-line="2" selection-start-column="29" selection-end-line="2" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/resources/database.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="6" column="24" selection-start-line="6" selection-start-column="24" selection-end-line="6" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="11" column="25" selection-start-line="11" selection-start-column="25" selection-end-line="11" selection-end-column="25" />
         </state>
       </provider>
     </entry>
@@ -1124,27 +1004,277 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/diff.txt" />
+    <entry file="file://$PROJECT_DIR$/src/test/java/persistence/Database.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="39" column="32" lean-forward="true" selection-start-line="39" selection-start-column="32" selection-end-line="39" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DesignFolder/ERD/Screenshot from 2020-03-04 14-57-59.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="696">
+          <caret line="53" column="19" selection-start-line="53" selection-start-column="19" selection-end-line="53" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://DATABASE/2af83ca9-2911-46d3-b3d0-dca6effec053.SCHEMA:Music">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>DATABASE</ID>
+          <OriginalElement>2af83ca9-2911-46d3-b3d0-dca6effec053.SCHEMA:Music</OriginalElement>
+          <nodes>
+            <node x="149.0" y="324.0">2af83ca9-2911-46d3-b3d0-dca6effec053.TABLE:Music.user_artist</node>
+            <node x="237.0" y="0.0">2af83ca9-2911-46d3-b3d0-dca6effec053.TABLE:Music.role</node>
+            <node x="0.0" y="174.0">2af83ca9-2911-46d3-b3d0-dca6effec053.TABLE:Music.artist</node>
+            <node x="237.0" y="150.0">2af83ca9-2911-46d3-b3d0-dca6effec053.TABLE:Music.user</node>
+          </nodes>
+          <notes />
+          <edges>
+            <edge source="2af83ca9-2911-46d3-b3d0-dca6effec053.TABLE:Music.user" target="2af83ca9-2911-46d3-b3d0-dca6effec053.TABLE:Music.role">
+              <point x="0.0" y="-62.0" />
+              <point x="0.0" y="50.0" />
+            </edge>
+            <edge source="2af83ca9-2911-46d3-b3d0-dca6effec053.TABLE:Music.user_artist" target="2af83ca9-2911-46d3-b3d0-dca6effec053.TABLE:Music.artist">
+              <point x="-38.75" y="-49.5" />
+              <point x="187.75" y="299.0" />
+              <point x="108.5" y="299.0" />
+              <point x="0.0" y="38.0" />
+            </edge>
+            <edge source="2af83ca9-2911-46d3-b3d0-dca6effec053.TABLE:Music.user_artist" target="2af83ca9-2911-46d3-b3d0-dca6effec053.TABLE:Music.user">
+              <point x="38.75" y="-49.5" />
+              <point x="265.25" y="299.0" />
+              <point x="344.5" y="299.0" />
+              <point x="0.0" y="62.0" />
+            </edge>
+          </edges>
+          <settings layout="Hierarchic Group" zoom="1.0" x="76.0" y="219.0" />
+          <SelectedNodes />
+          <Categories>
+            <Category>Key columns</Category>
+            <Category>Columns</Category>
+          </Categories>
+          <SCOPE>All</SCOPE>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/super_secret.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="251">
+          <caret line="13" column="14" selection-start-line="13" selection-start-column="14" selection-end-line="13" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/log4j2.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="16" column="23" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/login_error.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="179">
+          <caret line="10" column="16" selection-start-line="10" selection-start-column="16" selection-end-line="10" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/login.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="14" column="66" selection-start-line="14" selection-start-column="66" selection-end-line="14" selection-end-column="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://2af83ca9-2911-46d3-b3d0-dca6effec053/schema/Music/table/artist" />
+    <entry file="file://$PROJECT_DIR$/src/test/resources/cleandb.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="145">
+          <caret line="98" column="42" selection-start-line="98" selection-start-column="42" selection-end-line="98" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/3-6-20.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="384">
+          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/2af83ca9-2911-46d3-b3d0-dca6effec053/console_2.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="24">
+          <caret line="1" column="52" selection-start-line="1" selection-start-column="52" selection-end-line="1" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://2af83ca9-2911-46d3-b3d0-dca6effec053/schema/Music/table/user" />
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/index.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="12" column="71" selection-start-line="12" selection-start-column="71" selection-end-line="12" selection-end-column="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/2af83ca9-2911-46d3-b3d0-dca6effec053/console_1.sql">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/cleandb.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="673">
+          <caret line="136" selection-start-line="136" selection-end-line="136" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://2af83ca9-2911-46d3-b3d0-dca6effec053/schema/Music/table/role" />
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="22" column="33" selection-start-line="22" selection-start-column="33" selection-end-line="22" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/META-INF/context.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/resources/database.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="6" column="12" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/resources/hibernate.cfg.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="103">
+          <caret line="12" column="53" selection-start-line="12" selection-start-column="53" selection-end-line="12" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/timeLog.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="336">
-            <caret line="14" column="17" lean-forward="true" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
+          <first_editor relative-caret-position="501">
+            <caret line="29" column="8" selection-start-line="29" selection-start-column="8" selection-end-line="29" selection-end-column="8" />
           </first_editor>
           <second_editor />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/diff.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="2450" column="10" lean-forward="true" selection-start-line="2450" selection-start-column="10" selection-end-line="2450" selection-end-column="10" />
+    <entry file="file://$PROJECT_DIR$/Readme.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="271">
+            <caret line="17" column="10" selection-start-line="17" selection-start-column="10" selection-end-line="17" selection-end-column="10" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/persistence/Database.java">
+    <entry file="file://$PROJECT_DIR$/DesignFolder/ProjectPlan.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="144">
+            <caret line="15" column="3" lean-forward="true" selection-start-line="15" selection-start-column="3" selection-end-line="15" selection-end-column="3" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/database.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="42" column="35" lean-forward="true" selection-start-line="42" selection-start-column="35" selection-end-line="42" selection-end-column="35" />
+        <state relative-caret-position="144">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="7" column="24" selection-start-line="7" selection-start-column="24" selection-end-line="7" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/entity/myApi.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-192">
+          <caret line="34" column="17" lean-forward="true" selection-start-line="34" selection-start-column="17" selection-end-line="34" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/entity/Role.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="672">
+          <caret line="29" column="25" selection-start-line="29" selection-start-column="25" selection-end-line="29" selection-end-column="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/entity/Artist.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="24">
+          <caret line="12" column="59" lean-forward="true" selection-start-line="12" selection-start-column="59" selection-end-line="12" selection-end-column="59" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/entity/DeezerArtist/ArtistResponse.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-586">
+          <caret line="41" column="68" selection-start-line="41" selection-start-column="68" selection-end-line="41" selection-end-column="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/entity/DeezerSearch/DataItem.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-19">
+          <caret line="51" column="15" selection-start-line="51" selection-start-column="13" selection-end-line="51" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/persistence/TestServiceClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="384">
+          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/entity/DeezerSearch/SearchResponse.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="22" column="5" lean-forward="true" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/persistence/DeezerSearchDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="477">
+          <caret line="21" column="35" lean-forward="true" selection-start-line="21" selection-start-column="25" selection-end-line="21" selection-end-column="35" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

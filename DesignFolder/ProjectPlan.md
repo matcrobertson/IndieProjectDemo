@@ -6,7 +6,7 @@
 - [x] Set up logging
 - [x] research the APIs that i want to use
 
-- [ ? ] Prepare for Week 5 peer design/code review
+- [x] Prepare for Week 5 peer design/code review
 
 https://developer.spotify.com/documentation/web-api/
 https://developer.apple.com/documentation/applemusicapi

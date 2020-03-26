@@ -17,6 +17,7 @@
         <property name="zeroDateTimeBehavior" value="CONVERT_TO_NULL" />
         <property name="characterSetResults" value="utf8" />
         <property name="tinyInt1isBit" value="false" />
+        <property name="serverTimezone" value="UTC" />
       </driver-properties>
     </data-source>
   </component>
