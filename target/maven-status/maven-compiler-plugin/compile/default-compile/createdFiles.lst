@@ -1,6 +1,12 @@
-entity/Artist.class
+entity/DeezerSearch/Album.class
 persistence/SessionFactoryProvider.class
-controller/SearchUser.class
 persistence/GenericDao.class
 entity/User.class
+entity/DeezerSearch/SearchResponse.class
+entity/Artist.class
+entity/DeezerArtist/ArtistResponse.class
+controller/SearchUser.class
+persistence/DeezerSearchDao.class
+entity/DeezerSearch/Artist.class
+entity/DeezerSearch/DataItem.class
 entity/Role.class

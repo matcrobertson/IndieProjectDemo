@@ -1,4 +1,4 @@
-package entity.DeezerSearch;
+package dsr.entity.DeezerSearch;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 

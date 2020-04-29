@@ -1,6 +1,12 @@
+/home/student/IdeaProjects/indieProject/src/main/java/entity/DeezerSearch/SearchResponse.java
 /home/student/IdeaProjects/indieProject/src/main/java/entity/Artist.java
+/home/student/IdeaProjects/indieProject/src/main/java/persistence/DeezerSearchDao.java
 /home/student/IdeaProjects/indieProject/src/main/java/entity/User.java
 /home/student/IdeaProjects/indieProject/src/main/java/entity/Role.java
 /home/student/IdeaProjects/indieProject/src/main/java/controller/SearchUser.java
+/home/student/IdeaProjects/indieProject/src/main/java/entity/DeezerSearch/DataItem.java
+/home/student/IdeaProjects/indieProject/src/main/java/entity/DeezerSearch/Artist.java
 /home/student/IdeaProjects/indieProject/src/main/java/persistence/GenericDao.java
+/home/student/IdeaProjects/indieProject/src/main/java/entity/DeezerArtist/ArtistResponse.java
 /home/student/IdeaProjects/indieProject/src/main/java/persistence/SessionFactoryProvider.java
+/home/student/IdeaProjects/indieProject/src/main/java/entity/DeezerSearch/Album.java

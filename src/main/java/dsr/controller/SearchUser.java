@@ -1,7 +1,7 @@
-package controller;
+package dsr.controller;
 
-import entity.User;
-import persistence.GenericDao;
+import dsr.entity.User;
+import dsr.persistence.GenericDao;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -26,9 +26,10 @@ public class SearchUser extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         GenericDao userDao = new GenericDao(User.class);
         List<User> users = userDao.getAll();
+
         req.setAttribute("users", users);
 
-        RequestDispatcher dispatcher = req.getRequestDispatcher("/edit_artists.jsp");
+        RequestDispatcher dispatcher = req.getRequestDispatcher("/EDITARTIST.jsp");
         dispatcher.forward(req, resp);
     }
 }

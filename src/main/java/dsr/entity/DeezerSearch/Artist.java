@@ -1,8 +1,8 @@
-package entity.DeezerArtist;
+package dsr.entity.DeezerSearch;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class ArtistResponse {
+public class Artist{
 
 	@JsonProperty("picture_xl")
 	private String pictureXl;
@@ -10,38 +10,26 @@ public class ArtistResponse {
 	@JsonProperty("tracklist")
 	private String tracklist;
 
-	@JsonProperty("link")
-	private String link;
-
-	@JsonProperty("picture_small")
-	private String pictureSmall;
-
-	@JsonProperty("type")
-	private String type;
-
-	@JsonProperty("nb_album")
-	private int nbAlbum;
-
-	@JsonProperty("picture")
-	private String picture;
-
-	@JsonProperty("nb_fan")
-	private int nbFan;
-
-	@JsonProperty("radio")
-	private boolean radio;
-
 	@JsonProperty("picture_big")
 	private String pictureBig;
 
 	@JsonProperty("name")
 	private String name;
 
-	@JsonProperty("share")
-	private String share;
-//use this to create this => https://api.deezer.com/artist/27/albums
+	@JsonProperty("link")
+	private String link;
+
+	@JsonProperty("picture_small")
+	private String pictureSmall;
+
 	@JsonProperty("id")
 	private String id;
+
+	@JsonProperty("type")
+	private String type;
+
+	@JsonProperty("picture")
+	private String picture;
 
 	@JsonProperty("picture_medium")
 	private String pictureMedium;
@@ -62,62 +50,6 @@ public class ArtistResponse {
 		return tracklist;
 	}
 
-	public void setLink(String link){
-		this.link = link;
-	}
-
-	public String getLink(){
-		return link;
-	}
-
-	public void setPictureSmall(String pictureSmall){
-		this.pictureSmall = pictureSmall;
-	}
-
-	public String getPictureSmall(){
-		return pictureSmall;
-	}
-
-	public void setType(String type){
-		this.type = type;
-	}
-
-	public String getType(){
-		return type;
-	}
-
-	public void setNbAlbum(int nbAlbum){
-		this.nbAlbum = nbAlbum;
-	}
-
-	public int getNbAlbum(){
-		return nbAlbum;
-	}
-
-	public void setPicture(String picture){
-		this.picture = picture;
-	}
-
-	public String getPicture(){
-		return picture;
-	}
-
-	public void setNbFan(int nbFan){
-		this.nbFan = nbFan;
-	}
-
-	public int getNbFan(){
-		return nbFan;
-	}
-
-	public void setRadio(boolean radio){
-		this.radio = radio;
-	}
-
-	public boolean isRadio(){
-		return radio;
-	}
-
 	public void setPictureBig(String pictureBig){
 		this.pictureBig = pictureBig;
 	}
@@ -134,12 +66,20 @@ public class ArtistResponse {
 		return name;
 	}
 
-	public void setShare(String share){
-		this.share = share;
+	public void setLink(String link){
+		this.link = link;
 	}
 
-	public String getShare(){
-		return share;
+	public String getLink(){
+		return link;
+	}
+
+	public void setPictureSmall(String pictureSmall){
+		this.pictureSmall = pictureSmall;
+	}
+
+	public String getPictureSmall(){
+		return pictureSmall;
 	}
 
 	public void setId(String id){
@@ -148,6 +88,22 @@ public class ArtistResponse {
 
 	public String getId(){
 		return id;
+	}
+
+	public void setType(String type){
+		this.type = type;
+	}
+
+	public String getType(){
+		return type;
+	}
+
+	public void setPicture(String picture){
+		this.picture = picture;
+	}
+
+	public String getPicture(){
+		return picture;
 	}
 
 	public void setPictureMedium(String pictureMedium){
@@ -161,20 +117,16 @@ public class ArtistResponse {
 	@Override
  	public String toString(){
 		return 
-			"SearchResponse{" +
+			"Artist{" + 
 			"picture_xl = '" + pictureXl + '\'' + 
 			",tracklist = '" + tracklist + '\'' + 
-			",link = '" + link + '\'' + 
-			",picture_small = '" + pictureSmall + '\'' + 
-			",type = '" + type + '\'' + 
-			",nb_album = '" + nbAlbum + '\'' + 
-			",picture = '" + picture + '\'' + 
-			",nb_fan = '" + nbFan + '\'' + 
-			",radio = '" + radio + '\'' + 
 			",picture_big = '" + pictureBig + '\'' + 
 			",name = '" + name + '\'' + 
-			",share = '" + share + '\'' + 
+			",link = '" + link + '\'' + 
+			",picture_small = '" + pictureSmall + '\'' + 
 			",id = '" + id + '\'' + 
+			",type = '" + type + '\'' + 
+			",picture = '" + picture + '\'' + 
 			",picture_medium = '" + pictureMedium + '\'' + 
 			"}";
 		}

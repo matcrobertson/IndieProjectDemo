@@ -1,8 +1,7 @@
-package persistence;
-
+package dsr.persistence;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import entity.DeezerSearch.*;
+import dsr.entity.DeezerSearch.SearchResponse;
 import lombok.extern.log4j.Log4j2;
 
 import javax.ws.rs.client.Client;
@@ -14,7 +13,7 @@ import javax.ws.rs.core.MediaType;
 @Log4j2
 public class DeezerSearchDao {
 
-    SearchResponse getResponse(String myUrl) {
+    public SearchResponse getResponse(String myUrl) {
         Client client = ClientBuilder.newClient();
         WebTarget target = client.target(myUrl);
         String response = target.request(MediaType.APPLICATION_JSON).get(String.class);

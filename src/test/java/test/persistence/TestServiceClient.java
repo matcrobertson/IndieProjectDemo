@@ -1,9 +1,10 @@
-package persistence;
+package test.persistence;
 
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import entity.DeezerArtist.ArtistResponse;
-import entity.DeezerSearch.DataItem;
+import dsr.entity.DeezerArtist.ArtistResponse;
+import dsr.entity.DeezerSearch.DataItem;
+import dsr.persistence.DeezerSearchDao;
 import lombok.extern.log4j.Log4j2;
 import org.junit.Test;
 import javax.ws.rs.client.*;

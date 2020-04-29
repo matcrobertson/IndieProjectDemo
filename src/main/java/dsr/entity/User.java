@@ -1,8 +1,10 @@
-package entity;
+package dsr.entity;
 import lombok.*;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * represents one user in the music application
@@ -18,6 +20,15 @@ public class User {
     @GenericGenerator(name = "native", strategy = "native")
     private int id;
 
+    @EqualsAndHashCode.Exclude
+    @ToString.Exclude
+    @ManyToMany(cascade = {CascadeType.ALL})
+    @JoinTable(
+            name = "user_artist",
+            joinColumns = { @JoinColumn(name = "user_id")},
+            inverseJoinColumns = { @JoinColumn(name = "artist_id") }
+    )
+    Set<Artist> artistsSet = new HashSet<>();
 
     @EqualsAndHashCode.Exclude
     @ToString.Exclude

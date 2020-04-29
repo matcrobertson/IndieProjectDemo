@@ -1,3 +1,4 @@
 persistence/RoleDaoTest.class
 persistence/Database.class
 persistence/UserDaoTest.class
+persistence/TestServiceClient.class
