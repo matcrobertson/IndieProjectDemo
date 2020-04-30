@@ -1115,7 +1115,7 @@
     <table id="280" parent="2" name="role"/>
     <table id="281" parent="2" name="user"/>
     <table id="282" parent="2" name="user_artist"/>
-    <column id="283" parent="279" name="id">
+    <column id="283" parent="279" name="artist_id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
@@ -1129,17 +1129,17 @@
       <ColumnKind>normal</ColumnKind>
     </column>
     <index id="285" parent="279" name="id_UNIQUE">
-      <ColNames>id</ColNames>
+      <ColNames>artist_id</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
     <key id="286" parent="279" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
-      <ColNames>id</ColNames>
+      <ColNames>artist_id</ColNames>
       <Primary>1</Primary>
     </key>
     <key id="287" parent="279" name="id_UNIQUE">
-      <ColNames>id</ColNames>
+      <ColNames>artist_id</ColNames>
       <UnderlyingIndexName>id_UNIQUE</UnderlyingIndexName>
     </key>
     <column id="288" parent="280" name="id">
@@ -1174,7 +1174,7 @@
       <ColNames>id</ColNames>
       <UnderlyingIndexName>id_UNIQUE</UnderlyingIndexName>
     </key>
-    <column id="294" parent="281" name="id">
+    <column id="294" parent="281" name="user_id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
@@ -1200,7 +1200,7 @@
       <ColumnKind>normal</ColumnKind>
     </column>
     <index id="298" parent="281" name="id_UNIQUE">
-      <ColNames>id</ColNames>
+      <ColNames>user_id</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
@@ -1215,12 +1215,12 @@
     </index>
     <key id="301" parent="281" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
-      <ColNames>id
+      <ColNames>user_id
 role_id</ColNames>
       <Primary>1</Primary>
     </key>
     <key id="302" parent="281" name="id_UNIQUE">
-      <ColNames>id</ColNames>
+      <ColNames>user_id</ColNames>
       <UnderlyingIndexName>id_UNIQUE</UnderlyingIndexName>
     </key>
     <key id="303" parent="281" name="User_UNIQUE">
@@ -1280,13 +1280,13 @@ artist_id</ColNames>
       <ColNames>user_id</ColNames>
       <RefSchemaName>Music</RefSchemaName>
       <RefTableName>user</RefTableName>
-      <RefColNames>id</RefColNames>
+      <RefColNames>user_id</RefColNames>
     </foreign-key>
     <foreign-key id="314" parent="282" name="fk_user_artist_artist1">
       <ColNames>artist_id</ColNames>
       <RefSchemaName>Music</RefSchemaName>
       <RefTableName>artist</RefTableName>
-      <RefColNames>id</RefColNames>
+      <RefColNames>artist_id</RefColNames>
     </foreign-key>
   </database-model>
 </dataSource>

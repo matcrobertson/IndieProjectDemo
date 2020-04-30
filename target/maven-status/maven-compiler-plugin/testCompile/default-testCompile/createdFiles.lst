@@ -1,4 +1,5 @@
-persistence/RoleDaoTest.class
-persistence/Database.class
-persistence/UserDaoTest.class
-persistence/TestServiceClient.class
+test/persistence/RoleDaoTest.class
+test/persistence/UserDaoTest.class
+test/persistence/UserArtistTest.class
+test/persistence/Database.class
+test/persistence/TestServiceClient.class

@@ -1,4 +1,5 @@
-/home/student/IdeaProjects/indieProject/src/test/java/persistence/TestServiceClient.java
-/home/student/IdeaProjects/indieProject/src/test/java/persistence/RoleDaoTest.java
-/home/student/IdeaProjects/indieProject/src/test/java/persistence/Database.java
-/home/student/IdeaProjects/indieProject/src/test/java/persistence/UserDaoTest.java
+/home/student/IdeaProjects/indieProject/src/test/java/test/persistence/Database.java
+/home/student/IdeaProjects/indieProject/src/test/java/test/persistence/UserDaoTest.java
+/home/student/IdeaProjects/indieProject/src/test/java/test/persistence/RoleDaoTest.java
+/home/student/IdeaProjects/indieProject/src/test/java/test/persistence/TestServiceClient.java
+/home/student/IdeaProjects/indieProject/src/test/java/test/persistence/UserArtistTest.java

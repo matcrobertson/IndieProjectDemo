@@ -1,4 +1,5 @@
 package test.persistence;
+import dsr.entity.Artist;
 import dsr.entity.Role;
 import dsr.entity.User;
 import dsr.persistence.GenericDao;
@@ -6,7 +7,9 @@ import lombok.extern.log4j.Log4j2;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -85,6 +88,7 @@ public class UserDaoTest {
      */
     @Test
     void insertSuccess() {
+        Set<Artist> artistSet = new HashSet<Artist>();
         GenericDao roleDao = new GenericDao(Role.class);
         Role theRole = (Role)roleDao.getById(1);
         User newUser = new User(7, theRole, "gregorio", "pineapples");

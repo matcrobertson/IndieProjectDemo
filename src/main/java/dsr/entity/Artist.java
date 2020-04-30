@@ -14,22 +14,23 @@ public class Artist {
 
     @EqualsAndHashCode.Exclude
     @ToString.Exclude
-    @ManyToMany(mappedBy = "artistsSet")
-    private Set<User> users = new HashSet<>();
+    @ManyToMany(fetch = FetchType.EAGER, mappedBy = "artistsSet")
+    private Set<User> user = new HashSet<>();
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO, generator = "native")
     @GenericGenerator(name = "native", strategy = "native")
-    private int id;
+    private int artistId;
+
     @Column(name = "artist_name")
     private String artistName;
 
-    public int getId() {
-        return id;
+    public int getArtistId() {
+        return artistId;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setArtistId(int artistId) {
+        this.artistId = artistId;
     }
 
     public String getArtistName() {
@@ -39,7 +40,4 @@ public class Artist {
     public void setArtistName(String artistName) {
         this.artistName = artistName;
     }
-
-
-
 }

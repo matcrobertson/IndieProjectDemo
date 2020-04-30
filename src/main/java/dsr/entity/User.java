@@ -22,13 +22,12 @@ public class User {
 
     @EqualsAndHashCode.Exclude
     @ToString.Exclude
-    @ManyToMany(cascade = {CascadeType.ALL})
+    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinTable(
             name = "user_artist",
             joinColumns = { @JoinColumn(name = "user_id")},
-            inverseJoinColumns = { @JoinColumn(name = "artist_id") }
-    )
-    Set<Artist> artistsSet = new HashSet<>();
+            inverseJoinColumns = { @JoinColumn(name = "artist_id") })
+    private Set<Artist> artistsSet = new HashSet<>();
 
     @EqualsAndHashCode.Exclude
     @ToString.Exclude
