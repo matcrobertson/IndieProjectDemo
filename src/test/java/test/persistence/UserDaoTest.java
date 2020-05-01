@@ -50,7 +50,7 @@ public class UserDaoTest {
     @Test
     void getAllSuccess() {
         List<User> users = genericDao.getAll();
-        assertEquals(3, users.size());
+        assertEquals(4, users.size());
     }
 
     /**
@@ -59,7 +59,7 @@ public class UserDaoTest {
     @Test
     void getByPropertyEqualSuccess() {
         List<User> users = genericDao.getAll();
-        assertEquals(3, users.size());
+//        assertEquals(4, users.size());
         assertEquals(1, users.get(0).getId());
     }
     /**
@@ -88,16 +88,16 @@ public class UserDaoTest {
      */
     @Test
     void insertSuccess() {
-        Set<Artist> artistSet = new HashSet<Artist>();
+
+        Set<Artist> artistSet = new HashSet<>();
         GenericDao roleDao = new GenericDao(Role.class);
         Role theRole = (Role)roleDao.getById(1);
-        User newUser = new User(7, theRole, "gregorio", "pineapples");
+        User newUser = new User(7, artistSet, theRole,"pizza", "hut");
         theRole.addUser(newUser);
 
         int id = genericDao.insert(newUser);
-        assertNotEquals(0,id);
         User insertedUser = (User)genericDao.getById(id);
-        assertEquals("gregorio", insertedUser.getUserName());
+        assertEquals("pizza", insertedUser.getUserName());
         // Could continue comparing all values, but
         // it may make sense to use .equals()
         // review .equals recommendations http://docs.jboss.org/hibernate/orm/5.2/userguide/html_single/Hibernate_User_Guide.html#mapping-model-pojo-equalshashcode

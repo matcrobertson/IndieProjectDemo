@@ -18,6 +18,7 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO, generator = "native")
     @GenericGenerator(name = "native", strategy = "native")
+    @Column(name = "user_id")
     private int id;
 
     @EqualsAndHashCode.Exclude
@@ -44,5 +45,8 @@ public class User {
         this.password = password;
     }
 
+    public User(int userId, Role role, String userName, String password) {
+
+    }
 
 }

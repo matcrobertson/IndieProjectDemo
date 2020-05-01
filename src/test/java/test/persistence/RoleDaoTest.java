@@ -34,9 +34,7 @@ public class RoleDaoTest {
     @Test
     void getByIdSuccess() {
         Role retrievedRole = (Role)genericDao.getById(1);
-//        assertEquals("admin", retrievedRole.getRole());
-        assertEquals(1, 1);
-
+        assertEquals("admin", retrievedRole.getRole());
 
     }
     /**

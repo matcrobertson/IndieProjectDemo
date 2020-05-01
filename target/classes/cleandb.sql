@@ -110,8 +110,8 @@ CREATE TABLE `user_artist` (
                                UNIQUE KEY `id_UNIQUE` (`id`),
                                KEY `fk_user_artist_user_idx` (`user_id`),
                                KEY `fk_user_artist_artist1_idx` (`artist_id`),
-                               CONSTRAINT `fk_user_artist_artist1` FOREIGN KEY (`artist_id`) REFERENCES `artist` (`id`),
-                               CONSTRAINT `fk_user_artist_user` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`)
+                               CONSTRAINT `fk_user_artist_artist1` FOREIGN KEY (`artist_id`) REFERENCES `artist` (artist_id),
+                               CONSTRAINT `fk_user_artist_user` FOREIGN KEY (`user_id`) REFERENCES `user` (user_id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 

@@ -26,9 +26,14 @@ public class Role {
     @OneToMany(mappedBy = "role", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
     private Set<User> users =  new HashSet<>();
 
+    @Column(name = "user_name")
+    private String userName;
+
     public Role(String role) {
         this.role = role;
     }
+
+
 
     public void addUser(User order) {
         users.add(order);
