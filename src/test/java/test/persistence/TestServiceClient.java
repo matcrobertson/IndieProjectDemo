@@ -20,13 +20,13 @@ public class TestServiceClient {
     public void deezerArtistJSON() throws Exception {
         Client client = ClientBuilder.newClient();
         WebTarget target =
-                client.target("https://api.deezer.com/artist/27");
+                client.target("https://api.deezer.com/artist/27/albums");
 
         String response = target.request(MediaType.APPLICATION_JSON).get(String.class);
         ObjectMapper mapper = new ObjectMapper();
         ArtistResponse deezerArtist = mapper.readValue(response, ArtistResponse.class);
         String expectedArtist = "Daft Punk";
-        assertEquals(expectedArtist, deezerArtist.getName());
+        assertEquals(expectedArtist, deezerArtist.getData().get(0).getTitle());
 
     }
 

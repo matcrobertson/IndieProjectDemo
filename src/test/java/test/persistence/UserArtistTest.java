@@ -6,7 +6,9 @@ import dsr.persistence.GenericDao;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
+
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -21,8 +23,9 @@ public class UserArtistTest {
     public void getUserArtistsTest() {
         genericDao = new GenericDao<User>(User.class);
         User user = (User)genericDao.getById(1);
-
-        Set<Artist> testSet = user.getArtistsSet();
-        assertEquals(1, testSet.size());
+        List<Artist> testList = new ArrayList<>(user.getArtistsSet());
+        String arraylistArtist = testList.get(0).getArtistName();
+//        Set<Artist> testSet = user.getArtistsSet();
+        assertEquals("Eminem", arraylistArtist);
     }
 }
