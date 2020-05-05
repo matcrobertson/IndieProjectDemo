@@ -25,6 +25,15 @@
                 </form>
 
                     <!-- TODO: use jstl to populate this section -->
+            <c:forEach items="${songs}" var="song">
+                <tr>
+                    <th scope="row">song.data.</th>
+                    <td>Pink Floyd</td>
+                    <td>The Wall</td>
+                    <td>Another Brick in the Wall Pt.1</td>
+                    <td><a target="_blank" href="http://www.youtube.com"><img src="images/youtube.png" class="youtube"></a></td>
+                </tr>
+            </c:forEach>
                     <table class="table">
                       <thead class="thead-dark">
                         <tr>
