@@ -16,7 +16,9 @@
 
 
                 <h1 class="mt-5">Updates on Specific Artists</h1>
-
+            <c:forEach var="artist" items="artists">
+                <option value="${artist.name}">${artist.name}</option>
+            </c:forEach>
 
                     <select class="centering" name="artistName">
                         <option value="artist">artist</option>
@@ -24,7 +26,7 @@
                         <option value="">section</option>
                         <!-- TODO: use jstl to populate this section -->
                     </select>
-                    <input type="date" name="" value="">
+                    <input type="date" name="artistCheckDate" value="">
                     <button type="button" name="button">Enter</button>
                     <table class="table">
                       <thead class="thead-dark">

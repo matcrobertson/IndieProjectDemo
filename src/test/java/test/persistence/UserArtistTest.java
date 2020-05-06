@@ -8,6 +8,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -27,5 +28,32 @@ public class UserArtistTest {
         String arraylistArtist = testList.get(0).getArtistName();
 //        Set<Artist> testSet = user.getArtistsSet();
         assertEquals("Eminem", arraylistArtist);
+    }
+
+    @Test
+    public void addUserArtist() {
+        User testUser = genericDao.getById(2);
+        GenericDao<Artist> artistDao = new GenericDao<>(Artist.class);
+        Artist eminem = artistDao.getById(1);
+        Set<Artist> artistSet = testUser.getArtistsSet();
+        artistSet.add(eminem);
+        testUser.setArtistsSet(artistSet);
+        genericDao.saveOrUpdate(testUser);
+
+        User updatedUser = genericDao.getById(2);
+        Set<Artist> updatedUserArtistsSet = updatedUser.getArtistsSet();
+        assertEquals(1, updatedUserArtistsSet.size());
+    }
+
+    @Test
+    public void deleteUserArtist() {
+        User user = genericDao.getById(2);
+        GenericDao artistDao = new GenericDao(Artist.class);
+        Artist removeArtist = (Artist) artistDao.getById(1);
+        user.getArtistsSet().remove(removeArtist);
+        genericDao.saveOrUpdate(user);
+        User updatedUser = genericDao.getById(2);
+
+        assertEquals(0, updatedUser.getArtistsSet().size());
     }
 }
