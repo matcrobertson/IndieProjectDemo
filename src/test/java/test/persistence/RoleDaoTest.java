@@ -12,7 +12,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class RoleDaoTest {
     private final Logger logger = LogManager.getLogger(this.getClass());
-    GenericDao genericDao;
+    private GenericDao<Role> genericDao;
 
 
     /**
@@ -22,7 +22,7 @@ public class RoleDaoTest {
      */
     @BeforeEach
     void setUp() {
-        genericDao = new GenericDao(Role.class);
+        genericDao = new GenericDao<>(Role.class);
         Database database = Database.getInstance();
         database.runSQL("cleandb.sql");
 
@@ -82,10 +82,10 @@ public class RoleDaoTest {
     @Test
     void insertSuccess() {
 
-        Role newRole = new Role("Lord of Pancakes");
+        Role newRole = new Role("Lord of Pancakes", "bobbyMagee");
         int id = genericDao.insert(newRole);
         assertNotEquals(0,id);
-        Role insertedUser = (Role)genericDao.getById(id);
+        Role insertedUser = genericDao.getById(id);
         assertEquals("Lord of Pancakes", insertedUser.getRole());
         // Could continue comparing all values, but
         // it may make sense to use .equals()

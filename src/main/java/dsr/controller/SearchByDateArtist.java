@@ -23,7 +23,9 @@ import java.util.Date;
 import java.util.List;
 
 
-@WebServlet(name = "/artistSearch")
+@WebServlet(
+        name = "artistSearch",
+        urlPatterns = "/artistSearch")
 public class SearchByDateArtist extends HttpServlet {
 
         @Override

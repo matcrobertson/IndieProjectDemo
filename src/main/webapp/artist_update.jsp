@@ -16,9 +16,9 @@
 
 
                 <h1 class="mt-5">Updates on Specific Artists</h1>
-            <c:forEach var="artist" items="artists">
-                <option value="${artist.name}">${artist.name}</option>
-            </c:forEach>
+<%--            <c:forEach var="artist" items="artists">--%>
+<%--                <option value="${artist.name}">${artist.name}</option>--%>
+<%--            </c:forEach>--%>
 
                     <select class="centering" name="artistName">
                         <option value="artist">artist</option>

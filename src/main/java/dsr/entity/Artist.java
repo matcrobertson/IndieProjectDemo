@@ -21,9 +21,8 @@ public class Artist {
 
     @Id
     @Column(name="artist_id")
-    @GeneratedValue
-//    @GeneratedValue(strategy = GenerationType.AUTO, generator = "native")
-//    @GenericGenerator(name = "id", strategy = "native")
+    @GeneratedValue(strategy = GenerationType.AUTO, generator = "native")
+    @GenericGenerator(name = "native", strategy = "native")
     private int artistId;
 
     @Column(name = "artist_name")
@@ -31,6 +30,12 @@ public class Artist {
 
     @Column(name = "deezer_id")
     private String deezerId;
+
+    public Artist( String artistName, String deezerId) {
+//        this.user = user;
+        this.artistName = artistName;
+        this.deezerId = deezerId;
+    }
 
 
 }

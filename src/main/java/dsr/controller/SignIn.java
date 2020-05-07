@@ -9,28 +9,24 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
-import java.util.List;
-
-/**
- * A simple servlet to welcome the user.
- * @author pwaite
- */
 
 @WebServlet(
-        name = "artists",
-        urlPatterns = {"/artists"}
+        name = "signIn",
+        urlPatterns = { "/signIn"}
 )
-
-public class SearchUser extends HttpServlet {
+public class SignIn extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        GenericDao userDao = new GenericDao(User.class);
-        List<User> users = userDao.getAll();
+        GenericDao<User> userDao = new GenericDao<>(User.class);
 
-        req.setAttribute("users", users);
 
-        RequestDispatcher dispatcher = req.getRequestDispatcher("/EDITARTIST.jsp");
+        User currentUser = userDao.findByPropertyEqual("userName", req.getRemoteUser()).get(0);
+        HttpSession session = req.getSession();
+        session.setAttribute("sessionId", currentUser.getId());
+
+        RequestDispatcher dispatcher = req.getRequestDispatcher("/home_page.jsp");
         dispatcher.forward(req, resp);
     }
 }

@@ -18,7 +18,7 @@
 
                 <h1 class="mt-5">Updates on All Artists</h1>
 
-                <form class="centering" action="home_page" method="post">
+                <form class="centering" action="home_page" method="get">
                     <h2 class="centerText">When did you check on your artists last?</h2>
                     <input type="date" name="checkDate">
                     <button type="submit" id="enterButton" name="button">Enter</button>
@@ -27,7 +27,7 @@
                     <!-- TODO: use jstl to populate this section -->
             <c:forEach items="${songs}" var="song">
                 <tr>
-                    <th scope="row">song.data.</th>
+                    <th scope="row">song.data</th>
                     <td>Pink Floyd</td>
                     <td>The Wall</td>
                     <td>Another Brick in the Wall Pt.1</td>

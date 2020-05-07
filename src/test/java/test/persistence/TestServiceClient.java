@@ -49,37 +49,24 @@ public class TestServiceClient {
     @Test
     public void deezerSearchArtistJSON() {
         DeezerSearchDao searchDao = new DeezerSearchDao();
-        String url = "https://api.deezer.com/search?q=eminem";
+        String url = "https://api.deezer.com/search/artist?q=eminem";
         String returnedValue = null;
         for(DataItem item : searchDao.getResponse(url).getData()) {
             if(returnedValue != null) {
                 break;
             }
-            returnedValue = item.getArtist().getId();
+            returnedValue = item.getId();
         }
         assertEquals("13", returnedValue);
 
     }
 
-    @Test
-    public void deezerSearchAlbumJSON() {
-        DeezerSearchDao searchDao = new DeezerSearchDao();
-        String url = "https://api.deezer.com/search?q=eminem";
-        String returnedValue = null;
-        for(DataItem item : searchDao.getResponse(url).getData()) {
-            if(returnedValue != null) {
-                break;
-            }
-            returnedValue = item.getAlbum().getId();
-        }
-        assertEquals("119606", returnedValue);
 
-    }
 
     @Test
     public void deezerSearchResponseJSON() {
         DeezerSearchDao searchDao = new DeezerSearchDao();
-        String url = "https://api.deezer.com/search?q=eminem";
+        String url = "https://api.deezer.com/search/artist?q=eminem";
         assertNotNull(searchDao.getResponse(url).getData());
 
     }

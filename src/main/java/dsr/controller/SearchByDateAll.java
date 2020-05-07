@@ -19,6 +19,7 @@ import java.util.Date;
 import java.util.List;
 
 @WebServlet(
+            name = "homePage",
             urlPatterns = "/home_page"
     )
 public class SearchByDateAll extends HttpServlet {

@@ -16,7 +16,7 @@ import static org.junit.jupiter.api.Assertions.*;
 @Log4j2
 public class UserDaoTest {
 
-    GenericDao genericDao;
+    private GenericDao<User> genericDao;
 
 
     /**
@@ -26,7 +26,7 @@ public class UserDaoTest {
      */
     @BeforeEach
     void setUp() {
-        genericDao = new GenericDao(User.class);
+        genericDao = new GenericDao<>(User.class);
 
 
         Database database = Database.getInstance();
@@ -38,7 +38,7 @@ public class UserDaoTest {
      */
     @Test
     void getByIdSuccess() {
-        User retrievedUser = (User)genericDao.getById(1);
+        User retrievedUser = genericDao.getById(1);
         assertEquals("dan", retrievedUser.getUserName());
         assertEquals("dan", retrievedUser.getPassword());
 
@@ -58,7 +58,7 @@ public class UserDaoTest {
      */
     @Test
     void getByPropertyEqualSuccess() {
-        List<User> users = genericDao.getAll();
+        List<User> users = genericDao.findByPropertyEqual("userName", "dan");
 //        assertEquals(4, users.size());
         assertEquals(1, users.get(0).getId());
     }
@@ -89,14 +89,14 @@ public class UserDaoTest {
     @Test
     void insertSuccess() {
 
-        Set<Artist> artistSet = new HashSet<>();
-        GenericDao roleDao = new GenericDao(Role.class);
+        Set<Artist> artists = new HashSet<Artist>();
+        GenericDao roleDao = new GenericDao<>(Role.class);
         Role theRole = (Role)roleDao.getById(1);
-        User newUser = new User(7, artistSet, theRole,"pizza", "hut");
+        User newUser = new User(theRole,"pizza", "hut");
         theRole.addUser(newUser);
 
         int id = genericDao.insert(newUser);
-        User insertedUser = (User)genericDao.getById(id);
+        User insertedUser = genericDao.getById(id);
         assertEquals("pizza", insertedUser.getUserName());
         // Could continue comparing all values, but
         // it may make sense to use .equals()

@@ -29,14 +29,19 @@ public class Role {
     @Column(name = "user_name")
     private String userName;
 
-    public Role(String role) {
+//    public Role(String role) {
+//        this.role = role;
+//    }
+
+    public Role(String role, String userName) {
         this.role = role;
+        this.userName = userName;
     }
-
-
 
     public void addUser(User order) {
         users.add(order);
         order.setRole(this);
     }
+
+
 }

@@ -9,15 +9,15 @@
                 <p>Please sign up</p>
 
             </div>
-            <form action="#" method="post">
+            <form action="/signUp" method="get">
                 <label for="userName">User Name:</label>
                 <input type="text" id="userName" name="userName" value=""><br>
-                <label for="password">Password</label>
-                <input type="password" id="password" name="password" value=""><br>
-                <label for="password">Re-enter Password</label>
-                <input type="password" id="password" name="password2" value=""><br>
+                <label for="password1">Password</label>
+                <input type="password" id="password1" name="password1" value=""><br>
+                <label for="password2">Re-enter Password</label>
+                <input type="password" id="password2" name="password2" value=""><br>
 
-                <input type="button" class="btn btn-primary" name="SignUp" value="Sign Up">
+                <input type="submit" class="btn btn-primary" name="SignUp" value="Sign Up">
             </form>
             <a href="index.jsp" class="btn btn-dark">Go Back</a>
 

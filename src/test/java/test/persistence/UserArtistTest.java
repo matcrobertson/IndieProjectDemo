@@ -7,6 +7,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -34,10 +35,14 @@ public class UserArtistTest {
     public void addUserArtist() {
         User testUser = genericDao.getById(2);
         GenericDao<Artist> artistDao = new GenericDao<>(Artist.class);
-        Artist eminem = artistDao.getById(1);
+//        Artist eminem = artistDao.getById(1);
+        Artist eminem = artistDao.findByPropertyEqual("artistName", "eminem").get(0);
+        int dumb = eminem.getArtistId();
+        Artist stuff = artistDao.getById(dumb);
         Set<Artist> artistSet = testUser.getArtistsSet();
-        artistSet.add(eminem);
+        artistSet.add(stuff);
         testUser.setArtistsSet(artistSet);
+
         genericDao.saveOrUpdate(testUser);
 
         User updatedUser = genericDao.getById(2);

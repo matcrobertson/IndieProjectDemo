@@ -8,7 +8,7 @@
                               <a class="nav-link active" href="index.jsp">Home</a>
                           </li>
                           <li class="nav-item">
-                            <a class="nav-link" href="login.jsp">Log In</a>
+                            <a class="nav-link" href="signIn">Log In</a>
                           </li>
                           <li class="nav-item">
                               <a class="nav-link" href="sign_up.jsp">Sign Up</a>
