@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.List;
 
 
 @WebServlet(
@@ -19,26 +20,28 @@ import java.io.IOException;
         urlPatterns = "/signUp")
 public class AddUser extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
-        String pw = (String) req.getAttribute("password1");
-        String pw2 = (String)req.getAttribute("password2");
-        String userName = (String) req.getAttribute("userName");
+        String pw = req.getParameter("password1");
+        String pw2 = req.getParameter("password2");
+        String userName = req.getParameter("userName");
         RequestDispatcher dispatcher;
+        GenericDao<User> userDao = new GenericDao<>(User.class);
+        List<User> userList = userDao.findByPropertyEqual("userName", userName);
 
-        if(pw.equals(pw2) && !pw.equals("") && !userName.equals("")) {
-            GenericDao<User> userDao = new GenericDao<>(User.class);
+        if(pw.equals(pw2) && !pw.equals("") && !userName.equals("") && userList.size() == 0) {
+//            GenericDao<User> userDao = new GenericDao<>(User.class);
             GenericDao<Role> roleDao = new GenericDao<>(Role.class);
             Role newUserRole = new Role("user", userName);
             roleDao.insert(newUserRole);
             User newUser = new User(newUserRole, userName, pw);
             userDao.insert(newUser);
 
-             dispatcher = req.getRequestDispatcher("/sign_in.jsp");
+             resp.sendRedirect("signIn");
 
         } else {
-            req.setAttribute("error", "error");
-            dispatcher = req.getRequestDispatcher("/home_page.jsp");
-        }
+            req.setAttribute("userFail", "invalid credentials");
+            dispatcher = req.getRequestDispatcher("/sign_up.jsp");
             dispatcher.forward(req, resp);
+        }
     }
 
 }

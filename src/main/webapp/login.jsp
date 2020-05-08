@@ -21,6 +21,11 @@
                 <input type="submit" name="Submit" value="Log In">
                 <input type="button" name="SignUp" value="Sign Up">
             </form>
+            <c:if test="${error != null}">
+                ${error}
+                <c:remove var="error"/>
+            </c:if>
+            <c:set var="error" value="Oops! invalid credentials" scope="session"/>
             <a href="index.jsp" class="btn btn-dark">Go Back</a>
         </div>
     </body>

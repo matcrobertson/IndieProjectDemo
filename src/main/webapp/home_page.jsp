@@ -25,15 +25,7 @@
                 </form>
 
                     <!-- TODO: use jstl to populate this section -->
-            <c:forEach items="${songs}" var="song">
-                <tr>
-                    <th scope="row">song.data</th>
-                    <td>Pink Floyd</td>
-                    <td>The Wall</td>
-                    <td>Another Brick in the Wall Pt.1</td>
-                    <td><a target="_blank" href="http://www.youtube.com"><img src="images/youtube.png" class="youtube"></a></td>
-                </tr>
-            </c:forEach>
+
                     <table class="table">
                       <thead class="thead-dark">
                         <tr>
@@ -45,27 +37,15 @@
                         </tr>
                       </thead>
                       <tbody>
-                        <tr>
-                          <th scope="row">09/22/1979</th>
-                          <td>Pink Floyd</td>
-                          <td>The Wall</td>
-                          <td>Another Brick in the Wall Pt.1</td>
-                          <td><a target="_blank" href="http://www.youtube.com"><img src="images/youtube.png" class="youtube"></a></td>
-                        </tr>
-                        <tr>
-                          <th scope="row">07/25/1970</th>
-                          <td>Pink Floyd</td>
-                          <td>Dark Side of the Moon</td>
-                          <td>Comfortably Numb</td>
-                          <td><a target="_blank" href="http://www.youtube.com"><img src="images/youtube.png" class="youtube"></a></td>
-                        </tr>
-                        <tr>
-                          <th scope="row">07/01/1980</th>
-                          <td>Guns N' Roses</td>
-                          <td>Appetite for Destruction</td>
-                          <td>Sweet Child O' Mine</td>
-                          <td><a target="_blank" href="http://www.youtube.com"><img src="images/youtube.png" class="youtube"></a></td>
-                        </tr>
+                      <c:forEach items="${songs}" var="song">
+                          <tr>
+                              <th scope="row">${song.title}</th>
+                              <td>Pink Floyd</td>
+                              <td>The Wall</td>
+                              <td>Another Brick in the Wall Pt.1</td>
+                              <td><a target="_blank" href="http://www.youtube.com"><img src="images/youtube.png" class="youtube"></a></td>
+                          </tr>
+                      </c:forEach>
                       </tbody>
                     </table>
 

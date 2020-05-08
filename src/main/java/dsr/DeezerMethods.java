@@ -24,9 +24,9 @@ public class DeezerMethods {
 
         for(DataItem artistAlbum : deezerArtist.getResponse(url).getData()) {
             LocalDate albumDate = stringToLocalDate(artistAlbum.getReleaseDate());
-            if(userDate.compareTo(albumDate) > 0) {
+//            if(userDate.compareTo(albumDate) > 0) {
                 artistAlbums.add(artistAlbum.getTracklist());
-            }
+//            }
         }
         return artistAlbums;
     }
@@ -41,7 +41,9 @@ public class DeezerMethods {
             DeezerAlbumDao albumDao = new DeezerAlbumDao();
             List<dsr.entity.DeezerAlbum.DataItem> returnedSongs = new ArrayList<>();
             for(String album : newAlbums) {
-                returnedSongs.addAll(albumDao.getResponse(album).getData());
+                List<dsr.entity.DeezerAlbum.DataItem> tempList;
+                tempList = albumDao.getResponse(album).getData();
+                returnedSongs.addAll(tempList);
             }
             return returnedSongs;
         }

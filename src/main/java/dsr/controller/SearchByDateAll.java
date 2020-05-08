@@ -6,6 +6,7 @@ import dsr.entity.DeezerAlbum.DataItem;
 import dsr.entity.User;
 import dsr.persistence.GenericDao;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -27,9 +28,10 @@ public class SearchByDateAll extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 //        get the user id from the session
-        int currentUserId =  Integer.parseInt(req.getSession().getId());
+        int currentUserId =  (int) req.getSession().getAttribute("sessionId");
 //        USE THE DAO YOU SILLY GOOSE!!!!!
 //        instantiate dao
+        // TODO: 5/8/20 this does not handle an empty song list yet 
         GenericDao<User> userDao = new GenericDao<>(User.class);
 
         User currentUser = userDao.getById(currentUserId);
@@ -37,8 +39,8 @@ public class SearchByDateAll extends HttpServlet {
         List<Artist> userArtists = new ArrayList<>(currentUser.getArtistsSet());
 
         DeezerMethods deezerMethods = new DeezerMethods();
-        Date deprecatedDate = (Date)(req.getAttribute("checkDate"));
-       LocalDate userDate = deprecatedDate.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+        LocalDate userDate = deezerMethods.stringToLocalDate(req.getParameter("checkDate"));
+
 
         List<DataItem> userSongs = new ArrayList<>();
         for(Artist currentArtist : userArtists) {
@@ -49,9 +51,9 @@ public class SearchByDateAll extends HttpServlet {
 
         req.setAttribute("songs", userSongs);
 
-        resp.sendRedirect("home_page.jsp");
-//        RequestDispatcher dispatcher = req.getRequestDispatcher("home_page.jsp");
-//        dispatcher.forward(req,resp);
+
+        RequestDispatcher dispatcher = req.getRequestDispatcher("home_page.jsp");
+        dispatcher.forward(req,resp);
     }
 
 }
