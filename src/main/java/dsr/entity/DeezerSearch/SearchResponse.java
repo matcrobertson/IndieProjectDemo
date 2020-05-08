@@ -1,18 +1,26 @@
-package dsr.entity.DeezerAlbum;
+package dsr.entity.DeezerSearch;
 
 import java.util.List;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class AlbumResponse{
+public class SearchResponse{
+
+	@JsonProperty("next")
+	private String next;
 
 	@JsonProperty("total")
 	private int total;
 
 	@JsonProperty("data")
 	private List<DataItem> data;
-	//did this fix it?
-	@JsonProperty("next")
-	private String next;
+
+	public void setNext(String next){
+		this.next = next;
+	}
+
+	public String getNext(){
+		return next;
+	}
 
 	public void setTotal(int total){
 		this.total = total;
@@ -33,8 +41,9 @@ public class AlbumResponse{
 	@Override
  	public String toString(){
 		return 
-			"AlbumResponse{" + 
-			"total = '" + total + '\'' + 
+			"SearchResponse{" + 
+			"next = '" + next + '\'' + 
+			",total = '" + total + '\'' + 
 			",data = '" + data + '\'' + 
 			"}";
 		}
