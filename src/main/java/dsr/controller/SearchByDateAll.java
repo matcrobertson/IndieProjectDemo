@@ -2,8 +2,11 @@ package dsr.controller;
 
 import dsr.DeezerMethods;
 import dsr.entity.Artist;
-import dsr.entity.DeezerAlbum.DataItem;
+import dsr.entity.DeezerArtist.DataItem;
+import dsr.entity.DeezerSong;
 import dsr.entity.User;
+import dsr.persistence.DeezerAlbumDao;
+import dsr.persistence.DeezerArtistDao;
 import dsr.persistence.GenericDao;
 
 import javax.servlet.RequestDispatcher;
@@ -14,9 +17,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.time.LocalDate;
-import java.time.ZoneId;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 @WebServlet(
@@ -28,7 +29,7 @@ public class SearchByDateAll extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 //        get the user id from the session
-        int currentUserId =  (int) req.getSession().getAttribute("sessionId");
+        int currentUserId = (int) req.getSession().getAttribute("sessionId");
 //        USE THE DAO YOU SILLY GOOSE!!!!!
 //        instantiate dao
         // TODO: 5/8/20 this does not handle an empty song list yet 
@@ -42,18 +43,35 @@ public class SearchByDateAll extends HttpServlet {
         LocalDate userDate = deezerMethods.stringToLocalDate(req.getParameter("checkDate"));
 
 
-        List<DataItem> userSongs = new ArrayList<>();
-        for(Artist currentArtist : userArtists) {
+        List<DeezerSong> userSongs = new ArrayList<>();
+        for (Artist currentArtist : userArtists) {
             String artistId = currentArtist.getDeezerId();
-            List<String> userArtistAlbums = deezerMethods.getArtistAlbums(artistId, userDate);
-            userSongs.addAll(deezerMethods.addToSongsList(userArtistAlbums));
+            String url = "https://api.deezer.com/artist/" + artistId + "/albums";
+            DeezerArtistDao deezerArtist = new DeezerArtistDao();
+
+            for (DataItem artistAlbum : deezerArtist.getResponse(url).getData()) {
+                LocalDate albumDate = deezerMethods.stringToLocalDate(artistAlbum.getReleaseDate());
+                if (userDate.compareTo(albumDate) < 0) {
+                    String albumTitle = artistAlbum.getTitle();
+                    String trackList = artistAlbum.getTracklist();
+                    DeezerAlbumDao albumDao = new DeezerAlbumDao();
+
+                    for (dsr.entity.DeezerAlbum.DataItem track : albumDao.getResponse(trackList).getData()) {
+                        DeezerSong song = new DeezerSong();
+                        song.setAlbumName(albumTitle);
+                        song.setArtistName(track.getArtist().getName());
+                        song.setReleaseDate(albumDate);
+                        song.setSongTitle(track.getTitle());
+                        userSongs.add(song);
+                    }
+                }
+            }
         }
 
-        req.setAttribute("songs", userSongs);
+            req.setAttribute("songs", userSongs);
 
 
-        RequestDispatcher dispatcher = req.getRequestDispatcher("home_page.jsp");
-        dispatcher.forward(req,resp);
-    }
-
+            RequestDispatcher dispatcher = req.getRequestDispatcher("home_page.jsp");
+            dispatcher.forward(req, resp);
+        }
 }

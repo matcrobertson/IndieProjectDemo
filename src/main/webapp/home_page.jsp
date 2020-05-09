@@ -39,10 +39,10 @@
                       <tbody>
                       <c:forEach items="${songs}" var="song">
                           <tr>
-                              <th scope="row">${song.title}</th>
-                              <td>Pink Floyd</td>
-                              <td>The Wall</td>
-                              <td>Another Brick in the Wall Pt.1</td>
+                              <th scope="row">${song.releaseDate}</th>
+                              <td>${song.artistName}</td>
+                              <td>${song.albumName}</td>
+                              <td>${song.songTitle}</td>
                               <td><a target="_blank" href="http://www.youtube.com"><img src="images/youtube.png" class="youtube"></a></td>
                           </tr>
                       </c:forEach>

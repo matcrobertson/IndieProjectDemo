@@ -3,6 +3,7 @@ package dsr;
 
 
 import dsr.entity.DeezerArtist.DataItem;
+import dsr.entity.DeezerSong;
 import dsr.persistence.DeezerAlbumDao;
 import dsr.persistence.DeezerArtistDao;
 
@@ -17,19 +18,11 @@ import java.util.List;
 public class DeezerMethods {
 
 
-    public List<String> getArtistAlbums(String artistId, LocalDate userDate) {
-        String url = "https://api.deezer.com/artist/" + artistId + "/albums";
-        DeezerArtistDao deezerArtist = new DeezerArtistDao();
-        List<String> artistAlbums = new ArrayList<>();
-
-        for(DataItem artistAlbum : deezerArtist.getResponse(url).getData()) {
-            LocalDate albumDate = stringToLocalDate(artistAlbum.getReleaseDate());
-            if(userDate.compareTo(albumDate) > 0) {
-                artistAlbums.add(artistAlbum.getTracklist());
-            }
-        }
-        return artistAlbums;
-    }
+//    public DeezerSong getArtistAlbums(String artistId, LocalDate userDate) {
+//
+//        }
+//        return artistAlbums;
+//    }
 
 
         public LocalDate stringToLocalDate (String myDate) {
@@ -37,12 +30,12 @@ public class DeezerMethods {
              return LocalDate.parse(myDate, formatter);
         }
 
-        public List<dsr.entity.DeezerAlbum.DataItem> addToSongsList(List<String> newAlbums) {
-            DeezerAlbumDao albumDao = new DeezerAlbumDao();
-            List<dsr.entity.DeezerAlbum.DataItem> returnedSongs = new ArrayList<>();
-            for(String album : newAlbums) {
-                returnedSongs.addAll(albumDao.getResponse(album).getData());
-            }
-            return returnedSongs;
-        }
+//        public List<dsr.entity.DeezerAlbum.DataItem> addToSongsList(List<String> newAlbums) {
+//
+//            return returnedSongs;
+//        }
+
+    public void agregateData() {
+        DeezerSong artistAlbum = new DeezerSong();
+    }
 }
