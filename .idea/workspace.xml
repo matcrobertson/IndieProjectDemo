@@ -7,22 +7,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f72530a8-eb98-414b-9374-4e272efdd8dc" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/dsr/entity/DeezerSong.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dsr/DeezerMethods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dsr/DeezerMethods.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dsr/controller/DeleteUserArtist.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dsr/controller/DeleteUserArtist.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dsr/controller/SearchByDateAll.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dsr/controller/SearchByDateAll.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dsr/controller/SearchByDateArtist.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dsr/controller/SearchByDateArtist.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/artist_update.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/artist_update.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/home_page.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/home_page.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/cleandb.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/hibernate.cfg.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/log4j2.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/cleandb.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/hibernate.cfg.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/log4j2.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -99,47 +91,12 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/dsr/controller/SearchByDateAll.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/dsr/controller/DeleteUserArtist.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="74">
-              <caret line="47" column="58" selection-start-line="47" selection-start-column="58" selection-end-line="47" selection-end-column="58" />
+            <state relative-caret-position="71">
+              <caret line="19" column="70" lean-forward="true" selection-start-line="19" selection-start-column="70" selection-end-line="19" selection-end-column="70" />
               <folding>
                 <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/home_page.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="358">
-              <caret line="45" column="51" selection-start-line="45" selection-start-column="51" selection-end-line="45" selection-end-column="51" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/dsr/entity/DeezerSong.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="13" selection-start-line="13" selection-end-line="13" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/dsr/DeezerMethods.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="96">
-              <caret line="20" selection-start-line="20" selection-start-column="2" selection-end-line="24" selection-end-column="7" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1753#1754#0" expanded="true" />
-                <element signature="e#1810#1811#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -230,10 +187,8 @@
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/2af83ca9-2911-46d3-b3d0-dca6effec053/console.sql" />
         <option value="$PROJECT_DIR$/src/test/java/test/persistence/RoleDaoTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/dsr/entity/Role.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/artist_update.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/dsr/controller/SearchUser.java" />
         <option value="$PROJECT_DIR$/src/main/java/dsr/controller/SignOutUser.java" />
-        <option value="$PROJECT_DIR$/src/main/java/dsr/controller/DeleteUserArtist.java" />
         <option value="$PROJECT_DIR$/src/main/java/dsr/controller/signIn.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/index.jsp" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/2af83ca9-2911-46d3-b3d0-dca6effec053/console_1.sql" />
@@ -257,9 +212,11 @@
         <option value="$PROJECT_DIR$/src/main/java/dsr/entity/DeezerArtistAlbum.java" />
         <option value="$PROJECT_DIR$/src/main/java/dsr/entity/DeezerSong.java" />
         <option value="$PROJECT_DIR$/src/main/java/dsr/DeezerMethods.java" />
-        <option value="$PROJECT_DIR$/src/main/java/dsr/controller/SearchByDateArtist.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/home_page.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/dsr/controller/SearchByDateAll.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/home_page.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/dsr/controller/SearchByDateArtist.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/artist_update.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/dsr/controller/DeleteUserArtist.java" />
       </list>
     </option>
   </component>
@@ -366,26 +323,6 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="dsr" type="462c0819:PsiDirectoryNode" />
               <item name="entity" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="indieProject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="indieProject" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="dsr" type="462c0819:PsiDirectoryNode" />
-              <item name="entity" type="462c0819:PsiDirectoryNode" />
-              <item name="DeezerAlbum" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="indieProject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="indieProject" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="dsr" type="462c0819:PsiDirectoryNode" />
-              <item name="entity" type="462c0819:PsiDirectoryNode" />
-              <item name="DeezerArtist" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="indieProject" type="b2602c69:ProjectViewProjectNode" />
@@ -796,7 +733,7 @@
       <workItem from="1588797507750" duration="14732000" />
       <workItem from="1588874518097" duration="14809000" />
       <workItem from="1588912859392" duration="997000" />
-      <workItem from="1588958482275" duration="19792000" />
+      <workItem from="1588958482275" duration="28017000" />
     </task>
     <task id="LOCAL-00001" summary="planning has commenced">
       <created>1581156080723</created>
@@ -959,7 +896,14 @@
       <option name="project" value="LOCAL" />
       <updated>1588971501906</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="refactored searchDateAll to aggregate data to an entity. it works but it is messy">
+      <created>1589035083753</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1589035083753</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -995,7 +939,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="345418000" />
+    <option name="totallyTimeSpent" value="353643000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1010,7 +954,7 @@
     <frame x="67" y="25" width="1851" height="903" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26067665" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26067665" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -1021,7 +965,7 @@
       <window_info id="Persistence" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32988358" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.6500312" visible="true" weight="0.40750325" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.6500312" visible="true" weight="0.39327297" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.4996881" weight="0.42043984" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -1043,7 +987,7 @@
       <window_info anchor="right" id="Palette" order="4" />
       <window_info anchor="right" id="Capture Analysis" order="5" />
       <window_info anchor="right" id="JSF" order="6" />
-      <window_info anchor="right" id="Database" order="7" sideWeight="0.49420848" weight="0.2579035" />
+      <window_info anchor="right" id="Database" order="7" sideWeight="0.49420848" visible="true" weight="0.2579035" />
       <window_info anchor="right" id="Palette&#9;" order="8" />
       <window_info anchor="right" id="Theme Preview" order="9" />
       <window_info anchor="right" id="CDI" order="10" />
@@ -1076,7 +1020,8 @@
     <MESSAGE value="add Artist works in silly ways" />
     <MESSAGE value="sign in and sign up works properly. search functionality is still busted" />
     <MESSAGE value="search functionality currently gives me everything" />
-    <option name="LAST_COMMIT_MESSAGE" value="search functionality currently gives me everything" />
+    <MESSAGE value="refactored searchDateAll to aggregate data to an entity. it works but it is messy" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactored searchDateAll to aggregate data to an entity. it works but it is messy" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1088,22 +1033,10 @@
           <option name="timeStamp" value="31" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/dsr/DeezerMethods.java</url>
-          <line>34</line>
-          <properties />
-          <option name="timeStamp" value="47" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/dsr/controller/SearchByDateAll.java</url>
-          <line>70</line>
+          <line>52</line>
           <properties />
           <option name="timeStamp" value="48" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/dsr/controller/SearchByDateAll.java</url>
-          <line>56</line>
-          <properties />
-          <option name="timeStamp" value="49" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -1123,7 +1056,6 @@
     </SUITE>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/dsr/entity/DeezerSearch/Artist.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/dsr/entity/DeezerSearch/Album.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/dsr/persistence/DeezerArtistDao.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -1183,16 +1115,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/dsr/controller/DeleteUserArtist.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="359">
-          <caret line="31" column="66" selection-start-line="31" selection-start-column="66" selection-end-line="31" selection-end-column="66" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/2af83ca9-2911-46d3-b3d0-dca6effec053/console_1.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -1204,13 +1126,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="10" column="54" selection-start-line="10" selection-start-column="54" selection-end-line="10" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/artist_update.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="18" column="60" selection-start-line="18" selection-start-column="60" selection-end-line="18" selection-end-column="60" />
         </state>
       </provider>
     </entry>
@@ -1266,16 +1181,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="70">
           <caret line="15" column="32" selection-start-line="15" selection-start-column="32" selection-end-line="15" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/dsr/entity/Artist.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="35" column="27" lean-forward="true" selection-start-line="35" selection-start-column="27" selection-end-line="35" selection-end-column="27" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1412,13 +1317,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/dsr/entity/DeezerAlbum/Artist.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-48">
-          <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/dsr/entity/DeezerAlbum/DataItem.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2568">
@@ -1447,28 +1345,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/dsr/DeezerMethods.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="20" selection-start-line="20" selection-start-column="2" selection-end-line="24" selection-end-column="7" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1753#1754#0" expanded="true" />
-            <element signature="e#1810#1811#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/dsr/entity/DeezerSong.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="13" selection-start-line="13" selection-end-line="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="das://2af83ca9-2911-46d3-b3d0-dca6effec053/schema/Music/table/user_artist">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state projectRestartId="41943f49-63a0-479d-974a-3f90ad415cb5">
@@ -1487,24 +1363,88 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/dsr/controller/SearchByDateArtist.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/dsr/entity/DeezerSong.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="51" column="30" selection-start-line="51" selection-start-column="30" selection-end-line="51" selection-end-column="30" />
+        <state relative-caret-position="240">
+          <caret line="13" selection-start-line="13" selection-end-line="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jrt:///usr/lib/jvm/java-1.11.0-openjdk-amd64!/java.base/java/util/function/Predicate.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="143">
+          <caret line="8" column="12" selection-start-line="8" selection-start-column="12" selection-end-line="8" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/dsr/DeezerMethods.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="20" column="86" selection-start-line="20" selection-start-column="86" selection-end-line="20" selection-end-column="86" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/home_page.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="358">
-          <caret line="45" column="51" selection-start-line="45" selection-start-column="51" selection-end-line="45" selection-end-column="51" />
+        <state relative-caret-position="537">
+          <caret line="26" column="57" selection-start-line="26" selection-start-column="57" selection-end-line="26" selection-end-column="57" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/dsr/controller/SearchByDateAll.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="74">
+        <state relative-caret-position="544">
           <caret line="47" column="58" selection-start-line="47" selection-start-column="58" selection-end-line="47" selection-end-column="58" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/dsr/entity/DeezerAlbum/Artist.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/artist_update.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="21" column="90" selection-start-line="21" selection-start-column="90" selection-end-line="21" selection-end-column="90" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/dsr/controller/SearchByDateArtist.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="41" column="53" selection-start-line="41" selection-start-column="53" selection-end-line="41" selection-end-column="53" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/dsr/entity/Artist.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="730">
+          <caret line="41" selection-start-line="41" selection-end-line="41" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/dsr/controller/DeleteUserArtist.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="71">
+          <caret line="19" column="70" lean-forward="true" selection-start-line="19" selection-start-column="70" selection-end-line="19" selection-end-column="70" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

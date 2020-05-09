@@ -17,7 +17,7 @@ import java.io.IOException;
         urlPatterns = "/deleteUserArtist")
 public class DeleteUserArtist extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
-        int userId = Integer.parseInt(req.getSession().getId());
+        int userId = (int) req.getSession().getAttribute("sessionId");
         String artistNameDelete = (String) req.getAttribute("deleteArtist");
 
         GenericDao<User> userDao = new GenericDao<>(User.class);

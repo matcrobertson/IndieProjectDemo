@@ -16,52 +16,38 @@
 
 
                 <h1 class="mt-5">Updates on Specific Artists</h1>
-<%--            <c:forEach var="artist" items="artists">--%>
-<%--                <option value="${artist.name}">${artist.name}</option>--%>
-<%--            </c:forEach>--%>
-
-                    <select class="centering" name="artistName">
-                        <option value="artist">artist</option>
-                        <option value="">poputate</option>
-                        <option value="">section</option>
-                        <!-- TODO: use jstl to populate this section -->
-                    </select>
+            <form action="artistSearch" method="get">
+                <select class="centering" name="artistName">
+                    <c:forEach var="artist" items="${artists}">
+                        <option value="${artist.artistName}">${artist.artistName}</option>
+                    </c:forEach>
+                </select>
                     <input type="date" name="artistCheckDate" value="">
-                    <button type="button" name="button">Enter</button>
-                    <table class="table">
-                      <thead class="thead-dark">
-                        <tr>
-                            <th scope="col">Release Date</th>
-                            <th scope="col">Artist</th>
-                            <th scope="col">Album</th>
-                            <th scope="col">Song</th>
-                            <th scope="col">Youtube Link</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <th scope="row">09/22/1979</th>
-                          <td>Pink Floyd</td>
-                          <td>The Wall</td>
-                          <td>Another Brick in the Wall Pt.1</td>
-                          <td><a target="_blank" href="http://www.youtube.com"><img src="images/youtube.png" class="youtube"></a></td>
-                        </tr>
-                        <tr>
-                          <th scope="row">07/25/1970</th>
-                          <td>Pink Floyd</td>
-                          <td>Dark Side of the Moon</td>
-                          <td>Comfortably Numb</td>
-                          <td><a target="_blank" href="http://www.youtube.com"><img src="images/youtube.png" class="youtube"></a></td>
-                        </tr>
-                        <tr>
-                          <th scope="row">07/01/1980</th>
-                          <td>Pink Floyd</td>
-                          <td>Wish You Were Here</td>
-                          <td>Sweet Child O' Mine</td>
-                          <td><a target="_blank" href="http://www.youtube.com"><img src="images/youtube.png" class="youtube"></a></td>
-                        </tr>
-                      </tbody>
-                    </table>
+                    <button type="submit" name="submit">Enter</button>
+            </form>
+
+            <table class="table">
+                <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Release Date</th>
+                    <th scope="col">Artist</th>
+                    <th scope="col">Album</th>
+                    <th scope="col">Song</th>
+                    <th scope="col">Youtube Link</th>
+                </tr>
+                </thead>
+                <tbody>
+                <c:forEach items="${songs}" var="song">
+                    <tr>
+                        <th scope="row">${song.releaseDate}</th>
+                        <td>${song.artistName}</td>
+                        <td>${song.albumName}</td>
+                        <td>${song.songTitle}</td>
+                        <td><a target="_blank" href="http://www.youtube.com"><img src="images/youtube.png" class="youtube"></a></td>
+                    </tr>
+                </c:forEach>
+                </tbody>
+            </table>
         </div>
     </body>
 </html>

@@ -1,5 +1,6 @@
 dsr/entity/DeezerArtist/ArtistResponse.class
 dsr/persistence/DeezerAlbumDao.class
+dsr/controller/SearchByDateArtist.class
 dsr/controller/SignIn.class
 dsr/controller/AddUser.class
 dsr/persistence/GenericDao.class

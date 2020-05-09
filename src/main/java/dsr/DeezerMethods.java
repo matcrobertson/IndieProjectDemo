@@ -18,11 +18,20 @@ import java.util.List;
 public class DeezerMethods {
 
 
-//    public DeezerSong getArtistAlbums(String artistId, LocalDate userDate) {
-//
-//        }
-//        return artistAlbums;
-//    }
+        public List<DeezerSong> getArtistAlbums(LocalDate userDate, String artistId) {
+            String url = "https://api.deezer.com/artist/" + artistId + "/albums";
+            List<DeezerSong> albumSongs = new ArrayList<>();
+            DeezerArtistDao deezerArtist = new DeezerArtistDao();
+            for (DataItem artistAlbum : deezerArtist.getResponse(url).getData()) {
+                LocalDate albumDate = stringToLocalDate(artistAlbum.getReleaseDate());
+                if (userDate.compareTo(albumDate) < 0) {
+                    String albumTitle = artistAlbum.getTitle();
+                    String trackList = artistAlbum.getTracklist();
+                    albumSongs.addAll(addSongsToList(trackList, albumTitle, albumDate));
+                }
+            }
+            return albumSongs;
+        }
 
 
         public LocalDate stringToLocalDate (String myDate) {
@@ -30,12 +39,19 @@ public class DeezerMethods {
              return LocalDate.parse(myDate, formatter);
         }
 
-//        public List<dsr.entity.DeezerAlbum.DataItem> addToSongsList(List<String> newAlbums) {
-//
-//            return returnedSongs;
-//        }
+        public List<DeezerSong> addSongsToList(String trackList, String albumTitle, LocalDate albumDate) {
+            DeezerAlbumDao albumDao = new DeezerAlbumDao();
+            List<DeezerSong> userSongs = new ArrayList<>();
+            for (dsr.entity.DeezerAlbum.DataItem track : albumDao.getResponse(trackList).getData()) {
+                DeezerSong song = new DeezerSong();
+                song.setAlbumName(albumTitle);
+                song.setArtistName(track.getArtist().getName());
+                song.setReleaseDate(albumDate);
+                song.setSongTitle(track.getTitle());
+                userSongs.add(song);
+            }
+            return userSongs;
+        }
 
-    public void agregateData() {
-        DeezerSong artistAlbum = new DeezerSong();
-    }
+
 }

@@ -8,7 +8,7 @@
                           <a class="nav-link active" href="home_page.jsp">Home(signed in)</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="artist_update.jsp">Specific Artist Update</a>
+                        <a class="nav-link" href="artistSearch">Specific Artist Update</a>
                       </li>
                       <li class="nav-item">
                           <a class="nav-link" href="edit_artists.jsp">Edit My Artists</a>

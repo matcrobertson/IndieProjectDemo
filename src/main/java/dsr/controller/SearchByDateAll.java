@@ -46,26 +46,8 @@ public class SearchByDateAll extends HttpServlet {
         List<DeezerSong> userSongs = new ArrayList<>();
         for (Artist currentArtist : userArtists) {
             String artistId = currentArtist.getDeezerId();
-            String url = "https://api.deezer.com/artist/" + artistId + "/albums";
-            DeezerArtistDao deezerArtist = new DeezerArtistDao();
+            userSongs.addAll(deezerMethods.getArtistAlbums(userDate, artistId));
 
-            for (DataItem artistAlbum : deezerArtist.getResponse(url).getData()) {
-                LocalDate albumDate = deezerMethods.stringToLocalDate(artistAlbum.getReleaseDate());
-                if (userDate.compareTo(albumDate) < 0) {
-                    String albumTitle = artistAlbum.getTitle();
-                    String trackList = artistAlbum.getTracklist();
-                    DeezerAlbumDao albumDao = new DeezerAlbumDao();
-
-                    for (dsr.entity.DeezerAlbum.DataItem track : albumDao.getResponse(trackList).getData()) {
-                        DeezerSong song = new DeezerSong();
-                        song.setAlbumName(albumTitle);
-                        song.setArtistName(track.getArtist().getName());
-                        song.setReleaseDate(albumDate);
-                        song.setSongTitle(track.getTitle());
-                        userSongs.add(song);
-                    }
-                }
-            }
         }
 
             req.setAttribute("songs", userSongs);
