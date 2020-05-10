@@ -23,7 +23,9 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-
+/**
+ * servlet set up for a specific artist
+ */
 @WebServlet(
         name = "artistSearch",
         urlPatterns = "/artistSearch")

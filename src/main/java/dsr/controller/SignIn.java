@@ -12,6 +12,9 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
+/**
+ * sets the session id to use through the rest of the application
+ */
 @WebServlet(
         name = "signIn",
         urlPatterns = { "/signIn"}

@@ -9,6 +9,9 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
+/**
+ * signs out the user
+ */
 @WebServlet(
         name = "/signOut",
         urlPatterns = "/signOut")

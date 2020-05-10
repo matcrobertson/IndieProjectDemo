@@ -20,11 +20,13 @@ public class UserArtistTest {
     @BeforeEach
     void setUp() {
         genericDao = new GenericDao(User.class);
+        Database database = Database.getInstance();
+        database.runSQL("cleandb.sql");
     }
     @Test
     public void getUserArtistsTest() {
-        genericDao = new GenericDao<User>(User.class);
-        User user = (User)genericDao.getById(1);
+        genericDao = new GenericDao<>(User.class);
+        User user = genericDao.getById(1);
         List<Artist> testList = new ArrayList<>(user.getArtistsSet());
         String arraylistArtist = testList.get(0).getArtistName();
 //        Set<Artist> testSet = user.getArtistsSet();

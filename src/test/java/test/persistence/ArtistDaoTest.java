@@ -3,6 +3,7 @@ package test.persistence;
 import dsr.entity.Artist;
 import dsr.entity.User;
 import dsr.persistence.GenericDao;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.HashSet;
@@ -12,6 +13,12 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class ArtistDaoTest {
 
+    @BeforeEach
+    void setUp() {
+        Database database = Database.getInstance();
+        database.runSQL("cleandb.sql");
+
+    }
     @Test
     public void insertArtist() {
         GenericDao<Artist> artistDao = new GenericDao<>(Artist.class);

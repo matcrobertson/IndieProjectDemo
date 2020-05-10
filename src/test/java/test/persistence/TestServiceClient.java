@@ -25,25 +25,11 @@ public class TestServiceClient {
         String response = target.request(MediaType.APPLICATION_JSON).get(String.class);
         ObjectMapper mapper = new ObjectMapper();
         ArtistResponse deezerArtist = mapper.readValue(response, ArtistResponse.class);
-        String expectedArtist = "Daft Punk";
-        assertEquals(expectedArtist, deezerArtist.getData().get(0).getTitle());
+        String expectedUrl = "https://api.deezer.com/album/6575789/tracks";
+        assertEquals(expectedUrl, deezerArtist.getData().get(0).getTracklist());
 
     }
 
-    @Test
-    public void deezerSearchDataItemJSON() {
-        DeezerSearchDao searchDao = new DeezerSearchDao();
-        String url = "https://api.deezer.com/search?q=eminem";
-        String returnedValue = null;
-        for(DataItem item : searchDao.getResponse(url).getData()) {
-            if(returnedValue != null) {
-                break;
-            }
-            returnedValue = item.getId();
-        }
-        assertEquals("1109731", returnedValue);
-
-    }
 
 
     @Test

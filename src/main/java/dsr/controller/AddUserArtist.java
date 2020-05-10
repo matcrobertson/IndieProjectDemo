@@ -16,6 +16,9 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Set;
 
+/**
+ * this is the servlet to add and artist to a user
+ */
 @WebServlet(
         name = "addUserArtist",
         urlPatterns = "/addUserArtist")
@@ -54,7 +57,7 @@ public class AddUserArtist extends HttpServlet {
         currentUser.setArtistsSet(userArtists);
 
         userDao.saveOrUpdate(currentUser);
-
+        req.setAttribute("artists", currentUser.getArtistsSet());
         RequestDispatcher dispatcher = req.getRequestDispatcher("/edit_artists.jsp");
         dispatcher.forward(req,resp);
     }

@@ -1,6 +1,6 @@
 
 <html lang="en" dir="ltr">
-<%@ include file="head.jsp"%>
+<%@ include file="templates/head.jsp"%>
 
     <body>        
         <div class="wrapper">

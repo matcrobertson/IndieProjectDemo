@@ -20,6 +20,9 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * this servlet returns all artist songs
+ */
 @WebServlet(
             name = "homePage",
             urlPatterns = "/home_page"

@@ -14,7 +14,9 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-
+/**
+ * this is the sign up servlet
+ */
 @WebServlet(
         name = "/signUp",
         urlPatterns = "/signUp")

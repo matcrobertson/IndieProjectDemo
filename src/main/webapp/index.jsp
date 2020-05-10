@@ -1,5 +1,5 @@
 <html lang="en" dir="ltr">
-<%@ include file="head.jsp"%>
+<%@ include file="templates/head.jsp"%>
 
     <body>
             <div class="container">
@@ -30,7 +30,7 @@
                         <h2 class="centerText">
                             Here is a what it will look like
                         </h2>
-                        <img src="images/sample_data.png" style="width: 100%; margin-bottom: 2em;" alt="sample_data">
+                        <img src="images/sample_data.png" style="width: 100%;margin-bottom: 2em;" alt="sample_data">
                     </section>
             </div>
 

@@ -3,7 +3,7 @@ package dsr.entity;
 import lombok.Data;
 
 import java.time.LocalDate;
-import java.util.List;
+
 
 @Data
 public class DeezerSong {
@@ -11,6 +11,6 @@ public class DeezerSong {
     private LocalDate releaseDate;
     private String albumName;
     private String songTitle;
-
+    private String videoId;
 
 }

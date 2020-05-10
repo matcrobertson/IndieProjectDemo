@@ -4,8 +4,10 @@ package dsr;
 
 import dsr.entity.DeezerArtist.DataItem;
 import dsr.entity.DeezerSong;
+import dsr.entity.Youtube.ItemsItem;
 import dsr.persistence.DeezerAlbumDao;
 import dsr.persistence.DeezerArtistDao;
+import dsr.persistence.YoutubeDao;
 
 
 import java.time.LocalDate;
@@ -41,6 +43,7 @@ public class DeezerMethods {
 
         public List<DeezerSong> addSongsToList(String trackList, String albumTitle, LocalDate albumDate) {
             DeezerAlbumDao albumDao = new DeezerAlbumDao();
+
             List<DeezerSong> userSongs = new ArrayList<>();
             for (dsr.entity.DeezerAlbum.DataItem track : albumDao.getResponse(trackList).getData()) {
                 DeezerSong song = new DeezerSong();
@@ -48,10 +51,20 @@ public class DeezerMethods {
                 song.setArtistName(track.getArtist().getName());
                 song.setReleaseDate(albumDate);
                 song.setSongTitle(track.getTitle());
+                // TODO: 5/9/20 uncomment when youtube stops its tantrum(tomorrow)
+//                String youtubeId = youtubeVideoId(track.getTitle());
+//                song.setVideoId(youtubeId);
                 userSongs.add(song);
             }
             return userSongs;
         }
 
+        public String youtubeVideoId(String songName) {
+            String apiKey = "";
+            String urlSongName = songName.replace(" ", "%20");
+            String url = "https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&order=relevance&q=" + urlSongName + "&key=" + apiKey;
+            YoutubeDao youtube = new YoutubeDao();
+            return youtube.getResponse(url).getItems().get(0).getId().getVideoId();
+        }
 
 }
