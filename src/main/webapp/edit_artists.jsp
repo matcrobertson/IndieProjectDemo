@@ -36,7 +36,7 @@
              </form>
              <c:if test="${deletedArtist != null}">
              <div id="deleteConfirmation">
-                     ${deletedArtist} has been added to your artists
+                     ${deletedArtist} has been deleted to your artists
              </div>
              </c:if>
 

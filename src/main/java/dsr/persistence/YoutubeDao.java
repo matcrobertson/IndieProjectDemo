@@ -2,7 +2,7 @@ package dsr.persistence;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import dsr.entity.DeezerAlbum.AlbumResponse;
+
 import dsr.entity.Youtube.YoutubeResponse;
 import lombok.extern.log4j.Log4j2;
 
@@ -11,10 +11,19 @@ import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.client.WebTarget;
 import javax.ws.rs.core.MediaType;
 
+/**
+ * The type Youtube dao.
+ */
 @Log4j2
 public class YoutubeDao {
 
-        public YoutubeResponse getResponse(String myUrl) {
+    /**
+     * Gets response.
+     *
+     * @param myUrl the my url
+     * @return the response
+     */
+    public YoutubeResponse getResponse(String myUrl) {
             Client client = ClientBuilder.newClient();
             WebTarget target = client.target(myUrl);
             String response = target.request(MediaType.APPLICATION_JSON).get(String.class);

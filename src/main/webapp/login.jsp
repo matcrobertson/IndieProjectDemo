@@ -19,8 +19,8 @@
 
                 <input type="password" id="password" name="j_password" value=""><br>
                 <input type="submit" name="Submit" value="Log In">
-                <input type="button" name="SignUp" value="Sign Up">
             </form>
+                <a href="sign_up.jsp" class="btn btn-dark">Sign Up</a>
             <c:if test="${error != null}">
                 ${error}
                 <c:remove var="error"/>

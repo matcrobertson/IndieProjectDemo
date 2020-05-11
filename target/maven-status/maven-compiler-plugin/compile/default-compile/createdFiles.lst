@@ -31,6 +31,5 @@ dsr/entity/DeezerSearch/DataItem.class
 dsr/persistence/YoutubeDao.class
 dsr/entity/DeezerSong.class
 dsr/persistence/DeezerSearchDao.class
-dsr/controller/SearchUser.class
 dsr/entity/Youtube/Id.class
 dsr/controller/SignOutUser.class

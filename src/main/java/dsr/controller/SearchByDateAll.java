@@ -2,12 +2,12 @@ package dsr.controller;
 
 import dsr.DeezerMethods;
 import dsr.entity.Artist;
-import dsr.entity.DeezerArtist.DataItem;
+
 import dsr.entity.DeezerSong;
 import dsr.entity.User;
-import dsr.persistence.DeezerAlbumDao;
-import dsr.persistence.DeezerArtistDao;
+
 import dsr.persistence.GenericDao;
+import lombok.extern.log4j.Log4j2;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -27,6 +27,7 @@ import java.util.List;
             name = "homePage",
             urlPatterns = "/home_page"
     )
+@Log4j2
 public class SearchByDateAll extends HttpServlet {
 
     @Override
@@ -35,28 +36,31 @@ public class SearchByDateAll extends HttpServlet {
         int currentUserId = (int) req.getSession().getAttribute("sessionId");
 //        USE THE DAO YOU SILLY GOOSE!!!!!
 //        instantiate dao
-        // TODO: 5/8/20 this does not handle an empty song list yet 
+
         GenericDao<User> userDao = new GenericDao<>(User.class);
 
         User currentUser = userDao.getById(currentUserId);
 //        convert a set to a list
         List<Artist> userArtists = new ArrayList<>(currentUser.getArtistsSet());
 
-        DeezerMethods deezerMethods = new DeezerMethods();
-        LocalDate userDate = deezerMethods.stringToLocalDate(req.getParameter("checkDate"));
+        if(!req.getParameter("checkDate").equals("")) {
 
 
-        List<DeezerSong> userSongs = new ArrayList<>();
-        for (Artist currentArtist : userArtists) {
-            String artistId = currentArtist.getDeezerId();
-            userSongs.addAll(deezerMethods.getArtistAlbums(userDate, artistId));
+            DeezerMethods deezerMethods = new DeezerMethods();
+            LocalDate userDate = deezerMethods.stringToLocalDate(req.getParameter("checkDate"));
 
+
+            List<DeezerSong> userSongs = new ArrayList<>();
+            for (Artist currentArtist : userArtists) {
+                String artistId = currentArtist.getDeezerId();
+                userSongs.addAll(deezerMethods.getArtistAlbums(userDate, artistId));
+
+            }
+                log.info(userSongs.size());
+                req.setAttribute("songs", userSongs);
         }
 
-            req.setAttribute("songs", userSongs);
-
-
-            RequestDispatcher dispatcher = req.getRequestDispatcher("home_page.jsp");
+            RequestDispatcher dispatcher = req.getRequestDispatcher("/home_page.jsp");
             dispatcher.forward(req, resp);
         }
 }

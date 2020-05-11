@@ -2,6 +2,9 @@ package dsr.entity.DeezerSearch;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+/**
+ * The type Data item.
+ */
 public class DataItem{
 
 	@JsonProperty("picture_xl")
@@ -43,107 +46,237 @@ public class DataItem{
 	@JsonProperty("picture_medium")
 	private String pictureMedium;
 
-	public void setPictureXl(String pictureXl){
+    /**
+     * Set picture xl.
+     *
+     * @param pictureXl the picture xl
+     */
+    public void setPictureXl(String pictureXl){
 		this.pictureXl = pictureXl;
 	}
 
-	public String getPictureXl(){
+    /**
+     * Get picture xl string.
+     *
+     * @return the string
+     */
+    public String getPictureXl(){
 		return pictureXl;
 	}
 
-	public void setTracklist(String tracklist){
+    /**
+     * Set tracklist.
+     *
+     * @param tracklist the tracklist
+     */
+    public void setTracklist(String tracklist){
 		this.tracklist = tracklist;
 	}
 
-	public String getTracklist(){
+    /**
+     * Get tracklist string.
+     *
+     * @return the string
+     */
+    public String getTracklist(){
 		return tracklist;
 	}
 
-	public void setLink(String link){
+    /**
+     * Set link.
+     *
+     * @param link the link
+     */
+    public void setLink(String link){
 		this.link = link;
 	}
 
-	public String getLink(){
+    /**
+     * Get link string.
+     *
+     * @return the string
+     */
+    public String getLink(){
 		return link;
 	}
 
-	public void setPictureSmall(String pictureSmall){
+    /**
+     * Set picture small.
+     *
+     * @param pictureSmall the picture small
+     */
+    public void setPictureSmall(String pictureSmall){
 		this.pictureSmall = pictureSmall;
 	}
 
-	public String getPictureSmall(){
+    /**
+     * Get picture small string.
+     *
+     * @return the string
+     */
+    public String getPictureSmall(){
 		return pictureSmall;
 	}
 
-	public void setType(String type){
+    /**
+     * Set type.
+     *
+     * @param type the type
+     */
+    public void setType(String type){
 		this.type = type;
 	}
 
-	public String getType(){
+    /**
+     * Get type string.
+     *
+     * @return the string
+     */
+    public String getType(){
 		return type;
 	}
 
-	public void setNbAlbum(int nbAlbum){
+    /**
+     * Set nb album.
+     *
+     * @param nbAlbum the nb album
+     */
+    public void setNbAlbum(int nbAlbum){
 		this.nbAlbum = nbAlbum;
 	}
 
-	public int getNbAlbum(){
+    /**
+     * Get nb album int.
+     *
+     * @return the int
+     */
+    public int getNbAlbum(){
 		return nbAlbum;
 	}
 
-	public void setPicture(String picture){
+    /**
+     * Set picture.
+     *
+     * @param picture the picture
+     */
+    public void setPicture(String picture){
 		this.picture = picture;
 	}
 
-	public String getPicture(){
+    /**
+     * Get picture string.
+     *
+     * @return the string
+     */
+    public String getPicture(){
 		return picture;
 	}
 
-	public void setNbFan(int nbFan){
+    /**
+     * Set nb fan.
+     *
+     * @param nbFan the nb fan
+     */
+    public void setNbFan(int nbFan){
 		this.nbFan = nbFan;
 	}
 
-	public int getNbFan(){
+    /**
+     * Get nb fan int.
+     *
+     * @return the int
+     */
+    public int getNbFan(){
 		return nbFan;
 	}
 
-	public void setRadio(boolean radio){
+    /**
+     * Set radio.
+     *
+     * @param radio the radio
+     */
+    public void setRadio(boolean radio){
 		this.radio = radio;
 	}
 
-	public boolean isRadio(){
+    /**
+     * Is radio boolean.
+     *
+     * @return the boolean
+     */
+    public boolean isRadio(){
 		return radio;
 	}
 
-	public void setPictureBig(String pictureBig){
+    /**
+     * Set picture big.
+     *
+     * @param pictureBig the picture big
+     */
+    public void setPictureBig(String pictureBig){
 		this.pictureBig = pictureBig;
 	}
 
-	public String getPictureBig(){
+    /**
+     * Get picture big string.
+     *
+     * @return the string
+     */
+    public String getPictureBig(){
 		return pictureBig;
 	}
 
-	public void setName(String name){
+    /**
+     * Set name.
+     *
+     * @param name the name
+     */
+    public void setName(String name){
 		this.name = name;
 	}
 
-	public String getName(){
+    /**
+     * Get name string.
+     *
+     * @return the string
+     */
+    public String getName(){
 		return name;
 	}
 
-	public void setId(String id){
+    /**
+     * Set id.
+     *
+     * @param id the id
+     */
+    public void setId(String id){
 		this.id = id;
 	}
 
-	public String getId(){
+    /**
+     * Get id string.
+     *
+     * @return the string
+     */
+    public String getId(){
 		return id;
 	}
 
-	public void setPictureMedium(String pictureMedium){
+    /**
+     * Set picture medium.
+     *
+     * @param pictureMedium the picture medium
+     */
+    public void setPictureMedium(String pictureMedium){
 		this.pictureMedium = pictureMedium;
 	}
 
-	public String getPictureMedium(){
+    /**
+     * Get picture medium string.
+     *
+     * @return the string
+     */
+    public String getPictureMedium(){
 		return pictureMedium;
 	}
 

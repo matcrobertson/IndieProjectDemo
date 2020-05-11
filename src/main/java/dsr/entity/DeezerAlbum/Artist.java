@@ -2,6 +2,9 @@ package dsr.entity.DeezerAlbum;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+/**
+ * The type Artist.
+ */
 public class Artist{
 
 	@JsonProperty("tracklist")
@@ -16,35 +19,75 @@ public class Artist{
 	@JsonProperty("type")
 	private String type;
 
-	public void setTracklist(String tracklist){
+    /**
+     * Set tracklist.
+     *
+     * @param tracklist the tracklist
+     */
+    public void setTracklist(String tracklist){
 		this.tracklist = tracklist;
 	}
 
-	public String getTracklist(){
+    /**
+     * Get tracklist string.
+     *
+     * @return the string
+     */
+    public String getTracklist(){
 		return tracklist;
 	}
 
-	public void setName(String name){
+    /**
+     * Set name.
+     *
+     * @param name the name
+     */
+    public void setName(String name){
 		this.name = name;
 	}
 
-	public String getName(){
+    /**
+     * Get name string.
+     *
+     * @return the string
+     */
+    public String getName(){
 		return name;
 	}
 
-	public void setId(String id){
+    /**
+     * Set id.
+     *
+     * @param id the id
+     */
+    public void setId(String id){
 		this.id = id;
 	}
 
-	public String getId(){
+    /**
+     * Get id string.
+     *
+     * @return the string
+     */
+    public String getId(){
 		return id;
 	}
 
-	public void setType(String type){
+    /**
+     * Set type.
+     *
+     * @param type the type
+     */
+    public void setType(String type){
 		this.type = type;
 	}
 
-	public String getType(){
+    /**
+     * Get type string.
+     *
+     * @return the string
+     */
+    public String getType(){
 		return type;
 	}
 

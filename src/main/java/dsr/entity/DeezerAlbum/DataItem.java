@@ -2,6 +2,9 @@ package dsr.entity.DeezerAlbum;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+/**
+ * The type Data item.
+ */
 public class DataItem{
 
 	@JsonProperty("readable")
@@ -55,139 +58,309 @@ public class DataItem{
 	@JsonProperty("track_position")
 	private int trackPosition;
 
-	public void setReadable(boolean readable){
+    /**
+     * Set readable.
+     *
+     * @param readable the readable
+     */
+    public void setReadable(boolean readable){
 		this.readable = readable;
 	}
 
-	public boolean isReadable(){
+    /**
+     * Is readable boolean.
+     *
+     * @return the boolean
+     */
+    public boolean isReadable(){
 		return readable;
 	}
 
-	public void setPreview(String preview){
+    /**
+     * Set preview.
+     *
+     * @param preview the preview
+     */
+    public void setPreview(String preview){
 		this.preview = preview;
 	}
 
-	public String getPreview(){
+    /**
+     * Get preview string.
+     *
+     * @return the string
+     */
+    public String getPreview(){
 		return preview;
 	}
 
-	public void setArtist(Artist artist){
+    /**
+     * Set artist.
+     *
+     * @param artist the artist
+     */
+    public void setArtist(Artist artist){
 		this.artist = artist;
 	}
 
-	public Artist getArtist(){
+    /**
+     * Get artist artist.
+     *
+     * @return the artist
+     */
+    public Artist getArtist(){
 		return artist;
 	}
 
-	public void setLink(String link){
+    /**
+     * Set link.
+     *
+     * @param link the link
+     */
+    public void setLink(String link){
 		this.link = link;
 	}
 
-	public String getLink(){
+    /**
+     * Get link string.
+     *
+     * @return the string
+     */
+    public String getLink(){
 		return link;
 	}
 
-	public void setExplicitContentCover(int explicitContentCover){
+    /**
+     * Set explicit content cover.
+     *
+     * @param explicitContentCover the explicit content cover
+     */
+    public void setExplicitContentCover(int explicitContentCover){
 		this.explicitContentCover = explicitContentCover;
 	}
 
-	public int getExplicitContentCover(){
+    /**
+     * Get explicit content cover int.
+     *
+     * @return the int
+     */
+    public int getExplicitContentCover(){
 		return explicitContentCover;
 	}
 
-	public void setIsrc(String isrc){
+    /**
+     * Set isrc.
+     *
+     * @param isrc the isrc
+     */
+    public void setIsrc(String isrc){
 		this.isrc = isrc;
 	}
 
-	public String getIsrc(){
+    /**
+     * Get isrc string.
+     *
+     * @return the string
+     */
+    public String getIsrc(){
 		return isrc;
 	}
 
-	public void setTitle(String title){
+    /**
+     * Set title.
+     *
+     * @param title the title
+     */
+    public void setTitle(String title){
 		this.title = title;
 	}
 
-	public String getTitle(){
+    /**
+     * Get title string.
+     *
+     * @return the string
+     */
+    public String getTitle(){
 		return title;
 	}
 
-	public void setTitleVersion(String titleVersion){
+    /**
+     * Set title version.
+     *
+     * @param titleVersion the title version
+     */
+    public void setTitleVersion(String titleVersion){
 		this.titleVersion = titleVersion;
 	}
 
-	public String getTitleVersion(){
+    /**
+     * Get title version string.
+     *
+     * @return the string
+     */
+    public String getTitleVersion(){
 		return titleVersion;
 	}
 
-	public void setExplicitLyrics(boolean explicitLyrics){
+    /**
+     * Set explicit lyrics.
+     *
+     * @param explicitLyrics the explicit lyrics
+     */
+    public void setExplicitLyrics(boolean explicitLyrics){
 		this.explicitLyrics = explicitLyrics;
 	}
 
-	public boolean isExplicitLyrics(){
+    /**
+     * Is explicit lyrics boolean.
+     *
+     * @return the boolean
+     */
+    public boolean isExplicitLyrics(){
 		return explicitLyrics;
 	}
 
-	public void setType(String type){
+    /**
+     * Set type.
+     *
+     * @param type the type
+     */
+    public void setType(String type){
 		this.type = type;
 	}
 
-	public String getType(){
+    /**
+     * Get type string.
+     *
+     * @return the string
+     */
+    public String getType(){
 		return type;
 	}
 
-	public void setTitleShort(String titleShort){
+    /**
+     * Set title short.
+     *
+     * @param titleShort the title short
+     */
+    public void setTitleShort(String titleShort){
 		this.titleShort = titleShort;
 	}
 
-	public String getTitleShort(){
+    /**
+     * Get title short string.
+     *
+     * @return the string
+     */
+    public String getTitleShort(){
 		return titleShort;
 	}
 
-	public void setDuration(String duration){
+    /**
+     * Set duration.
+     *
+     * @param duration the duration
+     */
+    public void setDuration(String duration){
 		this.duration = duration;
 	}
 
-	public String getDuration(){
+    /**
+     * Get duration string.
+     *
+     * @return the string
+     */
+    public String getDuration(){
 		return duration;
 	}
 
-	public void setDiskNumber(int diskNumber){
+    /**
+     * Set disk number.
+     *
+     * @param diskNumber the disk number
+     */
+    public void setDiskNumber(int diskNumber){
 		this.diskNumber = diskNumber;
 	}
 
-	public int getDiskNumber(){
+    /**
+     * Get disk number int.
+     *
+     * @return the int
+     */
+    public int getDiskNumber(){
 		return diskNumber;
 	}
 
-	public void setRank(String rank){
+    /**
+     * Set rank.
+     *
+     * @param rank the rank
+     */
+    public void setRank(String rank){
 		this.rank = rank;
 	}
 
-	public String getRank(){
+    /**
+     * Get rank string.
+     *
+     * @return the string
+     */
+    public String getRank(){
 		return rank;
 	}
 
-	public void setId(String id){
+    /**
+     * Set id.
+     *
+     * @param id the id
+     */
+    public void setId(String id){
 		this.id = id;
 	}
 
-	public String getId(){
+    /**
+     * Get id string.
+     *
+     * @return the string
+     */
+    public String getId(){
 		return id;
 	}
 
-	public void setExplicitContentLyrics(int explicitContentLyrics){
+    /**
+     * Set explicit content lyrics.
+     *
+     * @param explicitContentLyrics the explicit content lyrics
+     */
+    public void setExplicitContentLyrics(int explicitContentLyrics){
 		this.explicitContentLyrics = explicitContentLyrics;
 	}
 
-	public int getExplicitContentLyrics(){
+    /**
+     * Get explicit content lyrics int.
+     *
+     * @return the int
+     */
+    public int getExplicitContentLyrics(){
 		return explicitContentLyrics;
 	}
 
-	public void setTrackPosition(int trackPosition){
+    /**
+     * Set track position.
+     *
+     * @param trackPosition the track position
+     */
+    public void setTrackPosition(int trackPosition){
 		this.trackPosition = trackPosition;
 	}
 
-	public int getTrackPosition(){
+    /**
+     * Get track position int.
+     *
+     * @return the int
+     */
+    public int getTrackPosition(){
 		return trackPosition;
 	}
 

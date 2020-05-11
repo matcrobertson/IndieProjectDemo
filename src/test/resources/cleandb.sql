@@ -63,7 +63,7 @@ CREATE TABLE `role` (
 
 LOCK TABLES `role` WRITE;
 /*!40000 ALTER TABLE `role` DISABLE KEYS */;
-INSERT INTO `role` VALUES (1,'admin','dan'),(2,'user',NULL),(3,'Lord of Pancakes',NULL);
+INSERT INTO `role` VALUES (1,'admin','dan'),(2,'user','sue'),(3,'Lord of Pancakes','gregorio');
 /*!40000 ALTER TABLE `role` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -93,7 +93,7 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES (1,'dan','dan',1),(2,'sue','sue',2),(3,'bob','bob',2),(4,'gregorio','pineapples',1);
+INSERT INTO `user` VALUES (1,'dan','dan',1),(2,'sue','sue',2),(3,'bob','bob',2),(4,'gregorio','pineapples',3);
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -134,4 +134,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-05-09 20:14:21
+-- Dump completed on 2020-05-09 21:03:22

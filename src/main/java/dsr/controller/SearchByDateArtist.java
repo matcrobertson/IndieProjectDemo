@@ -3,11 +3,12 @@ package dsr.controller;
 
 import dsr.DeezerMethods;
 import dsr.entity.Artist;
-import dsr.entity.DeezerAlbum.DataItem;
+
 import dsr.entity.DeezerSong;
 import dsr.entity.User;
-import dsr.persistence.DeezerAlbumDao;
+
 import dsr.persistence.GenericDao;
+import lombok.extern.log4j.Log4j2;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -15,12 +16,12 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.xml.crypto.Data;
+
 import java.io.IOException;
 import java.time.LocalDate;
-import java.time.ZoneId;
+
 import java.util.ArrayList;
-import java.util.Date;
+
 import java.util.List;
 
 /**
@@ -29,6 +30,7 @@ import java.util.List;
 @WebServlet(
         name = "artistSearch",
         urlPatterns = "/artistSearch")
+@Log4j2
 public class SearchByDateArtist extends HttpServlet {
 
         @Override
@@ -44,11 +46,13 @@ public class SearchByDateArtist extends HttpServlet {
             req.setAttribute("artists", userArtists);
 
             Artist currentArtist = new Artist();
-            String stringDate = req.getParameter("artistCheckDate");
-
-            String selectedArtist = req.getParameter("artistName");
             //if the user has submitted something
-            if(stringDate != null && selectedArtist != null) {
+            log.info(req.getParameter("artistCheckDate"));
+            String selectedArtist = req.getParameter("artistName");
+            String stringDate = req.getParameter("artistCheckDate");
+            log.info(stringDate);
+            log.info(selectedArtist);
+            if(stringDate != null && !stringDate.equals("") && selectedArtist != null) {
                 LocalDate userDate = deezerMethods.stringToLocalDate(stringDate);
                 for(Artist artist : userArtists) {
                     if(selectedArtist.equals(artist.getArtistName())) {

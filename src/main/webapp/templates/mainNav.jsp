@@ -1,6 +1,6 @@
 <ul class="nav nav-tabs nav-fill bg-dark">
     <li class="nav-item">
-        <a class="nav-link active" href="home_page.jsp">Home(signed in)</a>
+        <a class="nav-link" href="home_page.jsp">Home(signed in)</a>
     </li>
     <li class="nav-item">
         <a class="nav-link" href="artistSearch">Specific Artist Update</a>

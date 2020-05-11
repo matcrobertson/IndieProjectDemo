@@ -1,0 +1,9 @@
+
+[INFO ] 2020-05-11 14:55:00.922 [http-nio-8080-exec-4] SignIn - 1
+[INFO ] 2020-05-11 14:55:06.926 [http-nio-8080-exec-2] EditArtist - 1
+[INFO ] 2020-05-11 14:55:15.682 [http-nio-8080-exec-6] AddUserArtist - Artist(artistId=2, artistName=Metallica, deezerId=119)
+[INFO ] 2020-05-11 14:55:23.760 [http-nio-8080-exec-8] DeleteUserArtist - Artist(artistId=2, artistName=Metallica, deezerId=119)
+[INFO ] 2020-05-11 14:55:33.454 [http-nio-8080-exec-10] SearchByDateAll - 20
+[INFO ] 2020-05-11 15:45:01.022 [http-nio-8080-exec-3] SignIn - 2
+[INFO ] 2020-05-11 15:45:04.218 [http-nio-8080-exec-4] EditArtist - 0
+[INFO ] 2020-05-11 15:45:13.584 [http-nio-8080-exec-6] AddUserArtist - Artist(artistId=2, artistName=Queen, deezerId=412)

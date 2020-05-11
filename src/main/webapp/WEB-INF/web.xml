@@ -22,8 +22,112 @@
     <auth-constraint>
       <role-name>user</role-name>
       <role-name>admin</role-name>
+      <role-name>Lord of Pancakes</role-name>
     </auth-constraint>
   </security-constraint>
+
+  <security-constraint>
+    <web-resource-collection>
+      <web-resource-name>user</web-resource-name>
+      <url-pattern>/artist_update.jsp</url-pattern>
+    </web-resource-collection>
+    <auth-constraint>
+      <role-name>user</role-name>
+      <role-name>admin</role-name>
+    </auth-constraint>
+  </security-constraint>
+
+  <security-constraint>
+    <web-resource-collection>
+      <web-resource-name>user</web-resource-name>
+      <url-pattern>/edit_artists.jsp</url-pattern>
+    </web-resource-collection>
+    <auth-constraint>
+      <role-name>user</role-name>
+      <role-name>admin</role-name>
+    </auth-constraint>
+  </security-constraint>
+
+  <security-constraint>
+    <web-resource-collection>
+      <web-resource-name>user</web-resource-name>
+      <url-pattern>/home_page.jsp</url-pattern>
+    </web-resource-collection>
+    <auth-constraint>
+      <role-name>user</role-name>
+      <role-name>admin</role-name>
+    </auth-constraint>
+  </security-constraint>
+
+  <security-constraint>
+    <web-resource-collection>
+      <web-resource-name>user</web-resource-name>
+      <url-pattern>/addUserArtist</url-pattern>
+    </web-resource-collection>
+    <auth-constraint>
+      <role-name>user</role-name>
+      <role-name>admin</role-name>
+    </auth-constraint>
+  </security-constraint>
+
+  <security-constraint>
+    <web-resource-collection>
+      <web-resource-name>user</web-resource-name>
+      <url-pattern>/deleteUserArtist</url-pattern>
+    </web-resource-collection>
+    <auth-constraint>
+      <role-name>user</role-name>
+      <role-name>admin</role-name>
+    </auth-constraint>
+  </security-constraint>
+
+  <security-constraint>
+    <web-resource-collection>
+      <web-resource-name>user</web-resource-name>
+      <url-pattern>/editArtist</url-pattern>
+    </web-resource-collection>
+    <auth-constraint>
+      <role-name>user</role-name>
+      <role-name>admin</role-name>
+    </auth-constraint>
+  </security-constraint>
+
+  <security-constraint>
+    <web-resource-collection>
+      <web-resource-name>user</web-resource-name>
+      <url-pattern>/home_page</url-pattern>
+    </web-resource-collection>
+    <auth-constraint>
+      <role-name>user</role-name>
+      <role-name>admin</role-name>
+    </auth-constraint>
+  </security-constraint>
+
+  <security-constraint>
+    <web-resource-collection>
+      <web-resource-name>user</web-resource-name>
+      <url-pattern>/artistSearch</url-pattern>
+    </web-resource-collection>
+    <auth-constraint>
+      <role-name>user</role-name>
+      <role-name>admin</role-name>
+    </auth-constraint>
+  </security-constraint>
+
+  <security-constraint>
+    <web-resource-collection>
+      <web-resource-name>user</web-resource-name>
+      <url-pattern>/signOut</url-pattern>
+    </web-resource-collection>
+    <auth-constraint>
+      <role-name>user</role-name>
+      <role-name>admin</role-name>
+    </auth-constraint>
+  </security-constraint>
+
+
+
+
 
   <security-role>
     <role-name>admin</role-name>
@@ -31,5 +135,9 @@
 
   <security-role>
     <role-name>user</role-name>
+  </security-role>
+
+  <security-role>
+    <role-name>Lord of Pancakes</role-name>
   </security-role>
 </web-app>

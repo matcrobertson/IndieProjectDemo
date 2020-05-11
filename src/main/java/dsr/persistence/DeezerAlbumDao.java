@@ -11,10 +11,19 @@ import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.client.WebTarget;
 import javax.ws.rs.core.MediaType;
 
+/**
+ * The type Deezer album dao.
+ */
 @Log4j2
 public class DeezerAlbumDao {
 
-        public AlbumResponse getResponse(String myUrl) {
+    /**
+     * Gets response.
+     *
+     * @param myUrl the my url
+     * @return the response
+     */
+    public AlbumResponse getResponse(String myUrl) {
             Client client = ClientBuilder.newClient();
             WebTarget target = client.target(myUrl);
             String response = target.request(MediaType.APPLICATION_JSON).get(String.class);

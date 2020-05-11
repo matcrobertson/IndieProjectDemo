@@ -4,7 +4,7 @@ package dsr;
 
 import dsr.entity.DeezerArtist.DataItem;
 import dsr.entity.DeezerSong;
-import dsr.entity.Youtube.ItemsItem;
+
 import dsr.persistence.DeezerAlbumDao;
 import dsr.persistence.DeezerArtistDao;
 import dsr.persistence.YoutubeDao;
@@ -16,11 +16,20 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-
+/**
+ * The type Deezer methods.
+ */
 public class DeezerMethods {
 
 
-        public List<DeezerSong> getArtistAlbums(LocalDate userDate, String artistId) {
+    /**
+     * Gets artist albums.
+     *
+     * @param userDate the user date
+     * @param artistId the artist id
+     * @return the artist albums
+     */
+    public List<DeezerSong> getArtistAlbums(LocalDate userDate, String artistId) {
             String url = "https://api.deezer.com/artist/" + artistId + "/albums";
             List<DeezerSong> albumSongs = new ArrayList<>();
             DeezerArtistDao deezerArtist = new DeezerArtistDao();
@@ -36,12 +45,26 @@ public class DeezerMethods {
         }
 
 
-        public LocalDate stringToLocalDate (String myDate) {
+    /**
+     * String to local date local date.
+     *
+     * @param myDate the my date
+     * @return the local date
+     */
+    public LocalDate stringToLocalDate (String myDate) {
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
              return LocalDate.parse(myDate, formatter);
         }
 
-        public List<DeezerSong> addSongsToList(String trackList, String albumTitle, LocalDate albumDate) {
+    /**
+     * Add songs to list list.
+     *
+     * @param trackList  the track list
+     * @param albumTitle the album title
+     * @param albumDate  the album date
+     * @return the list
+     */
+    public List<DeezerSong> addSongsToList(String trackList, String albumTitle, LocalDate albumDate) {
             DeezerAlbumDao albumDao = new DeezerAlbumDao();
 
             List<DeezerSong> userSongs = new ArrayList<>();
@@ -59,8 +82,14 @@ public class DeezerMethods {
             return userSongs;
         }
 
-        public String youtubeVideoId(String songName) {
-            String apiKey = "";
+    /**
+     * Youtube video id string.
+     *
+     * @param songName the song name
+     * @return the string
+     */
+    public String youtubeVideoId(String songName) {
+            String apiKey = "AIzaSyBOiirNwA9ES1-z_FGWhYuSV4TR20isGTI";
             String urlSongName = songName.replace(" ", "%20");
             String url = "https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&order=relevance&q=" + urlSongName + "&key=" + apiKey;
             YoutubeDao youtube = new YoutubeDao();

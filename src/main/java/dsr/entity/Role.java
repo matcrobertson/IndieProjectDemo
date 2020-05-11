@@ -7,6 +7,9 @@ import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 
+/**
+ * The type Role.
+ */
 @Data
 
 @NoArgsConstructor
@@ -33,11 +36,22 @@ public class Role {
 //        this.role = role;
 //    }
 
+    /**
+     * Instantiates a new Role.
+     *
+     * @param role     the role
+     * @param userName the user name
+     */
     public Role(String role, String userName) {
         this.role = role;
         this.userName = userName;
     }
 
+    /**
+     * Add user.
+     *
+     * @param order the order
+     */
     public void addUser(User order) {
         users.add(order);
         order.setRole(this);

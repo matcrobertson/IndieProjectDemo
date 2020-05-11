@@ -2,6 +2,9 @@ package dsr.entity.DeezerArtist;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+/**
+ * The type Data item.
+ */
 public class DataItem{
 
 	@JsonProperty("tracklist")
@@ -49,123 +52,273 @@ public class DataItem{
 	@JsonProperty("cover_big")
 	private String coverBig;
 
-	public void setTracklist(String tracklist){
+    /**
+     * Set tracklist.
+     *
+     * @param tracklist the tracklist
+     */
+    public void setTracklist(String tracklist){
 		this.tracklist = tracklist;
 	}
 
-	public String getTracklist(){
+    /**
+     * Get tracklist string.
+     *
+     * @return the string
+     */
+    public String getTracklist(){
 		return tracklist;
 	}
 
-	public void setLink(String link){
+    /**
+     * Set link.
+     *
+     * @param link the link
+     */
+    public void setLink(String link){
 		this.link = link;
 	}
 
-	public String getLink(){
+    /**
+     * Get link string.
+     *
+     * @return the string
+     */
+    public String getLink(){
 		return link;
 	}
 
-	public void setCoverSmall(String coverSmall){
+    /**
+     * Set cover small.
+     *
+     * @param coverSmall the cover small
+     */
+    public void setCoverSmall(String coverSmall){
 		this.coverSmall = coverSmall;
 	}
 
-	public String getCoverSmall(){
+    /**
+     * Get cover small string.
+     *
+     * @return the string
+     */
+    public String getCoverSmall(){
 		return coverSmall;
 	}
 
-	public void setTitle(String title){
+    /**
+     * Set title.
+     *
+     * @param title the title
+     */
+    public void setTitle(String title){
 		this.title = title;
 	}
 
-	public String getTitle(){
+    /**
+     * Get title string.
+     *
+     * @return the string
+     */
+    public String getTitle(){
 		return title;
 	}
 
-	public void setExplicitLyrics(boolean explicitLyrics){
+    /**
+     * Set explicit lyrics.
+     *
+     * @param explicitLyrics the explicit lyrics
+     */
+    public void setExplicitLyrics(boolean explicitLyrics){
 		this.explicitLyrics = explicitLyrics;
 	}
 
-	public boolean isExplicitLyrics(){
+    /**
+     * Is explicit lyrics boolean.
+     *
+     * @return the boolean
+     */
+    public boolean isExplicitLyrics(){
 		return explicitLyrics;
 	}
 
-	public void setType(String type){
+    /**
+     * Set type.
+     *
+     * @param type the type
+     */
+    public void setType(String type){
 		this.type = type;
 	}
 
-	public String getType(){
+    /**
+     * Get type string.
+     *
+     * @return the string
+     */
+    public String getType(){
 		return type;
 	}
 
-	public void setGenreId(int genreId){
+    /**
+     * Set genre id.
+     *
+     * @param genreId the genre id
+     */
+    public void setGenreId(int genreId){
 		this.genreId = genreId;
 	}
 
-	public int getGenreId(){
+    /**
+     * Get genre id int.
+     *
+     * @return the int
+     */
+    public int getGenreId(){
 		return genreId;
 	}
 
-	public void setRecordType(String recordType){
+    /**
+     * Set record type.
+     *
+     * @param recordType the record type
+     */
+    public void setRecordType(String recordType){
 		this.recordType = recordType;
 	}
 
-	public String getRecordType(){
+    /**
+     * Get record type string.
+     *
+     * @return the string
+     */
+    public String getRecordType(){
 		return recordType;
 	}
 
-	public void setFans(int fans){
+    /**
+     * Set fans.
+     *
+     * @param fans the fans
+     */
+    public void setFans(int fans){
 		this.fans = fans;
 	}
 
-	public int getFans(){
+    /**
+     * Get fans int.
+     *
+     * @return the int
+     */
+    public int getFans(){
 		return fans;
 	}
 
-	public void setCover(String cover){
+    /**
+     * Set cover.
+     *
+     * @param cover the cover
+     */
+    public void setCover(String cover){
 		this.cover = cover;
 	}
 
-	public String getCover(){
+    /**
+     * Get cover string.
+     *
+     * @return the string
+     */
+    public String getCover(){
 		return cover;
 	}
 
-	public void setCoverXl(String coverXl){
+    /**
+     * Set cover xl.
+     *
+     * @param coverXl the cover xl
+     */
+    public void setCoverXl(String coverXl){
 		this.coverXl = coverXl;
 	}
 
-	public String getCoverXl(){
+    /**
+     * Get cover xl string.
+     *
+     * @return the string
+     */
+    public String getCoverXl(){
 		return coverXl;
 	}
 
-	public void setReleaseDate(String releaseDate){
+    /**
+     * Set release date.
+     *
+     * @param releaseDate the release date
+     */
+    public void setReleaseDate(String releaseDate){
 		this.releaseDate = releaseDate;
 	}
 
-	public String getReleaseDate(){
+    /**
+     * Get release date string.
+     *
+     * @return the string
+     */
+    public String getReleaseDate(){
 		return releaseDate;
 	}
 
-	public void setCoverMedium(String coverMedium){
+    /**
+     * Set cover medium.
+     *
+     * @param coverMedium the cover medium
+     */
+    public void setCoverMedium(String coverMedium){
 		this.coverMedium = coverMedium;
 	}
 
-	public String getCoverMedium(){
+    /**
+     * Get cover medium string.
+     *
+     * @return the string
+     */
+    public String getCoverMedium(){
 		return coverMedium;
 	}
 
-	public void setId(String id){
+    /**
+     * Set id.
+     *
+     * @param id the id
+     */
+    public void setId(String id){
 		this.id = id;
 	}
 
-	public String getId(){
+    /**
+     * Get id string.
+     *
+     * @return the string
+     */
+    public String getId(){
 		return id;
 	}
 
-	public void setCoverBig(String coverBig){
+    /**
+     * Set cover big.
+     *
+     * @param coverBig the cover big
+     */
+    public void setCoverBig(String coverBig){
 		this.coverBig = coverBig;
 	}
 
-	public String getCoverBig(){
+    /**
+     * Get cover big string.
+     *
+     * @return the string
+     */
+    public String getCoverBig(){
 		return coverBig;
 	}
 

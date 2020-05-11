@@ -1,9 +1,10 @@
 package dsr.controller;
 
-import dsr.entity.Artist;
+
 import dsr.entity.Role;
 import dsr.entity.User;
 import dsr.persistence.GenericDao;
+import lombok.extern.log4j.Log4j2;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -20,6 +21,7 @@ import java.util.List;
 @WebServlet(
         name = "/signUp",
         urlPatterns = "/signUp")
+@Log4j2
 public class AddUser extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
         String pw = req.getParameter("password1");
@@ -36,10 +38,11 @@ public class AddUser extends HttpServlet {
             roleDao.insert(newUserRole);
             User newUser = new User(newUserRole, userName, pw);
             userDao.insert(newUser);
-
+            log.info(newUser.getUserName());
              resp.sendRedirect("signIn");
 
         } else {
+            log.info(pw + " " + pw2 + " " + userName);
             req.setAttribute("userFail", "invalid credentials");
             dispatcher = req.getRequestDispatcher("/sign_up.jsp");
             dispatcher.forward(req, resp);

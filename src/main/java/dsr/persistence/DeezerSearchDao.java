@@ -10,9 +10,18 @@ import javax.ws.rs.client.WebTarget;
 import javax.ws.rs.core.MediaType;
 
 
+/**
+ * The type Deezer search dao.
+ */
 @Log4j2
 public class DeezerSearchDao {
 
+    /**
+     * Gets response.
+     *
+     * @param myUrl the my url
+     * @return the response
+     */
     public SearchResponse getResponse(String myUrl) {
         Client client = ClientBuilder.newClient();
         WebTarget target = client.target(myUrl);

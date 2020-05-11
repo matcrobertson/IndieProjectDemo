@@ -11,8 +11,17 @@ import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.client.WebTarget;
 import javax.ws.rs.core.MediaType;
 
+/**
+ * The type Deezer artist dao.
+ */
 @Log4j2
 public class DeezerArtistDao {
+    /**
+     * Gets response.
+     *
+     * @param myUrl the my url
+     * @return the response
+     */
     public ArtistResponse getResponse(String myUrl) {
         Client client = ClientBuilder.newClient();
         WebTarget target = client.target(myUrl);

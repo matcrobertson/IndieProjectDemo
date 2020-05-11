@@ -2,8 +2,9 @@ package dsr.controller;
 
 import dsr.entity.User;
 import dsr.persistence.GenericDao;
+import lombok.extern.log4j.Log4j2;
 
-import javax.persistence.GeneratedValue;
+
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -17,6 +18,7 @@ import java.io.IOException;
  */
 @WebServlet( name = "editArtist",
         urlPatterns = "/editArtist")
+@Log4j2
 public class EditArtist extends HttpServlet{
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
@@ -24,7 +26,7 @@ public class EditArtist extends HttpServlet{
         GenericDao<User> userDao = new GenericDao<>(User.class);
         User currentUser = userDao.getById(sessionId);
         req.setAttribute("artists", currentUser.getArtistsSet());
-
+        log.info(currentUser.getArtistsSet().size());
         RequestDispatcher dispatcher = req.getRequestDispatcher("/edit_artists.jsp");
         dispatcher.forward(req, resp);
     }

@@ -40,11 +40,24 @@ public class User {
     @Column(name = "password")
     private String password;
 
+    /**
+     * Instantiates a new User.
+     *
+     * @param userName the user name
+     * @param password the password
+     */
     public User(String userName, String password) {
         this.userName = userName;
         this.password = password;
     }
 
+    /**
+     * Instantiates a new User.
+     *
+     * @param role     the role
+     * @param userName the user name
+     * @param password the password
+     */
     public User( Role role, String userName, String password) {
         this.role = role;
         this.userName = userName;

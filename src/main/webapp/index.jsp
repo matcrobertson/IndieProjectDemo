@@ -16,11 +16,11 @@
                     </ul>
 
 
-                    <h1 class="mt-5">Welcome to {fakeName}!</h1>
+                    <h1 class="mt-5">Welcome to N'Tune!</h1>
                     <div class="row correctWidth mx-auto">
                         <div class="col">
                             &emsp; Do you find it hard to keep up with your favorite artists?
-                            Try {fakeName} today! Tell us what artists you like, when you were
+                            Try N'Tune today! Tell us what artists you like, when you were
                             up to speed on their content, and we will give you back all of music that is
                             new to you. You can also get updates on just one of your artists if you would like.
                              If you are up to speed on your artists then it will tell you that as well.

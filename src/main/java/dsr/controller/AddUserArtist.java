@@ -5,6 +5,7 @@ import dsr.entity.DeezerSearch.DataItem;
 import dsr.entity.User;
 import dsr.persistence.DeezerSearchDao;
 import dsr.persistence.GenericDao;
+import lombok.extern.log4j.Log4j2;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -13,7 +14,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.List;
+
 import java.util.Set;
 
 /**
@@ -22,6 +23,7 @@ import java.util.Set;
 @WebServlet(
         name = "addUserArtist",
         urlPatterns = "/addUserArtist")
+@Log4j2
 public class AddUserArtist extends HttpServlet {
 
     @Override
@@ -50,9 +52,11 @@ public class AddUserArtist extends HttpServlet {
         } else {
             Artist tempArtist = artistDao.findByPropertyEqual("artistName", artistToAdd).get(0);
             addArtistObject = artistDao.getById(tempArtist.getArtistId());
+
 //            get that artist with foundArtist
         }
         Set<Artist> userArtists = currentUser.getArtistsSet();
+        log.info(addArtistObject);
         userArtists.add(addArtistObject);
         currentUser.setArtistsSet(userArtists);
 

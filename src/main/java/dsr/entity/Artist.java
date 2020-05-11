@@ -7,6 +7,9 @@ import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 
+/**
+ * The type Artist.
+ */
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -31,6 +34,12 @@ public class Artist {
     @Column(name = "deezer_id")
     private String deezerId;
 
+    /**
+     * Instantiates a new Artist.
+     *
+     * @param artistName the artist name
+     * @param deezerId   the deezer id
+     */
     public Artist( String artistName, String deezerId) {
 //        this.user = user;
         this.artistName = artistName;

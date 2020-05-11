@@ -3,6 +3,9 @@ package dsr.entity.DeezerArtist;
 import java.util.List;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+/**
+ * The type Artist response.
+ */
 public class ArtistResponse{
 
 	@JsonProperty("next")
@@ -14,27 +17,57 @@ public class ArtistResponse{
 	@JsonProperty("data")
 	private List<DataItem> data;
 
-	public void setNext(String next){
+    /**
+     * Set next.
+     *
+     * @param next the next
+     */
+    public void setNext(String next){
 		this.next = next;
 	}
 
-	public String getNext(){
+    /**
+     * Get next string.
+     *
+     * @return the string
+     */
+    public String getNext(){
 		return next;
 	}
 
-	public void setTotal(int total){
+    /**
+     * Set total.
+     *
+     * @param total the total
+     */
+    public void setTotal(int total){
 		this.total = total;
 	}
 
-	public int getTotal(){
+    /**
+     * Get total int.
+     *
+     * @return the int
+     */
+    public int getTotal(){
 		return total;
 	}
 
-	public void setData(List<DataItem> data){
+    /**
+     * Set data.
+     *
+     * @param data the data
+     */
+    public void setData(List<DataItem> data){
 		this.data = data;
 	}
 
-	public List<DataItem> getData(){
+    /**
+     * Get data list.
+     *
+     * @return the list
+     */
+    public List<DataItem> getData(){
 		return data;
 	}
 
